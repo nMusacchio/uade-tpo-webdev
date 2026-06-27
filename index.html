@@ -132,6 +132,7 @@
             50% { transform: translateY(-10px); }
         }
     </style>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-background text-on-surface">
 <!-- TopNavBar -->
@@ -140,15 +141,15 @@
 <div class="flex items-center gap-8">
 <a class="text-xl font-bold text-primary" href="index.html">MatchStage</a>
 <div class="hidden md:flex gap-6">
-<a class="text-primary border-b-2 border-primary font-bold pb-1 text-sm hover:opacity-80 transition-colors" href="buscador_pasantias.html">Buscar Pasantías</a>
-<a class="text-on-surface-variant text-sm hover:text-primary transition-colors" href="mis_postulaciones.html">Mis Postulaciones</a>
-<a class="text-on-surface-variant text-sm hover:text-primary transition-colors" href="mi_perfil.html">Mi Perfil</a>
+<a class="text-primary border-b-2 border-primary font-bold pb-1 text-sm hover:opacity-80 transition-colors" href="secciones/buscador_pasantias.html">Buscar Pasantías</a>
+<a class="text-on-surface-variant text-sm hover:text-primary transition-colors" href="secciones/mis_postulaciones.html">Mis Postulaciones</a>
+<a class="text-on-surface-variant text-sm hover:text-primary transition-colors" href="secciones/mi_perfil.html">Mi Perfil</a>
 </div>
 </div>
-<div class="flex items-center gap-4"><div class="hidden sm:block relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span><input class="bg-surface-container-low border border-outline-variant rounded-full py-1.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all w-48 lg:w-64" placeholder="Buscar..." type="text"/></div><button class="text-sm font-medium text-on-surface-variant hover:text-primary px-4 py-2" onclick="window.location.href='login.html'">Iniciar Sesión</button><button class="bg-primary text-on-primary px-6 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity" onclick="window.location.href='registro_seleccion.html'">Registrarse</button></div>
+<div class="flex items-center gap-4"><div class="hidden sm:block relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span><input class="bg-surface-container-low border border-outline-variant rounded-full py-1.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all w-48 lg:w-64" placeholder="Buscar..." type="text"/></div><button class="text-sm font-medium text-on-surface-variant hover:text-primary px-4 py-2" onclick="window.location.href='secciones/login.html'">Iniciar Sesión</button><button class="bg-primary text-on-primary px-6 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity" onclick="window.location.href='secciones/registro_seleccion.html'">Registrarse</button></div>
 </div>
 </nav>
-<main>
+<main id="main-content" role="main">
 <!-- Hero Section -->
 <section class="hero-gradient pt-16 pb-24 px-margin-mobile md:px-margin-desktop">
 <div class="max-w-container-max mx-auto">
@@ -162,8 +163,8 @@
 <p class="text-body-lg text-on-surface-variant max-w-md">La plataforma líder donde estudiantes ambiciosos y organizaciones innovadoras se encuentran para crear impacto real.</p>
 <!-- Role Selector Segmented Control -->
 <div class="flex p-1 bg-surface-container rounded-xl w-fit mt-8 border border-outline-variant">
-<button class="px-6 py-2 rounded-lg text-sm font-bold transition-all bg-primary text-on-primary shadow-sm" id="studentBtn" onclick="window.location.href='registro_seleccion.html'">Soy Estudiante</button>
-<button class="px-6 py-2 rounded-lg text-sm font-bold transition-all text-on-surface-variant hover:bg-surface-container-highest" id="companyBtn" onclick="window.location.href='registro_organizacion.html'">Soy Empresa</button>
+<button class="px-6 py-2 rounded-lg text-sm font-bold transition-all bg-primary text-on-primary shadow-sm" id="studentBtn" onclick="window.location.href='secciones/registro_seleccion.html'">Soy Estudiante</button>
+<button class="px-6 py-2 rounded-lg text-sm font-bold transition-all text-on-surface-variant hover:bg-surface-container-highest" id="companyBtn" onclick="window.location.href='secciones/registro_organizacion.html'">Soy Empresa</button>
 </div>
 <!-- Quick Search Bar -->
 <div class="mt-8 glass-card p-2 rounded-xl flex flex-col md:flex-row gap-2 shadow-sm">
@@ -175,7 +176,7 @@
 <span class="material-symbols-outlined text-primary">location_on</span>
 <input class="bg-transparent border-none focus:ring-0 w-full text-body-md py-3 px-3" placeholder="Ciudad o Remoto" type="text"/>
 </div>
-<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity flex items-center justify-center gap-2" onclick="window.location.href='buscador_pasantias.html'">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity flex items-center justify-center gap-2" onclick="window.location.href='secciones/buscador_pasantias.html'">
 <span class="">Buscar</span>
 <span class="material-symbols-outlined">arrow_forward</span>
 </button>
@@ -246,7 +247,7 @@
 </div>
 <h3 class="text-2xl font-bold mb-2">Para Organizaciones</h3>
 <p class="text-body-md text-on-surface-variant">Gestiona todo el ciclo de vida del pasante. Desde la publicación hasta la contratación final, con herramientas de filtrado avanzado y entrevistas integradas.</p>
-<button class="mt-4 text-primary font-bold hover:underline flex items-center gap-1" onclick="window.location.href='registro_organizacion.html'">
+<button class="mt-4 text-primary font-bold hover:underline flex items-center gap-1" onclick="window.location.href='secciones/registro_organizacion.html'">
                                 Ver soluciones corporativas
                                 <span class="material-symbols-outlined text-[18px]">open_in_new</span>
 </button>
@@ -266,7 +267,7 @@
 <h2 class="text-headline-md text-on-background">Pasantías destacadas</h2>
 <p class="text-body-md text-on-surface-variant">Nuevas oportunidades publicadas hoy mismo.</p>
 </div>
-<a class="text-primary font-bold hover:underline flex items-center gap-1" href="buscador_pasantias.html">Ver todas las ofertas <span class="material-symbols-outlined">chevron_right</span></a>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="secciones/buscador_pasantias.html">Ver todas las ofertas <span class="material-symbols-outlined">chevron_right</span></a>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 <!-- Internship Card 1 -->
@@ -283,7 +284,7 @@
 <span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">Figma</span>
 <span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">Research</span>
 </div>
-<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary-fixed transition-colors" onclick="window.location.href='detalle_pasantia.html'">Postulación Rápida</button>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary-fixed transition-colors" onclick="window.location.href='secciones/detalle_pasantia.html'">Postulación Rápida</button>
 </div>
 <!-- Internship Card 2 -->
 <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
@@ -299,7 +300,7 @@
 <span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">SEO</span>
 <span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">Content</span>
 </div>
-<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary-fixed transition-colors" onclick="window.location.href='detalle_pasantia.html'">Postulación Rápida</button>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary-fixed transition-colors" onclick="window.location.href='secciones/detalle_pasantia.html'">Postulación Rápida</button>
 </div>
 <!-- Internship Card 3 -->
 <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
@@ -315,7 +316,7 @@
 <span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">Python</span>
 <span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">SQL</span>
 </div>
-<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary-fixed transition-colors" onclick="window.location.href='detalle_pasantia.html'">Postulación Rápida</button>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary-fixed transition-colors" onclick="window.location.href='secciones/detalle_pasantia.html'">Postulación Rápida</button>
 </div>
 <!-- Internship Card 4 -->
 <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
@@ -331,7 +332,7 @@
 <span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">Agile</span>
 <span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">English</span>
 </div>
-<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary-fixed transition-colors" onclick="window.location.href='detalle_pasantia.html'">Postulación Rápida</button>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary-fixed transition-colors" onclick="window.location.href='secciones/detalle_pasantia.html'">Postulación Rápida</button>
 </div>
 </div>
 </div>
@@ -367,14 +368,14 @@
 <h2 class="text-display-lg text-on-surface relative z-10">¿Listo para dar el siguiente paso?</h2>
 <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto mt-6 relative z-10">Únete a la comunidad de MatchStage hoy mismo y comienza a construir tu futuro profesional con las mejores herramientas a tu disposición.</p>
 <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all" onclick="window.location.href='registro_seleccion.html'">Crear Perfil Estudiante</button>
-<button class="bg-surface-container-highest text-on-surface px-10 py-4 rounded-lg font-bold hover:bg-outline-variant transition-all" onclick="window.location.href='registro_organizacion.html'">Registrar Organización</button>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all" onclick="window.location.href='secciones/registro_seleccion.html'">Crear Perfil Estudiante</button>
+<button class="bg-surface-container-highest text-on-surface px-10 py-4 rounded-lg font-bold hover:bg-outline-variant transition-all" onclick="window.location.href='secciones/registro_organizacion.html'">Registrar Organización</button>
 </div>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-lowest border-t border-outline-variant" id="footer">
+<footer role="contentinfo" class="bg-surface-container-lowest border-t border-outline-variant" id="footer">
 <div class="w-full py-8 px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-8">
 <div class="flex flex-col items-center md:items-start">
 <span class="text-sm font-bold text-on-surface">MatchStage Portal</span>
@@ -425,4 +426,5 @@
             }
         });
     </script>
+<script src="assets/js/app.js"></script>
 </body></html>

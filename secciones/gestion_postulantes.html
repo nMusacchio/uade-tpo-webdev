@@ -1,0 +1,416 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+  <title>Gestión de Postulantes | MatchStage</title>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary":                    "#6554C0",
+                    "primary-container":          "#E6DEFF",
+                    "on-primary":                 "#ffffff",
+                    "on-primary-container":       "#1A0063",
+                    "primary-fixed":              "#E5DEFF",
+                    "primary-fixed-dim":          "#C9BFFF",
+                    "on-primary-fixed":           "#1A0063",
+                    "on-primary-fixed-variant":   "#4633A0",
+                    "inverse-primary":            "#C9BFFF",
+                    "surface-tint":               "#6554C0",
+
+                    "secondary":                  "#00B8D9",
+                    "secondary-container":        "#D6F8FF",
+                    "on-secondary":               "#ffffff",
+                    "on-secondary-container":     "#003640",
+                    "secondary-fixed":            "#AFECFF",
+                    "secondary-fixed-dim":        "#48D7F9",
+                    "on-secondary-fixed":         "#001F27",
+                    "on-secondary-fixed-variant": "#004E5D",
+
+                    "tertiary":                   "#6A5ACD",
+                    "tertiary-container":         "#EDE8FF",
+                    "on-tertiary":                "#ffffff",
+                    "on-tertiary-container":      "#2A1A7A",
+                    "tertiary-fixed":             "#EDE8FF",
+                    "tertiary-fixed-dim":         "#C9BFFF",
+                    "on-tertiary-fixed":          "#1A0063",
+                    "on-tertiary-fixed-variant":  "#4633A0",
+
+                    "surface":                    "#ffffff",
+                    "surface-bright":             "#f8f9fb",
+                    "surface-dim":                "#d9dadc",
+                    "surface-container-lowest":   "#ffffff",
+                    "surface-container-low":      "#f3f4f6",
+                    "surface-container":          "#edeef0",
+                    "surface-container-high":     "#e7e8ea",
+                    "surface-container-highest":  "#e1e2e4",
+                    "surface-variant":            "#e1e2e4",
+                    "on-surface":                 "#1A1C20",
+                    "on-surface-variant":         "#484552",
+
+                    "background":                 "#f8f9fb",
+                    "on-background":              "#191c1e",
+
+                    "outline":                    "#797584",
+                    "outline-variant":            "#C9C4D4",
+
+                    "inverse-surface":            "#2e3132",
+                    "inverse-on-surface":         "#f0f1f3",
+
+                    "error":                      "#ba1a1a",
+                    "error-container":            "#ffdad6",
+                    "on-error":                   "#ffffff",
+                    "on-error-container":         "#93000a"
+                },
+                borderRadius: {
+                    DEFAULT: "0.5rem",
+                    sm:      "0.375rem",
+                    lg:      "0.75rem",
+                    xl:      "1rem",
+                    "2xl":   "1.5rem",
+                    full:    "9999px"
+                },
+                spacing: {
+                    base:              "4px",
+                    gutter:            "24px",
+                    "margin-mobile":   "16px",
+                    "max-width":       "1440px",
+                    "margin-desktop":  "32px",
+                    "container-max":   "1280px",
+                    "stack-xs":        "4px",
+                    "stack-sm":        "8px",
+                    "stack-md":        "16px",
+                    "stack-lg":        "24px",
+                    "stack-xl":        "32px"
+                },
+                fontFamily: {
+                    "display-lg":         ["Inter", "sans-serif"],
+                    "headline-lg":        ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "title-md":           ["Inter", "sans-serif"],
+                    "body-lg":            ["Inter", "sans-serif"],
+                    "body-md":            ["Inter", "sans-serif"],
+                    "label-lg":           ["Inter", "sans-serif"],
+                    "label-md":           ["Inter", "sans-serif"],
+                    "label-sm":           ["Inter", "sans-serif"]
+                },
+                fontSize: {
+                    "display-lg":         ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}],
+                    "headline-lg":        ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}],
+                    "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}],
+                    "title-md":           ["18px", {lineHeight: "24px", fontWeight: "600"}],
+                    "body-lg":            ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                    "body-md":            ["14px", {lineHeight: "20px", fontWeight: "400"}],
+                    "label-lg":           ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}],
+                    "label-md":           ["13px", {lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500"}],
+                    "label-sm":           ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500"}]
+                }
+            }
+        }
+    };
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-state {
+            transform: scale(0.98);
+            transition: transform 150ms;
+        }
+        .status-chip {
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    </style>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex">
+<!-- SideNavBar (Shared Component) -->
+<aside aria-label="Menú de navegación" class="fixed left-0 top-0 h-full w-64 z-40 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 px-4">
+  <a class="flex items-center gap-3 mb-8 px-2 hover:opacity-90 transition-opacity" href="../index.html">
+    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+      <span class="material-symbols-outlined text-on-primary" style="font-size:18px">work</span>
+    </div>
+    <span class="font-bold text-primary text-lg">MatchStage</span>
+  </a>
+  <nav class="flex-1 space-y-1" aria-label="Menú principal">
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="dashboard_organizacion.html">
+      <span class="material-symbols-outlined">dashboard</span>
+      <span class="font-label-md text-label-md">Dashboard</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="gestion_pasantias.html">
+      <span class="material-symbols-outlined">work</span>
+      <span class="font-label-md text-label-md">Mis Pasantías</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="crear_editar_pasantia.html">
+      <span class="material-symbols-outlined">add_circle</span>
+      <span class="font-label-md text-label-md">Crear Pasantía</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container font-semibold rounded-xl transition-all" href="gestion_postulantes.html">
+      <span class="material-symbols-outlined">groups</span>
+      <span class="font-label-md text-label-md">Postulantes</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="perfil_empresa.html">
+      <span class="material-symbols-outlined">business</span>
+      <span class="font-label-md text-label-md">Perfil Empresa</span>
+    </a>
+  </nav>
+  <div class="space-y-1 border-t border-outline-variant pt-4 mt-4">
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="javascript:void(0)">
+      <span class="material-symbols-outlined">settings</span>
+      <span class="font-label-md text-label-md">Ajustes</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/10 rounded-xl transition-all" href="../index.html">
+      <span class="material-symbols-outlined">logout</span>
+      <span class="font-label-md text-label-md">Cerrar Sesión</span>
+    </a>
+  </div>
+</aside>
+<!-- Main Content Canvas -->
+<main role="main" id="main-content" role="main" class="ml-64 flex-grow p-margin-desktop max-w-container-max mx-auto">
+<!-- Header Section -->
+<header role="banner"> class="mb-stack-lg flex flex-col md:flex-row md:items-end justify-between gap-gutter">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Postulantes Recibidos</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Gestiona el talento joven que busca unirse a tu organización.</p>
+</div>
+<div class="flex items-center gap-stack-sm bg-surface-container p-1 rounded-xl">
+<button class="px-4 py-2 bg-surface-container-lowest text-tertiary font-label-md rounded-lg shadow-sm">Todos</button>
+<button class="px-4 py-2 text-on-surface-variant font-label-md rounded-lg hover:bg-surface-container-high transition-colors">Pendientes</button>
+<button class="px-4 py-2 text-on-surface-variant font-label-md rounded-lg hover:bg-surface-container-high transition-colors">Entrevistas</button>
+</div>
+</header>
+<!-- Search & Filter Bar -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md mb-stack-md flex flex-wrap gap-stack-md items-center shadow-sm">
+<div class="flex-grow flex items-center bg-background border border-outline-variant rounded-lg px-3 py-2 gap-stack-sm focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-full placeholder:text-outline" placeholder="Buscar por nombre, carrera o universidad..." type="text">
+</div>
+<button class="flex items-center gap-stack-sm px-4 py-2 border border-outline-variant rounded-lg font-label-md hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                Filtrar
+            </button>
+<button class="flex items-center gap-stack-sm px-4 py-2 border border-outline-variant rounded-lg font-label-md hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                Exportar CSV
+            </button>
+</div>
+<!-- Applicant Table Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<table class="w-full border-collapse text-left">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="px-6 py-4 font-label-md text-on-surface-variant uppercase tracking-wider">Estudiante</th>
+<th class="px-6 py-4 font-label-md text-on-surface-variant uppercase tracking-wider">Carrera &amp; Universidad</th>
+<th class="px-6 py-4 font-label-md text-on-surface-variant uppercase tracking-wider">Postulación</th>
+<th class="px-6 py-4 font-label-md text-on-surface-variant uppercase tracking-wider">Estado</th>
+<th class="px-6 py-4 font-label-md text-on-surface-variant uppercase tracking-wider text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-stack-md">
+<img alt="Estudiante" class="w-12 h-12 rounded-full border border-outline-variant" data-alt="A professional headshot of a young male student in his early 20s. He is wearing a crisp light blue shirt and has a friendly, confident expression. The background is a soft-focus office environment with natural sunlight streaming through a window, creating a clean, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFVHaPXbdCcrqpS4pC66TidYqxqP6gT6wiFYekJy3UgbiroCV8Lr7PmOot6HV9fYAtKL4-R8KWyUL_gPiv38NEOXMmcr3m7kOw5MkuZHDtqBNWgEfA3vBImozlFJmpBF6QqtffiN_9RTJv11MtcIQh1FHKmti5e8p7RbTFUAAwBeYPSV4r0nY-GcG9RikISYGVAZVxtOa1-UTzvKKL0S0x4A7yTchzBD0B151wwIbg3-PHS-Pq6TkkK7DBnptChLJZPr4bvocdv9hi">
+<div>
+<a href="dashboard_estudiante.html" class="font-title-lg text-title-lg text-on-surface hover:text-primary hover:underline transition-colors">Mateo Rodríguez</a>
+<p class="font-label-sm text-label-sm text-on-surface-variant">mateo.rod@university.edu</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-body-md text-on-surface">Ingeniería de Software</p>
+<p class="font-label-sm text-on-surface-variant">Universidad de Buenos Aires</p>
+</td>
+<td class="px-6 py-4">
+<p class="font-body-md text-on-surface">15 Oct, 2024</p>
+<p class="font-label-sm text-on-surface-variant">Vacante: Dev Fullstack Jr</p>
+</td>
+<td class="px-6 py-4">
+<span class="status-chip bg-[#E3F2FD] text-[#0D47A1]">En Revisión</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container rounded-lg transition-colors" title="Ver Perfil">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+<button class="p-2 text-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container rounded-lg transition-colors" title="Descargar CV">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</button>
+<button class="p-2 text-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container rounded-lg transition-colors" title="Cambiar Estado">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-stack-md">
+<img alt="Estudiante" class="w-12 h-12 rounded-full border border-outline-variant" data-alt="A close-up portrait of a young female college student with glasses, smiling warmly. She is in a modern library with books and blurred architectural details in the background. The lighting is bright and airy, reflecting a clean and professional academic setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzWI11l8oD043Og2o5qa6fyClCl0nmae3QIkhqEPo0SBovvtY_APCD9i5bI3qclHy3IrmqPVIEaSTTmWpN6crmiVS3loHvqtqt3vXta-X-bGOQQYEnjoYer16eTMqj5jzBo7JQAf6Fp96Mn9iOafafQatgR7Oql1pwkGmdFst_NggzwkMK6s6SSK0U0VWk0AfOVNvuGz2s9PlAaz1v1nyE8AfirkJGLaqT8b0vJWYolPOlXa7an3iGRRDnal6nKw7gD-0p33cbT3z9">
+<div>
+<p class="font-title-lg text-title-lg text-on-surface">Lucía Fernández</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">lfer@campus.org</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-body-md text-on-surface">Diseño UX/UI</p>
+<p class="font-label-sm text-on-surface-variant">ITBA</p>
+</td>
+<td class="px-6 py-4">
+<p class="font-body-md text-on-surface">12 Oct, 2024</p>
+<p class="font-label-sm text-on-surface-variant">Vacante: Product Intern</p>
+</td>
+<td class="px-6 py-4">
+<span class="status-chip bg-[#FFFDE7] text-[#F57F17]">Entrevista</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container rounded-lg transition-colors" title="Ver Perfil">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+<button class="p-2 text-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container rounded-lg transition-colors" title="Descargar CV">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</button>
+<button class="p-2 text-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container rounded-lg transition-colors" title="Cambiar Estado">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-stack-md">
+<img alt="Estudiante" class="w-12 h-12 rounded-full border border-outline-variant" data-alt="A modern professional portrait of a male student with a neat beard. He is wearing a dark polo shirt against a minimalist grey background. The lighting is soft and even, emphasizing a serious yet approachable career-oriented persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2RaimNebHC6tNOSiGTFin_OK7fioy9WODTCoSraDlhy8sUyBrdjPNqhJBkDHy9uYymLeXhc59b0d-zyWeVcTsOjB2w5jFMfpKffxUTj776DmWYQVq2cxgUe3ps6_LKqJB9VsZD1vi32DnX8OKzLzldNAZB-rmE_yCJJaQhNDytaVmFDS4lLhSesH3so84010AAE0Hi1OmVqNnqAJxZwCI1OT5j9mNQN0OoRddGtH-YsNUGv0VDWsdOh19jYCktr72JerPfxiVAeui">
+<div>
+<p class="font-title-lg text-title-lg text-on-surface">Carlos Ruiz</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">carlos.ruiz@edu.ar</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-body-md text-on-surface">Marketing Digital</p>
+<p class="font-label-sm text-on-surface-variant">UADE</p>
+</td>
+<td class="px-6 py-4">
+<p class="font-body-md text-on-surface">10 Oct, 2024</p>
+<p class="font-label-sm text-on-surface-variant">Vacante: Growth Intern</p>
+</td>
+<td class="px-6 py-4">
+<span class="status-chip bg-surface-container-high text-on-surface-variant">Pendiente</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container rounded-lg transition-colors" title="Ver Perfil">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+<button class="p-2 text-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container rounded-lg transition-colors" title="Descargar CV">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</button>
+<button class="p-2 text-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container rounded-lg transition-colors" title="Cambiar Estado">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-stack-md">
+<img alt="Estudiante" class="w-12 h-12 rounded-full border border-outline-variant" data-alt="A portrait of a young woman with a focused expression, wearing a stylish blazer. She is sitting in a brightly lit, modern co-working space with clean white walls and indoor plants. The atmosphere is professional, energetic, and contemporary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQEfLPTuEX-mAvlvZQ3dHbl272tq5rDTZIDKOiSBuvyUvnyMYb9ymp_cGDJHt8Nfii5vO7WIVan0hDFdPEON6pbAH7Hur3mfhqHDLGOM0k5kt2ouPTVkr9kzquMQTd4HEBWqN4tpQ2JFgOrLvuxuNTQcnWPfWwmFM3hiJ8weJJrKiW9ule9AizR965ABWG4h2lWymLO9SNWzBtOOAScZ1fIkMdUI2yf6g2a-sMyy2J5k5VRnAvLxPk3iR04lHTQidxEE-Y9NO8FQcA">
+<div>
+<p class="font-title-lg text-title-lg text-on-surface">Sofía Paz</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">sofipaz@post.edu</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-body-md text-on-surface">Ciencia de Datos</p>
+<p class="font-label-sm text-on-surface-variant">Universidad Austral</p>
+</td>
+<td class="px-6 py-4">
+<p class="font-body-md text-on-surface">08 Oct, 2024</p>
+<p class="font-label-sm text-on-surface-variant">Vacante: Data Analyst Jr</p>
+</td>
+<td class="px-6 py-4">
+<span class="status-chip bg-[#FFEBEE] text-[#C62828]">Rechazado</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container rounded-lg transition-colors" title="Ver Perfil">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+<button class="p-2 text-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container rounded-lg transition-colors" title="Descargar CV">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</button>
+<button class="p-2 text-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container rounded-lg transition-colors" title="Cambiar Estado">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<footer role="contentinfo" class="bg-surface-container-low px-6 py-4 flex items-center justify-between border-t border-outline-variant">
+<p class="font-label-sm text-on-surface-variant">Mostrando 1-4 de 24 postulantes</p>
+<div class="flex items-center gap-stack-sm">
+<button class="p-2 rounded-lg border border-outline-variant hover:bg-surface-container-high transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="px-3 py-1 rounded-lg bg-tertiary text-on-tertiary font-label-sm">1</button>
+<button class="px-3 py-1 rounded-lg hover:bg-surface-container-high font-label-sm transition-colors">2</button>
+<button class="px-3 py-1 rounded-lg hover:bg-surface-container-high font-label-sm transition-colors">3</button>
+<button class="p-2 rounded-lg border border-outline-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</footer>
+</div>
+<!-- Footnote / Footer (Shared Component Guidance) -->
+<div class="mt-stack-lg pt-stack-md border-t border-outline-variant flex flex-col md:flex-row justify-between items-center text-on-surface-variant font-label-sm gap-stack-sm">
+<p class="">© 2026 MatchStage. Todos los derechos reservados.</p>
+<div class="flex gap-stack-md">
+<a class="hover:text-primary hover:underline" href="#">Privacidad</a>
+<a class="hover:text-primary hover:underline" href="#">Términos y Condiciones</a>
+<a class="hover:text-primary hover:underline" href="#">Contacto</a>
+</div>
+</div>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('click', function(e) {
+                if (!e.target.closest('button')) {
+                    this.classList.add('active-state');
+                    setTimeout(() => this.classList.remove('active-state'), 150);
+                    // Mocking navigation to details
+                    console.log('Navigating to applicant details...');
+                }
+            });
+        });
+
+        // Search highlight mock
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('input', (e) => {
+            const value = e.target.value.toLowerCase();
+            document.querySelectorAll('tbody tr').forEach(row => {
+                const text = row.innerText.toLowerCase();
+                row.style.display = text.includes(value) ? '' : 'none';
+            });
+        });
+    </script>
+
+
+<script src="../assets/js/app.js"></script>
+</body></html>

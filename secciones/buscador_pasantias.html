@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Buscar Pasantías | MatchStage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary":                    "#6554C0",
+                    "primary-container":          "#E6DEFF",
+                    "on-primary":                 "#ffffff",
+                    "on-primary-container":       "#1A0063",
+                    "primary-fixed":              "#E5DEFF",
+                    "primary-fixed-dim":          "#C9BFFF",
+                    "on-primary-fixed":           "#1A0063",
+                    "on-primary-fixed-variant":   "#4633A0",
+                    "inverse-primary":            "#C9BFFF",
+                    "surface-tint":               "#6554C0",
+                    "secondary":                  "#00B8D9",
+                    "secondary-container":        "#D6F8FF",
+                    "on-secondary":               "#ffffff",
+                    "on-secondary-container":     "#003640",
+                    "secondary-fixed":            "#AFECFF",
+                    "secondary-fixed-dim":        "#48D7F9",
+                    "on-secondary-fixed":         "#001F27",
+                    "on-secondary-fixed-variant": "#004E5D",
+                    "tertiary":                   "#6A5ACD",
+                    "tertiary-container":         "#EDE8FF",
+                    "on-tertiary":                "#ffffff",
+                    "on-tertiary-container":      "#2A1A7A",
+                    "tertiary-fixed":             "#EDE8FF",
+                    "tertiary-fixed-dim":         "#C9BFFF",
+                    "on-tertiary-fixed":          "#1A0063",
+                    "on-tertiary-fixed-variant":  "#4633A0",
+                    "surface":                    "#ffffff",
+                    "surface-bright":             "#f8f9fb",
+                    "surface-dim":                "#d9dadc",
+                    "surface-container-lowest":   "#ffffff",
+                    "surface-container-low":      "#f3f4f6",
+                    "surface-container":          "#edeef0",
+                    "surface-container-high":     "#e7e8ea",
+                    "surface-container-highest":  "#e1e2e4",
+                    "surface-variant":            "#e1e2e4",
+                    "on-surface":                 "#1A1C20",
+                    "on-surface-variant":         "#484552",
+                    "background":                 "#f8f9fb",
+                    "on-background":              "#191c1e",
+                    "outline":                    "#797584",
+                    "outline-variant":            "#C9C4D4",
+                    "inverse-surface":            "#2e3132",
+                    "inverse-on-surface":         "#f0f1f3",
+                    "error":                      "#ba1a1a",
+                    "error-container":            "#ffdad6",
+                    "on-error":                   "#ffffff",
+                    "on-error-container":         "#93000a"
+                },
+                borderRadius: {
+                    DEFAULT: "0.5rem",
+                    sm:      "0.375rem",
+                    lg:      "0.75rem",
+                    xl:      "1rem",
+                    "2xl":   "1.5rem",
+                    full:    "9999px"
+                },
+                spacing: {
+                    base:              "4px",
+                    gutter:            "24px",
+                    "margin-mobile":   "16px",
+                    "max-width":       "1440px",
+                    "margin-desktop":  "32px",
+                    "container-max":   "1280px",
+                    "stack-xs":        "4px",
+                    "stack-sm":        "8px",
+                    "stack-md":        "16px",
+                    "stack-lg":        "24px",
+                    "stack-xl":        "32px"
+                },
+                fontFamily: {
+                    "display-lg":         ["Inter", "sans-serif"],
+                    "headline-lg":        ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "title-md":           ["Inter", "sans-serif"],
+                    "body-lg":            ["Inter", "sans-serif"],
+                    "body-md":            ["Inter", "sans-serif"],
+                    "label-lg":           ["Inter", "sans-serif"],
+                    "label-md":           ["Inter", "sans-serif"],
+                    "label-sm":           ["Inter", "sans-serif"]
+                },
+                fontSize: {
+                    "display-lg":         ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}],
+                    "headline-lg":        ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}],
+                    "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}],
+                    "title-md":           ["18px", {lineHeight: "24px", fontWeight: "600"}],
+                    "body-lg":            ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                    "body-md":            ["14px", {lineHeight: "20px", fontWeight: "400"}],
+                    "label-lg":           ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}],
+                    "label-md":           ["13px", {lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500"}],
+                    "label-sm":           ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500"}]
+                }
+            }
+        }
+    };
+</script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #D1D4D7;
+            border-radius: 10px;
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(101, 84, 192, 0.15);
+        }
+    </style>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header role="banner"> class="bg-surface border-b border-outline-variant sticky top-0 z-50 h-16">
+  <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+    <div class="flex items-center gap-8">
+      <a href="../index.html" class="font-bold text-primary text-xl tracking-tight">MatchStage</a>
+      <nav class="hidden md:flex items-center gap-6 h-full" aria-label="Navegación principal">
+        <a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md h-full flex items-center" href="buscador_pasantias.html">Buscar Pasantías</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md h-full flex items-center" href="mis_postulaciones.html">Mis Postulaciones</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md h-full flex items-center" href="mi_perfil.html">Mi Perfil</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-3">
+      <button aria-label="Notificaciones" class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined">notifications</span>
+      </button>
+      <button aria-label="Configuración" class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined">settings</span>
+      </button>
+      <a href="mi_perfil.html" class="w-9 h-9 rounded-full overflow-hidden border border-outline-variant block ml-1 flex-shrink-0">
+        <img alt="Perfil" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvY-FybOewEmgrsj3-GlqVdJP_jCBdTiEp-gT4DUz36XeqW-1VB0dmkt9dtmnc7AWUi7ZtpMy86t0F8Ue8PmgH1u8P-It4xCI8ZGGibaq8_WmThdkI1xYv_KfclQF46CeeA3hy8pipjzvPubx3BFNxSRkVOWaRuQIXmGV-tH9_eX6RjRV-DweJNQASDkhEbMO6RoF0tnZkOzZrXHBoRtZFv6FF6EkuSr8ayhnpzkzLcGvc9LZlI7luBUmXPC3fc9iWEZyW1Z_l7oB3">
+      </a>
+    </div>
+  </div>
+</header>
+<!-- Main Content Grid -->
+<main role="main" id="main-content" role="main" class="flex-grow pt-24 pb-12 px-margin-desktop w-full max-w-container-max mx-auto flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside aria-label="Menú de navegación" class="w-full md:w-72 shrink-0">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 sticky top-24">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-title-md text-title-md text-on-surface">Filtros Avanzados</h2>
+<button class="text-primary font-label-sm text-label-sm hover:underline">Limpiar</button>
+</div>
+<div class="space-y-8">
+<!-- Modality -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-3">Modalidad de Trabajo</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Remoto</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Híbrido</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Presencial</span>
+</label>
+</div>
+</div>
+<!-- Department -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-3">Departamento</h3>
+<div class="space-y-2 max-h-48 overflow-y-auto custom-scrollbar pr-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Tecnología / IT</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Diseño UI/UX</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Marketing</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Finanzas</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Recursos Humanos</span>
+</label>
+</div>
+</div>
+<!-- Stipend Range -->
+<div>
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-label-md text-label-md text-on-surface">Remuneración</h3>
+<span class="font-label-sm text-label-sm text-primary">$400k - $900k+</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container rounded-full appearance-none cursor-pointer accent-primary" max="1000" min="0" step="50" type="range"/>
+</div>
+<!-- Date Posted -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-3">Fecha de publicación</h3>
+<select class="w-full bg-surface-container-lowest border border-outline rounded-lg font-body-md text-body-md px-4 py-2 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+<option>Cualquier momento</option>
+<option>Últimas 24 horas</option>
+<option>Última semana</option>
+<option>Último mes</option>
+</select>
+</div>
+</div>
+</div>
+</aside>
+<!-- Results Section -->
+<section class="flex-grow space-y-6">
+<!-- Search & Sort Header -->
+<div class="flex flex-col sm:flex-row gap-4 items-center justify-between">
+<div class="relative w-full sm:max-w-md group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-xl font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Buscar por cargo, empresa o palabra clave..." type="text"/>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<span class="font-label-md text-label-md text-on-surface-variant whitespace-nowrap">Ordenar por:</span>
+<select class="bg-transparent border-none font-label-md text-label-md text-primary focus:ring-0 cursor-pointer">
+<option>Más Recientes</option>
+<option>Relevancia</option>
+<option>Mayor Remuneración</option>
+</select>
+</div>
+</div>
+<!-- Internship Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 card-hover flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center p-2 border border-outline-variant">
+<img alt="Tech Corp Logo" class="w-full h-full object-contain" data-alt="A sleek and minimal technology company logo featuring geometric shapes and a vibrant indigo color palette. The logo is displayed in a professional, clean UI setting, suggesting innovation and digital excellence in a modern corporate landscape with soft, diffused backlighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV_S41___SNUYRE3r_0OKR21Jmyzj_iWl40UhPEzXJAg_Z6UYlHpwj6dIn5uwXz05SHrSfSPAaymXk22aIef4vpacK1YpTxdSkFo3zSjqTLX9IKVUtP8mncpHWVswXZjyAXVt_pqi_zcXCO4lmxc9HO0cXULx1cRNrM4zYeDh6ywpdNmwYvpIKBUavDnFtq9gS_Iv5kuvYPvpMigkA1f1139PruhM_8ats7tgo6WI0hkxVBtBcdD14Owfn-5m4I4znUQASoKuuCGtL"/>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm">Híbrido</span>
+</div>
+<div class="mb-6 flex-grow">
+<h3 class="font-title-md text-title-md text-on-surface mb-1">Pasantía Desarrollo Fullstack</h3>
+<p class="font-body-md text-body-md text-primary font-medium mb-3">Global Systems S.A.</p>
+<div class="flex flex-wrap gap-y-2 gap-x-4">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+<span class="font-label-sm text-label-sm">Madrid, España</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="payments">payments</span>
+<span class="font-label-sm text-label-sm">$850.000 / mes</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+<span class="font-label-sm text-label-sm">Publicado hace 2h</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="w-7 h-7 rounded-full border-2 border-surface-container-lowest bg-surface-container overflow-hidden">
+<img alt="Recruiter 1" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional HR manager in a minimalist office setting. The mood is calm and professional, with a focus on human interaction and academic recruitment excellence, featuring soft lighting and a blurred background of a modern workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe7UVSN7HDsmLLsYQ-Z0bQB8fSkPuBys58Ah2UFUEQmFPcDlBmHd3ZPtzAvvLD6cYgs5XnSwFao0-22s3gZ8dJ1Y0MssH9dBpDGSg6B8Q6KcIN4c3vlgOxaOWA41YoCsXAnhan39XEp19cErDwmlTasw_R2mbtNof1mzLUPWq5NOEaw-_nGTSif-_1UFuywQe6xk8JgSuC8X8fOvOb8wmZd3tODBA7cdMZV5ZaMPtY5y6rbP3Y8tkFu7meYWEWfY64uk8Id2dXYMSN"/>
+</div>
+<div class="w-7 h-7 rounded-full border-2 border-surface-container-lowest bg-primary-container flex items-center justify-center">
+<span class="text-[10px] text-on-primary font-bold">+12</span>
+</div>
+</div>
+<button class="px-6 py-2 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary transition-all active:scale-95 shadow-sm">Ver Detalles</button>
+</div>
+</div>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 card-hover flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center p-2 border border-outline-variant">
+<img alt="Design Agency Logo" class="w-full h-full object-contain" data-alt="A modern and creative design studio logo featuring abstract shapes and a rich purple gradient. The visual style is contemporary and artistic, presented on a clean white background that emphasizes high-density professional aesthetics and intellectual focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPoOVVNSvddkqzegObCf-bhkkJ3wlXkIAehmoQ_C6QB0JtOseb0_X3lqFmGoWdvU2XghEL4rW8TErBfvA6qqn4maeI50XQZigFvWUwzE7SIAEkOHetudrcCKxVzaEVIXLE9q2juxhlu_uOyFWfAetDeEvCBMbuBVcMQaq5rLhOvV4n3xATg6QxqJswJrvAD6dz4v8SXBHhu-qHmibZ-koUOKvvsL6wj_aGUmJ9BgSO0j8y7g-evtMqaYD9KFkwQR84A3Q0b8E5Lglt"/>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm">Remoto</span>
+</div>
+<div class="mb-6 flex-grow">
+<h3 class="font-title-md text-title-md text-on-surface mb-1">Practicante de Diseño UX Research</h3>
+<p class="font-body-md text-body-md text-primary font-medium mb-3">Creative Minds Lab</p>
+<div class="flex flex-wrap gap-y-2 gap-x-4">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+<span class="font-label-sm text-label-sm">Latinoamérica</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="payments">payments</span>
+<span class="font-label-sm text-label-sm">$600.000 / mes</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+<span class="font-label-sm text-label-sm">Publicado hace 1d</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="w-7 h-7 rounded-full border-2 border-surface-container-lowest bg-surface-container overflow-hidden">
+<img alt="Recruiter 2" class="w-full h-full object-cover" data-alt="Detailed professional headshot of a female educator and mentor in a brightly lit academic hall. She is smiling warmly, representing the supportive and professional nature of the MatchStage platform within an intellectual environment. The image is crisp and utilizes a clean, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV6PJLrhEcE7WzGyFVortWhgr9g1vuohzX_y2I80_jemakTm3o6EICfLBJQ-yFmFWXdj3yyo7mRnu4dRIxZFXKODq2cSclm0DUUDw01_IEHP2RF6TJZQVGgyRpnCckGWHcyqVH_gsCFGi7zLU1izu77G1_Voaw2ncsmnLojuOKkEV8UTITXqM5-lp-dTaYVOa7DIcg8td36JA7iB8dQsy_fU3T5sHe7i6vUC1R9y99cDa2FyFjIQGxey6Yedh-vsMited98ZyJ4Gpp"/>
+</div>
+</div>
+<button class="px-6 py-2 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary transition-all active:scale-95 shadow-sm">Ver Detalles</button>
+</div>
+</div>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 card-hover flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center p-2 border border-outline-variant">
+<img alt="Fintech Logo" class="w-full h-full object-contain" data-alt="A minimal corporate logo for a financial services firm, using clean lines and a professional blue and gray palette. The image conveys trust and organizational efficiency, rendered in a high-fidelity digital format suitable for a premium career platform interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYgF4zWcwWAEGgGDoNG9LftIqKRrlgCFs0v7TRRFCovEuv4_Qeig8CMdcfPSdsOW6YQnJi9Famh65EZgs6leH2PTBHKNsUGUyALugNzSwlPCFsGJ_bi5n8pixiljvXEVk5vXHLZquLCmoXgcHp9K4cYlQv3nWX0WfSU5e4gdSwZcUcZ2p2gLZrkc-uFrWxJL-HXBn90-jvPN81pGhXeCyQTo9x5pcYuEdwd-y-HjJFbWQAuERGocLacNYu1VzGIsKzk56VoVlLN33l"/>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm">Presencial</span>
+</div>
+<div class="mb-6 flex-grow">
+<h3 class="font-title-md text-title-md text-on-surface mb-1">Analista Junior de Datos</h3>
+<p class="font-body-md text-body-md text-primary font-medium mb-3">DataLink Global</p>
+<div class="flex flex-wrap gap-y-2 gap-x-4">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+<span class="font-label-sm text-label-sm">Bogotá, Colombia</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="payments">payments</span>
+<span class="font-label-sm text-label-sm">$1.200.000 / mes</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+<span class="font-label-sm text-label-sm">Publicado hace 3d</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="w-7 h-7 rounded-full border-2 border-surface-container-lowest bg-surface-container overflow-hidden">
+<img alt="Recruiter 3" class="w-full h-full object-cover" data-alt="Portrait of a young woman in a modern corporate office, holding a tablet and looking focused. The lighting is sophisticated, creating a bright and clean light-mode aesthetic that aligns with the professional academic style of the UI. The background shows a structured, organized workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFJ0IP4zzhLYjcdLl6on-_qII3chBj8QfaKRRXr4BWD5FUQPpV7XWmi_7tdmdXGOWCFDJCzKc6_8DjDpYrKz8IN1Dm6RfF_wRiwIyvHRYnMZf1z7SL7gy8QG4T4Sfq_LuDoYRRGJ-mWrSxWoRz04z7G1H0z9Lb1gGPDloR2OMoAHRiCQQxo0bwbN93J4yGwDWj8FiS2pgFeI3KQGDAVHNGt4VMnduAQ22lF35hFvwt746oJPWUZvxEjdJphqbuPELQSL_qto0JVItp"/>
+</div>
+</div>
+<button class="px-6 py-2 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary transition-all active:scale-95 shadow-sm">Ver Detalles</button>
+</div>
+</div>
+<!-- Card 4 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 card-hover flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center p-2 border border-outline-variant">
+<img alt="Company Logo" class="w-full h-full object-contain" data-alt="A clean and professional logo for a marketing agency, featuring a bold typography and a modern circular emblem in deep violet. The styling is high-end and minimalist, positioned within a white container that emphasizes clarity and intellectual focus for a scholarly recruitment platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArKyBXeifEMTUUS4L4qiZg6yYj-tqSAtvFjTOuQ1w8VGXsUWTYdio0jwS0f0IBN-zF0rT-eXhjPnW_LWpL0LGyV6-3ojiOT0cSx0tAmD-TRVejMD_XCJwfcuFOryiNg1udHJsNwWJ3zy-4EbDcx9n0V8mY2oRLMks3Oc8tL8Jhds5ZepcOSAPaf9pxWV2F-jd01bFPmhGs5fd_8bu05AXcidQMq-fQ9ECz5wCQxPiKhf-qZx4aGdvcNQ4XI8JGlEua0_ZUbt0pE8Yd"/>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm">Híbrido</span>
+</div>
+<div class="mb-6 flex-grow">
+<h3 class="font-title-md text-title-md text-on-surface mb-1">Estratega de Contenidos Digitales</h3>
+<p class="font-body-md text-body-md text-primary font-medium mb-3">Echo Media House</p>
+<div class="flex flex-wrap gap-y-2 gap-x-4">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+<span class="font-label-sm text-label-sm">Santiago, Chile</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="payments">payments</span>
+<span class="font-label-sm text-label-sm">$550.000 / mes</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+<span class="font-label-sm text-label-sm">Publicado hace 4d</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="w-7 h-7 rounded-full border-2 border-surface-container-lowest bg-surface-container overflow-hidden">
+<img alt="Recruiter 4" class="w-full h-full object-cover" data-alt="Professional portrait of a male recruitment specialist in a bright, modern office with large windows. The lighting is high-key and soft, emphasizing a trustworthy and professional character. The aesthetic is clean and corporate, fitting for an academic digital ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0bONOY725q-RSz_xbdgh8gYLTbVF3wtwX1K-Zapa6spZ_vkIzjGE6FrmQG7faXQb0JfXjwA1HHwIzP3Teb7948zToUARBwGIx_7Y1t5tZu_OESNijbxTUxb4i7ZnE_YEv_4pnish93qz9BFYieEgOsKVnMjz6tuHk-HKCpYqV0s5uLQUVWCKHdJqP6shafGuAjvqr1POsTnl1idxYzO_3fgyXx4I8em1HQjDTd65sflVOataH3PWqSoqZYl2LO_sgA8AQpBwLYPiq"/>
+</div>
+<div class="w-7 h-7 rounded-full border-2 border-surface-container-lowest bg-primary-container flex items-center justify-center">
+<span class="text-[10px] text-on-primary font-bold">+5</span>
+</div>
+</div>
+<button class="px-6 py-2 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary transition-all active:scale-95 shadow-sm">Ver Detalles</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-2 pt-8">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-container text-on-primary font-label-md text-label-md">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors font-label-md text-label-md">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors font-label-md text-label-md">3</button>
+<span class="text-on-surface-variant px-2">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors font-label-md text-label-md">12</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer role="contentinfo" class="bg-surface border-t border-outline-variant mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="flex flex-col items-center md:items-start gap-2 mb-6 md:mb-0">
+<span class="font-title-lg text-title-lg font-bold text-on-surface">MatchStage</span>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2026 MatchStage. Todos los derechos reservados.</p>
+</div>
+<nav class="flex gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Términos y Condiciones</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contacto</a>
+</nav>
+</div>
+</footer>
+<script>
+        // Simple micro-interactions
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                if(e.target.checked) {
+                    console.log('Filter applied');
+                }
+            });
+        });
+
+        // Search highlight interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-primary/20');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-primary/20');
+        });
+    </script>
+<script src="../assets/js/app.js"></script>
+</body></html>

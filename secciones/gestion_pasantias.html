@@ -1,0 +1,415 @@
+<html class="light" lang="es"><head>  <link rel="stylesheet" href="../assets/css/styles.css">
+</head><body class="bg-background text-on-surface min-h-screen flex">```html
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MatchStage | Gestión de Pasantías</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary":                    "#6554C0",
+                    "primary-container":          "#E6DEFF",
+                    "on-primary":                 "#ffffff",
+                    "on-primary-container":       "#1A0063",
+                    "primary-fixed":              "#E5DEFF",
+                    "primary-fixed-dim":          "#C9BFFF",
+                    "on-primary-fixed":           "#1A0063",
+                    "on-primary-fixed-variant":   "#4633A0",
+                    "inverse-primary":            "#C9BFFF",
+                    "surface-tint":               "#6554C0",
+
+                    "secondary":                  "#00B8D9",
+                    "secondary-container":        "#D6F8FF",
+                    "on-secondary":               "#ffffff",
+                    "on-secondary-container":     "#003640",
+                    "secondary-fixed":            "#AFECFF",
+                    "secondary-fixed-dim":        "#48D7F9",
+                    "on-secondary-fixed":         "#001F27",
+                    "on-secondary-fixed-variant": "#004E5D",
+
+                    "tertiary":                   "#6A5ACD",
+                    "tertiary-container":         "#EDE8FF",
+                    "on-tertiary":                "#ffffff",
+                    "on-tertiary-container":      "#2A1A7A",
+                    "tertiary-fixed":             "#EDE8FF",
+                    "tertiary-fixed-dim":         "#C9BFFF",
+                    "on-tertiary-fixed":          "#1A0063",
+                    "on-tertiary-fixed-variant":  "#4633A0",
+
+                    "surface":                    "#ffffff",
+                    "surface-bright":             "#f8f9fb",
+                    "surface-dim":                "#d9dadc",
+                    "surface-container-lowest":   "#ffffff",
+                    "surface-container-low":      "#f3f4f6",
+                    "surface-container":          "#edeef0",
+                    "surface-container-high":     "#e7e8ea",
+                    "surface-container-highest":  "#e1e2e4",
+                    "surface-variant":            "#e1e2e4",
+                    "on-surface":                 "#1A1C20",
+                    "on-surface-variant":         "#484552",
+
+                    "background":                 "#f8f9fb",
+                    "on-background":              "#191c1e",
+
+                    "outline":                    "#797584",
+                    "outline-variant":            "#C9C4D4",
+
+                    "inverse-surface":            "#2e3132",
+                    "inverse-on-surface":         "#f0f1f3",
+
+                    "error":                      "#ba1a1a",
+                    "error-container":            "#ffdad6",
+                    "on-error":                   "#ffffff",
+                    "on-error-container":         "#93000a"
+                },
+                borderRadius: {
+                    DEFAULT: "0.5rem",
+                    sm:      "0.375rem",
+                    lg:      "0.75rem",
+                    xl:      "1rem",
+                    "2xl":   "1.5rem",
+                    full:    "9999px"
+                },
+                spacing: {
+                    base:              "4px",
+                    gutter:            "24px",
+                    "margin-mobile":   "16px",
+                    "max-width":       "1440px",
+                    "margin-desktop":  "32px",
+                    "container-max":   "1280px",
+                    "stack-xs":        "4px",
+                    "stack-sm":        "8px",
+                    "stack-md":        "16px",
+                    "stack-lg":        "24px",
+                    "stack-xl":        "32px"
+                },
+                fontFamily: {
+                    "display-lg":         ["Inter", "sans-serif"],
+                    "headline-lg":        ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "title-md":           ["Inter", "sans-serif"],
+                    "body-lg":            ["Inter", "sans-serif"],
+                    "body-md":            ["Inter", "sans-serif"],
+                    "label-lg":           ["Inter", "sans-serif"],
+                    "label-md":           ["Inter", "sans-serif"],
+                    "label-sm":           ["Inter", "sans-serif"]
+                },
+                fontSize: {
+                    "display-lg":         ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}],
+                    "headline-lg":        ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}],
+                    "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}],
+                    "title-md":           ["18px", {lineHeight: "24px", fontWeight: "600"}],
+                    "body-lg":            ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                    "body-md":            ["14px", {lineHeight: "20px", fontWeight: "400"}],
+                    "label-lg":           ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}],
+                    "label-md":           ["13px", {lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500"}],
+                    "label-sm":           ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500"}]
+                }
+            }
+        }
+    };
+</script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-layer-1 {
+            background-color: #ffffff;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .tonal-layer-1:hover {
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+<!-- SideNavBar -->
+<aside aria-label="Menú de navegación" class="fixed left-0 top-0 h-full w-64 z-40 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 px-4">
+  <a class="flex items-center gap-3 mb-8 px-2 hover:opacity-90 transition-opacity" href="../index.html">
+    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+      <span class="material-symbols-outlined text-on-primary" style="font-size:18px">work</span>
+    </div>
+    <span class="font-bold text-primary text-lg">MatchStage</span>
+  </a>
+  <nav class="flex-1 space-y-1" aria-label="Menú principal">
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="dashboard_organizacion.html">
+      <span class="material-symbols-outlined">dashboard</span>
+      <span class="font-label-md text-label-md">Dashboard</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container font-semibold rounded-xl transition-all" href="gestion_pasantias.html">
+      <span class="material-symbols-outlined">work</span>
+      <span class="font-label-md text-label-md">Mis Pasantías</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="crear_editar_pasantia.html">
+      <span class="material-symbols-outlined">add_circle</span>
+      <span class="font-label-md text-label-md">Crear Pasantía</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="gestion_postulantes.html">
+      <span class="material-symbols-outlined">groups</span>
+      <span class="font-label-md text-label-md">Postulantes</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="perfil_empresa.html">
+      <span class="material-symbols-outlined">business</span>
+      <span class="font-label-md text-label-md">Perfil Empresa</span>
+    </a>
+  </nav>
+  <div class="space-y-1 border-t border-outline-variant pt-4 mt-4">
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="javascript:void(0)">
+      <span class="material-symbols-outlined">settings</span>
+      <span class="font-label-md text-label-md">Ajustes</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/10 rounded-xl transition-all" href="../index.html">
+      <span class="material-symbols-outlined">logout</span>
+      <span class="font-label-md text-label-md">Cerrar Sesión</span>
+    </a>
+  </div>
+</aside>
+<!-- Main Content Canvas -->
+<main id="main-content" role="main" class="flex-grow md:ml-64 p-margin-mobile md:p-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<!-- Header Action Row -->
+<header role="banner"> class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+<div>
+<h1 class="text-4xl md:text-5xl font-bold text-on-surface mb-2">Pasantías Publicadas</h1>
+<p class="text-body-md text-on-surface-variant">Gestiona tus vacantes actuales y revisa las nuevas postulaciones.</p>
+</div>
+<a class="bg-primary text-on-primary px-6 py-3 rounded-lg flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-md" href="crear_editar_pasantia.html">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span class="text-sm font-bold">Crear Nueva Pasantía</span>
+</a>
+</header>
+<!-- Stats Overview -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="tonal-layer-1 p-6 rounded-xl border border-outline-variant">
+<span class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Activas</span>
+<div class="flex items-end justify-between mt-2">
+<span class="text-5xl font-bold text-primary">12</span>
+<span class="text-primary bg-primary-container px-2 py-1 rounded text-xs">+2 este mes</span>
+</div>
+</div>
+<div class="tonal-layer-1 p-6 rounded-xl border border-outline-variant">
+<span class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Postulantes Totales</span>
+<div class="flex items-end justify-between mt-2">
+<span class="text-5xl font-bold text-secondary">348</span>
+<span class="text-secondary bg-secondary-container px-2 py-1 rounded text-xs">Top 5%</span>
+</div>
+</div>
+<div class="tonal-layer-1 p-6 rounded-xl border border-outline-variant">
+<span class="text-xs text-on-surface-variant uppercase tracking-wider font-semibold">Entrevistas</span>
+<div class="flex items-end justify-between mt-2">
+<span class="text-5xl font-bold text-primary">24</span>
+<span class="text-primary bg-primary-container px-2 py-1 rounded text-xs font-medium">Pendientes</span>
+</div>
+</div>
+</div>
+<!-- Internship List Table Container -->
+<div class="tonal-layer-1 rounded-xl border border-outline-variant overflow-hidden bg-surface">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="px-6 py-4 text-sm font-semibold text-on-surface-variant">Pasantía</th>
+<th class="px-6 py-4 text-sm font-semibold text-on-surface-variant">Estado</th>
+<th class="px-6 py-4 text-sm font-semibold text-on-surface-variant text-center">Postulantes</th>
+<th class="px-6 py-4 text-sm font-semibold text-on-surface-variant">Fecha de Cierre</th>
+<th class="px-6 py-4 text-sm font-semibold text-on-surface-variant text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="Modern tech visualization" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKsE_BApm-onqrEaETHiMemQDpbb_e51Y-XhuBIzBSWvw3Uu1faBSqi5H6yO9pxE602iTgw9iOfFbTLHthiFZEpGGtnAwI-4wrS8CpIjk3CUKz7b8r2THsnJumUu18mYZyd4tx7_LgekkNztdMJwjFV2QsTJWMAvSchx96X1rw8dBPYBOCxM0IAoX9jDHfTHEmiU82tfSXT6zErwV00Dgae6zMin7dcmg-g31dK3TwYiawNWL3_CGoxVa5xr-lJBnqMaJ3pIOEOKFC"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Junior UX/UI Designer</p>
+<p class="text-xs text-on-surface-variant">Remote • Full-time</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-bold bg-primary-container text-primary">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                                    Activa
+                                </span>
+</td>
+<td class="px-6 py-5 text-center">
+<div class="flex flex-col items-center">
+<span class="text-sm font-bold text-on-surface">142</span>
+<span class="text-xs font-semibold text-primary">+12 nuevos</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">
+                                15 Oct, 2024
+                            </td>
+<td class="px-6 py-5">
+<div class="flex justify-end gap-2">
+<a class="p-2 rounded text-on-surface-variant hover:bg-primary-container hover:text-primary transition-colors" href="gestion_postulantes.html" title="Ver Postulantes">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</a>
+<a class="p-2 rounded text-on-surface-variant hover:bg-surface-container-high transition-colors" href="crear_editar_pasantia.html" title="Editar">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</a>
+<button class="p-2 rounded text-on-surface-variant hover:bg-error-container/20 hover:text-error transition-colors" title="Pausar">
+<span class="material-symbols-outlined" data-icon="pause_circle">pause_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="Modern office workspace" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBavz2Uh64Ocid6SKHoqFluMhtQD8wBHhB0mGtMqLbD3BEhaSg8Zi0tWkK5JEPNB1ubNh9Lkksy0UxQ45byj6h-X-x1ClUvx4yyvTVh6Jh7y8ZSzkR0P4QPlcxFoktti2rJ3008ZwzI5u6OAGQcO_rGq-2f1mgDTXIDfaD6HK1rt1Ha2zGhHXOOxfRejh2_iz6wE4MfjrxHtKHVoRhexZDZikIYWsOVgQRIy2KLgPg3UBQ-UhtchG4q2ncC7xz9_gqaryy8UjMXSBzQ"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Data Science Intern</p>
+<p class="text-xs text-on-surface-variant">Hybrid • Part-time</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-bold bg-surface-container-high text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+                                    Pausada
+                                </span>
+</td>
+<td class="px-6 py-5 text-center">
+<div class="flex flex-col items-center">
+<span class="text-sm font-bold text-on-surface">86</span>
+<span class="text-xs text-on-surface-variant">Sin cambios</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">
+                                01 Nov, 2024
+                            </td>
+<td class="px-6 py-5">
+<div class="flex justify-end gap-2">
+<a class="p-2 rounded text-on-surface-variant hover:bg-primary-container hover:text-primary transition-colors" href="gestion_postulantes.html" title="Ver Postulantes">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</a>
+<a class="p-2 rounded text-on-surface-variant hover:bg-surface-container-high transition-colors" href="crear_editar_pasantia.html" title="Editar">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</a>
+<button class="p-2 rounded text-on-surface-variant hover:bg-primary-container hover:text-primary transition-colors" title="Activar">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="Corporate building facade" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA63aG6Hv36yf9--kY2Z9FaJ6Eur5nIEt43kIi4n0OOA2XHtvCwDFZ1EurwI-K3ytqLAioKPoW4-QTWbxL793BHTnkbuVvo2RrdW9ZWhwQAWcN9MJifTDWVfQbGn0aYuDPYRvMsmBPU5k42HQqtEwcSPnbJMN07oAJv_N6DGysTj-v0Y67ZZ8S4g2_0fag4VXfFeyS6h_VimXceOJBUDaKRT76LkBUXPwv0ONE_tHrhWx0DwsaeoRZbIIDX-IUyzKdJh5g13f0RHmr_"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Fullstack Developer Intern</p>
+<p class="text-xs text-on-surface-variant">On-site • Full-time</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-bold bg-primary-container text-primary">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                                    Activa
+                                </span>
+</td>
+<td class="px-6 py-5 text-center">
+<div class="flex flex-col items-center">
+<span class="text-sm font-bold text-on-surface">120</span>
+<span class="text-xs font-semibold text-primary">+45 nuevos</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">
+                                10 Oct, 2024
+                            </td>
+<td class="px-6 py-5">
+<div class="flex justify-end gap-2">
+<a class="p-2 rounded text-on-surface-variant hover:bg-primary-container hover:text-primary transition-colors" href="gestion_postulantes.html" title="Ver Postulantes">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</a>
+<a class="p-2 rounded text-on-surface-variant hover:bg-surface-container-high transition-colors" href="crear_editar_pasantia.html" title="Editar">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</a>
+<button class="p-2 rounded text-on-surface-variant hover:bg-error-container/20 hover:text-error transition-colors" title="Pausar">
+<span class="material-symbols-outlined" data-icon="pause_circle">pause_circle</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer -->
+<div class="px-6 py-4 bg-surface-container-low border-t border-outline-variant flex justify-between items-center">
+<span class="text-xs font-medium text-on-surface-variant">Mostrando 3 de 12 publicaciones</span>
+<div class="flex gap-2">
+<button class="p-2 rounded border border-outline-variant hover:bg-surface-container-high transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-2 rounded border border-outline-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Contextual Help / Tips Section -->
+<section class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 pb-24">
+<div class="bg-primary text-on-primary p-8 rounded-xl flex items-start gap-4">
+<div class="bg-white/20 text-on-primary p-3 rounded">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Tip de Reclutamiento</h4>
+<p class="text-sm opacity-90 leading-relaxed">Las pasantías con descripción detallada de beneficios educativos reciben un 40% más de postulaciones cualificadas.</p>
+<button class="mt-4 text-sm font-bold underline hover:opacity-75">Saber más</button>
+</div>
+</div>
+<div class="border border-outline-variant bg-surface p-8 rounded-xl flex items-start gap-4">
+<div class="bg-secondary text-on-secondary p-3 rounded">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Anuncio Rápido</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">¿Necesitas cubrir una vacante pronto? Prueba promocionar tu publicación para mayor alcance.</p>
+<button class="mt-4 text-sm font-bold text-secondary hover:opacity-75">Ver planes</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer role="contentinfo" class="fixed bottom-0 right-0 w-full md:w-[calc(100%-16rem)] bg-surface border-t border-outline-variant px-10 py-4 flex flex-col md:flex-row justify-between items-center z-50" id="footer">
+<p class="text-xs text-on-surface-variant">© 2026 MatchStage. Todos los derechos reservados.</p>
+<div class="flex gap-4">
+<a class="text-xs text-on-surface-variant hover:underline transition-all" href="#">Privacidad</a>
+<a class="text-xs text-on-surface-variant hover:underline transition-all" href="#">Términos</a>
+<a class="text-xs text-on-surface-variant hover:underline transition-all" href="#">Contacto</a>
+<a class="text-xs text-on-surface-variant hover:underline transition-all" href="#">Soporte</a>
+</div>
+</footer>
+<script>
+    // Micro-interactions
+    document.querySelectorAll('tr').forEach(row => {
+        row.addEventListener('click', (e) => {
+            if (e.target.closest('a') || e.target.closest('button')) return;
+            console.log('Row clicked');
+        });
+    });
+</script>
+```<script src="../assets/js/app.js"></script>
+</body></html>

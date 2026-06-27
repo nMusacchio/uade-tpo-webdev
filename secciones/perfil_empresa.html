@@ -1,0 +1,379 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+  <title>Perfil Empresa | MatchStage</title>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary":                    "#6554C0",
+                    "primary-container":          "#E6DEFF",
+                    "on-primary":                 "#ffffff",
+                    "on-primary-container":       "#1A0063",
+                    "primary-fixed":              "#E5DEFF",
+                    "primary-fixed-dim":          "#C9BFFF",
+                    "on-primary-fixed":           "#1A0063",
+                    "on-primary-fixed-variant":   "#4633A0",
+                    "inverse-primary":            "#C9BFFF",
+                    "surface-tint":               "#6554C0",
+
+                    "secondary":                  "#00B8D9",
+                    "secondary-container":        "#D6F8FF",
+                    "on-secondary":               "#ffffff",
+                    "on-secondary-container":     "#003640",
+                    "secondary-fixed":            "#AFECFF",
+                    "secondary-fixed-dim":        "#48D7F9",
+                    "on-secondary-fixed":         "#001F27",
+                    "on-secondary-fixed-variant": "#004E5D",
+
+                    "tertiary":                   "#6A5ACD",
+                    "tertiary-container":         "#EDE8FF",
+                    "on-tertiary":                "#ffffff",
+                    "on-tertiary-container":      "#2A1A7A",
+                    "tertiary-fixed":             "#EDE8FF",
+                    "tertiary-fixed-dim":         "#C9BFFF",
+                    "on-tertiary-fixed":          "#1A0063",
+                    "on-tertiary-fixed-variant":  "#4633A0",
+
+                    "surface":                    "#ffffff",
+                    "surface-bright":             "#f8f9fb",
+                    "surface-dim":                "#d9dadc",
+                    "surface-container-lowest":   "#ffffff",
+                    "surface-container-low":      "#f3f4f6",
+                    "surface-container":          "#edeef0",
+                    "surface-container-high":     "#e7e8ea",
+                    "surface-container-highest":  "#e1e2e4",
+                    "surface-variant":            "#e1e2e4",
+                    "on-surface":                 "#1A1C20",
+                    "on-surface-variant":         "#484552",
+
+                    "background":                 "#f8f9fb",
+                    "on-background":              "#191c1e",
+
+                    "outline":                    "#797584",
+                    "outline-variant":            "#C9C4D4",
+
+                    "inverse-surface":            "#2e3132",
+                    "inverse-on-surface":         "#f0f1f3",
+
+                    "error":                      "#ba1a1a",
+                    "error-container":            "#ffdad6",
+                    "on-error":                   "#ffffff",
+                    "on-error-container":         "#93000a"
+                },
+                borderRadius: {
+                    DEFAULT: "0.5rem",
+                    sm:      "0.375rem",
+                    lg:      "0.75rem",
+                    xl:      "1rem",
+                    "2xl":   "1.5rem",
+                    full:    "9999px"
+                },
+                spacing: {
+                    base:              "4px",
+                    gutter:            "24px",
+                    "margin-mobile":   "16px",
+                    "max-width":       "1440px",
+                    "margin-desktop":  "32px",
+                    "container-max":   "1280px",
+                    "stack-xs":        "4px",
+                    "stack-sm":        "8px",
+                    "stack-md":        "16px",
+                    "stack-lg":        "24px",
+                    "stack-xl":        "32px"
+                },
+                fontFamily: {
+                    "display-lg":         ["Inter", "sans-serif"],
+                    "headline-lg":        ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "title-md":           ["Inter", "sans-serif"],
+                    "body-lg":            ["Inter", "sans-serif"],
+                    "body-md":            ["Inter", "sans-serif"],
+                    "label-lg":           ["Inter", "sans-serif"],
+                    "label-md":           ["Inter", "sans-serif"],
+                    "label-sm":           ["Inter", "sans-serif"]
+                },
+                fontSize: {
+                    "display-lg":         ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}],
+                    "headline-lg":        ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}],
+                    "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}],
+                    "title-md":           ["18px", {lineHeight: "24px", fontWeight: "600"}],
+                    "body-lg":            ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                    "body-md":            ["14px", {lineHeight: "20px", fontWeight: "400"}],
+                    "label-lg":           ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}],
+                    "label-md":           ["13px", {lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500"}],
+                    "label-sm":           ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500"}]
+                }
+            }
+        }
+    };
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fb;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="text-on-surface">
+<!-- Sidebar Navigation -->
+<aside aria-label="Menú de navegación" class="fixed left-0 top-0 h-full w-64 z-40 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 px-4">
+  <a class="flex items-center gap-3 mb-8 px-2 hover:opacity-90 transition-opacity" href="../index.html">
+    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+      <span class="material-symbols-outlined text-on-primary" style="font-size:18px">work</span>
+    </div>
+    <span class="font-bold text-primary text-lg">MatchStage</span>
+  </a>
+  <nav class="flex-1 space-y-1" aria-label="Menú principal">
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="dashboard_organizacion.html">
+      <span class="material-symbols-outlined">dashboard</span>
+      <span class="font-label-md text-label-md">Dashboard</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="gestion_pasantias.html">
+      <span class="material-symbols-outlined">work</span>
+      <span class="font-label-md text-label-md">Mis Pasantías</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="crear_editar_pasantia.html">
+      <span class="material-symbols-outlined">add_circle</span>
+      <span class="font-label-md text-label-md">Crear Pasantía</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="gestion_postulantes.html">
+      <span class="material-symbols-outlined">groups</span>
+      <span class="font-label-md text-label-md">Postulantes</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container font-semibold rounded-xl transition-all" href="perfil_empresa.html">
+      <span class="material-symbols-outlined">business</span>
+      <span class="font-label-md text-label-md">Perfil Empresa</span>
+    </a>
+  </nav>
+  <div class="space-y-1 border-t border-outline-variant pt-4 mt-4">
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="javascript:void(0)">
+      <span class="material-symbols-outlined">settings</span>
+      <span class="font-label-md text-label-md">Ajustes</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/10 rounded-xl transition-all" href="../index.html">
+      <span class="material-symbols-outlined">logout</span>
+      <span class="font-label-md text-label-md">Cerrar Sesión</span>
+    </a>
+  </div>
+</aside>
+<!-- Main Content Area -->
+<main role="main" id="main-content" role="main" class="ml-64 min-h-screen p-margin-desktop bg-background">
+<div class="max-w-container-max mx-auto">
+<!-- Header Section with Bento Card -->
+<section class="mb-stack-lg">
+<div class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-[0px_2px_8px_rgba(0,0,0,0.05)] border border-outline-variant flex flex-col md:flex-row gap-gutter items-center">
+<div class="w-32 h-32 rounded-2xl overflow-hidden bg-surface-container flex-shrink-0 border border-outline-variant">
+<img alt="TechCorp Inc. Logo" class="w-full h-full object-cover" data-alt="A clean, minimalist company logo for TechCorp Inc. featuring an abstract blue geometric shape against a crisp white background. The style is modern corporate, professional, and elegant, fitting into a high-end academic and professional bridge platform with soft studio lighting and sharp edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6iljRHTlEz7ZBxm0oSH2LUPDbZsPw_Z38Z7CGRgAL2PzrzaSlrm8922NQc6gk6gGjNmuZpyVRuWM7SduFxDhuXaO5AwG0-bZoRYapEVVFj76KJQpmj6Clo3tbjQ1bW0C8nJPKFjGPvUIhY-JoApl5syliU2KJO0o0dyzZ_hW7NSeFzknPoaPThfl-WzyLpIcUCBexfKbjOJ7NrzezVj3Brl993CdEkd1moVoAI0jInbz-RBqaAJvE7AVjoc_5VQqOzaoWxIN5ZXEF">
+</div>
+<div class="flex-1 text-center md:text-left">
+<div class="flex flex-col md:flex-row md:items-center gap-stack-sm mb-stack-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">TechCorp Inc.</h2>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm w-fit mx-auto md:mx-0">
+<span class="material-symbols-outlined text-[16px] mr-1" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                Empresa Verificada
+                            </span>
+</div>
+<div class="flex flex-wrap justify-center md:justify-start gap-gutter mb-stack-md text-on-surface-variant font-body-md text-body-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="domain">domain</span>
+                                Tecnología &amp; Software
+                            </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                                San Francisco, CA
+                            </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="public">public</span>
+                                techcorp.example.com
+                            </div>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md max-w-3xl">
+                            Impulsamos el futuro de la inteligencia artificial y el desarrollo de software escalable. En TechCorp Inc., creemos en el talento joven y proporcionamos un entorno de aprendizaje dinámico donde los pasantes trabajan en proyectos reales con impacto global.
+                        </p>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<button class="bg-primary text-on-primary px-6 py-3 rounded-xl font-label-md text-label-md shadow-sm hover:opacity-90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+                            Editar Perfil
+                        </button>
+<button class="border border-outline-variant text-primary px-6 py-3 rounded-xl font-label-md text-label-md hover:bg-surface-container-low transition-all">
+                            Compartir Perfil
+                        </button>
+</div>
+</div>
+</section>
+<!-- Stats & Context Bento -->
+<div class="bento-grid mb-stack-lg">
+<div class="col-span-12 md:col-span-8 bg-surface-container-lowest rounded-xl p-stack-lg border border-outline-variant shadow-[0px_2px_8px_rgba(0,0,0,0.05)]">
+<h3 class="font-title-lg text-title-lg mb-stack-md">Nuestra Misión</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">
+                        Nuestra misión es democratizar el acceso a la tecnología de punta a través de la educación práctica. Buscamos mentes curiosas, dispuestas a desafiar el status quo y a construir soluciones que mejoren la vida de millones. 
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-stack-md">
+<div class="bg-surface-container-low p-stack-md rounded-lg">
+<span class="block font-headline-md text-headline-md text-primary">120+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pasantes contratados</span>
+</div>
+<div class="bg-surface-container-low p-stack-md rounded-lg">
+<span class="block font-headline-md text-headline-md text-primary">45</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mentores activos</span>
+</div>
+<div class="bg-surface-container-low p-stack-md rounded-lg">
+<span class="block font-headline-md text-headline-md text-primary">15</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Países alcanzados</span>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 bg-tertiary-container text-on-tertiary-container rounded-xl p-stack-lg border border-outline-variant shadow-[0px_2px_8px_rgba(0,0,0,0.05)] relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-title-lg text-title-lg mb-stack-sm">¿Buscas Talento?</h3>
+<p class="font-body-md text-body-md opacity-90 mb-stack-lg">
+                            Gestiona tus convocatorias y encuentra a los mejores perfiles académicos en un solo lugar.
+                        </p>
+<button class="w-full bg-white text-tertiary py-3 rounded-xl font-label-md text-label-md shadow-lg hover:bg-opacity-90 transition-all">
+                            Nueva Convocatoria
+                        </button>
+</div>
+<!-- Decorative background icon -->
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-9xl opacity-10" data-icon="rocket_launch">rocket_launch</span>
+</div>
+</div>
+<!-- Active Postings Section -->
+<section>
+<div class="flex items-center justify-between mb-stack-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Pasantías Activas</h3>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1" href="javascript:void(0)">
+                        Ver todas
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-md">
+<!-- Posting Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-stack-md shadow-[0px_2px_8px_rgba(0,0,0,0.05)] hover:shadow-[0px_8px_16px_rgba(0,0,0,0.08)] transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-stack-sm">
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant rounded font-label-sm text-label-sm">Remoto</span>
+<span class="text-on-surface-variant opacity-60"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></span>
+</div>
+<h4 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Frontend Developer Intern</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">React, Tailwind, &amp; TypeScript Ecosystem</p>
+<div class="flex items-center gap-4 text-on-surface-variant mb-stack-md">
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                                6 Meses
+                            </div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="payments">payments</span>
+                                Estipendio Competitivo
+                            </div>
+</div>
+<div class="flex gap-2 mb-stack-md">
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-sm text-label-sm">React</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-sm text-label-sm">UX/UI</span>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant pt-stack-sm">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-lowest bg-surface-container-high overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="A portrait of a young professional smiling, representing a potential applicant or current intern, styled in high-key natural lighting with a blurred corporate background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO2IBW6gI54pYkRtAmndUoHBLkHl3k6ONB2GEgicIRHkwjU2Cve8MDN9ugCAUJAfeqiEdijlsPwKBLIdjuOpR1oFEHg2nOir9ODapNo0PnHHfZ0ltpfMSqt2Cf1Hl7so8d_m5XKzk-6xtd3A7XYJmZKpsM0H3xcLPqhvwcDCZzmXFFsfBM6RACf7_G4ol7aMPnAfV06_4ybvWY7unPvXIxLXdZkP2oPfsYueOAZIQERLcw5NwPUy7ZxSzjl6AqyYp8PlDXb5uAtm3j">
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-lowest bg-surface-container-high overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="A professional woman smiling warmly at the camera, wearing professional attire in a modern, brightly lit office environment, fitting the academic ambition and professional reliability brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD44V-nHZDDlf4E2_8Az7v9gk3uTgrabli_RHeE1lduWDv1b_4xXWsal-mcjWTU6aeUxCglpZCQGYz37yYkoexFTyvtZSnaJpp23LR7Nus9IGHwYY_FIsSIOBoneCzEDZMi-7WtNe5IX4uJWAwjFQUAzMlFhQHpFv3mo09b5_cGTonsAOecwRjZtTiic08NXH0U31X3yNJJSxLhgc9oqzubzgWaFL7ghQeqCr2T8opeRDu9k9cUJhkXC6_ZpKC6wCsEOFujqRdSD2sd">
+</div>
+<div class="flex items-center justify-center w-8 h-8 rounded-full border-2 border-surface-container-lowest bg-surface-container-high text-[10px] font-bold">+12</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">15 postulantes</span>
+</div>
+</div>
+<!-- Posting Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-stack-md shadow-[0px_2px_8px_rgba(0,0,0,0.05)] hover:shadow-[0px_8px_16px_rgba(0,0,0,0.08)] transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-stack-sm">
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant rounded font-label-sm text-label-sm">Híbrido</span>
+<span class="text-on-surface-variant opacity-60"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></span>
+</div>
+<h4 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Data Science Assistant</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Machine Learning &amp; Big Data Analysis</p>
+<div class="flex items-center gap-4 text-on-surface-variant mb-stack-md">
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                                4 Meses
+                            </div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="payments">payments</span>
+                                Estipendio Fijo
+                            </div>
+</div>
+<div class="flex gap-2 mb-stack-md">
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-sm text-label-sm">Python</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-sm text-label-sm">SQL</span>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant pt-stack-sm">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-lowest bg-surface-container-high overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="Portrait of a young man with a friendly expression in a clean, modern workspace with soft focus technology in the background. High-quality lighting that emphasizes professional clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLHyydlIDdOKXrdvxjaRnKElktEdhhdfIT5_a7dLeJNf80DSXcEOhblpS5O8jKLsaTSnKJdfysWzGOIxVLkcdtSpwII6LjnaBxvEzb0uAbp8XIuFr_5bDGOteqODgQQsmmfFS6iDmZd4IUnoIuOitgTKyKk5xNGCiqOSW7P8-K74bI0gHOL7Q8zHrBrf9CJmR_kE3hUkjpyYWEMtGL97JaX2JNSDfFPY7gTnw3y-bOG_b6dyUnwetqylEHbMNEK5PR5Rt8IwbBI507">
+</div>
+<div class="flex items-center justify-center w-8 h-8 rounded-full border-2 border-surface-container-lowest bg-surface-container-high text-[10px] font-bold">+5</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">8 postulantes</span>
+</div>
+</div>
+<!-- Add New Card Slot -->
+<div class="bg-dashed border-2 border-dashed border-outline-variant rounded-xl p-stack-md flex flex-col items-center justify-center text-on-surface-variant hover:border-tertiary hover:text-tertiary transition-all cursor-pointer group h-full min-h-[220px]">
+<span class="material-symbols-outlined text-4xl mb-2 group-hover:scale-110 transition-transform" data-icon="add_circle">add_circle</span>
+<span class="font-label-md text-label-md">Crear nueva publicación</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer role="contentinfo" class="ml-64 bg-surface dark:bg-background border-t border-outline-variant dark:border-outline mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="mb-4 md:mb-0">
+<span class="font-title-lg text-title-lg font-bold text-on-surface dark:text-inverse-on-surface">MatchStage</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant mt-1">© 2026 MatchStage. Todos los derechos reservados.</p>
+</div>
+<div class="flex gap-stack-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary underline transition-colors" href="#">Privacidad</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary underline transition-colors" href="#">Términos y Condiciones</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary underline transition-colors" href="#">Contacto</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple interactive effect for cards
+        document.querySelectorAll('.bg-surface-container-lowest').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0px)';
+            });
+        });
+
+        // Handle navigation clicks
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // For demo purposes, prevent actual navigation
+                // e.preventDefault();
+                console.log('Navigating to:', link.textContent.trim());
+            });
+        });
+    </script>
+<script src="../assets/js/app.js"></script>
+</body></html>
