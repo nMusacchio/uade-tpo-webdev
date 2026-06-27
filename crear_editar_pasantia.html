@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+  <title>Crear Pasantía | MatchStage</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary":                    "#6554C0",
+                    "primary-container":          "#E6DEFF",
+                    "on-primary":                 "#ffffff",
+                    "on-primary-container":       "#1A0063",
+                    "primary-fixed":              "#E5DEFF",
+                    "primary-fixed-dim":          "#C9BFFF",
+                    "on-primary-fixed":           "#1A0063",
+                    "on-primary-fixed-variant":   "#4633A0",
+                    "inverse-primary":            "#C9BFFF",
+                    "surface-tint":               "#6554C0",
+
+                    "secondary":                  "#00B8D9",
+                    "secondary-container":        "#D6F8FF",
+                    "on-secondary":               "#ffffff",
+                    "on-secondary-container":     "#003640",
+                    "secondary-fixed":            "#AFECFF",
+                    "secondary-fixed-dim":        "#48D7F9",
+                    "on-secondary-fixed":         "#001F27",
+                    "on-secondary-fixed-variant": "#004E5D",
+
+                    "tertiary":                   "#6A5ACD",
+                    "tertiary-container":         "#EDE8FF",
+                    "on-tertiary":                "#ffffff",
+                    "on-tertiary-container":      "#2A1A7A",
+                    "tertiary-fixed":             "#EDE8FF",
+                    "tertiary-fixed-dim":         "#C9BFFF",
+                    "on-tertiary-fixed":          "#1A0063",
+                    "on-tertiary-fixed-variant":  "#4633A0",
+
+                    "surface":                    "#ffffff",
+                    "surface-bright":             "#f8f9fb",
+                    "surface-dim":                "#d9dadc",
+                    "surface-container-lowest":   "#ffffff",
+                    "surface-container-low":      "#f3f4f6",
+                    "surface-container":          "#edeef0",
+                    "surface-container-high":     "#e7e8ea",
+                    "surface-container-highest":  "#e1e2e4",
+                    "surface-variant":            "#e1e2e4",
+                    "on-surface":                 "#1A1C20",
+                    "on-surface-variant":         "#484552",
+
+                    "background":                 "#f8f9fb",
+                    "on-background":              "#191c1e",
+
+                    "outline":                    "#797584",
+                    "outline-variant":            "#C9C4D4",
+
+                    "inverse-surface":            "#2e3132",
+                    "inverse-on-surface":         "#f0f1f3",
+
+                    "error":                      "#ba1a1a",
+                    "error-container":            "#ffdad6",
+                    "on-error":                   "#ffffff",
+                    "on-error-container":         "#93000a"
+                },
+                borderRadius: {
+                    DEFAULT: "0.5rem",
+                    sm:      "0.375rem",
+                    lg:      "0.75rem",
+                    xl:      "1rem",
+                    "2xl":   "1.5rem",
+                    full:    "9999px"
+                },
+                spacing: {
+                    base:              "4px",
+                    gutter:            "24px",
+                    "margin-mobile":   "16px",
+                    "max-width":       "1440px",
+                    "margin-desktop":  "32px",
+                    "container-max":   "1280px",
+                    "stack-xs":        "4px",
+                    "stack-sm":        "8px",
+                    "stack-md":        "16px",
+                    "stack-lg":        "24px",
+                    "stack-xl":        "32px"
+                },
+                fontFamily: {
+                    "display-lg":         ["Inter", "sans-serif"],
+                    "headline-lg":        ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "title-md":           ["Inter", "sans-serif"],
+                    "body-lg":            ["Inter", "sans-serif"],
+                    "body-md":            ["Inter", "sans-serif"],
+                    "label-lg":           ["Inter", "sans-serif"],
+                    "label-md":           ["Inter", "sans-serif"],
+                    "label-sm":           ["Inter", "sans-serif"]
+                },
+                fontSize: {
+                    "display-lg":         ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}],
+                    "headline-lg":        ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}],
+                    "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}],
+                    "title-md":           ["18px", {lineHeight: "24px", fontWeight: "600"}],
+                    "body-lg":            ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                    "body-md":            ["14px", {lineHeight: "20px", fontWeight: "400"}],
+                    "label-lg":           ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}],
+                    "label-md":           ["13px", {lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500"}],
+                    "label-sm":           ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500"}]
+                }
+            }
+        }
+    };
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(223, 225, 230, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 px-4">
+  <a class="flex items-center gap-3 mb-8 px-2 hover:opacity-90 transition-opacity" href="index.html">
+    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+      <span class="material-symbols-outlined text-on-primary" style="font-size:18px">work</span>
+    </div>
+    <span class="font-bold text-primary text-lg">MatchStage</span>
+  </a>
+  <nav class="flex-1 space-y-1">
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="dashboard_organizacion.html">
+      <span class="material-symbols-outlined">dashboard</span>
+      <span class="font-label-md text-label-md">Dashboard</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="gestion_pasantias.html">
+      <span class="material-symbols-outlined">work</span>
+      <span class="font-label-md text-label-md">Mis Pasantías</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container font-semibold rounded-xl transition-all" href="crear_editar_pasantia.html">
+      <span class="material-symbols-outlined">add_circle</span>
+      <span class="font-label-md text-label-md">Crear Pasantía</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="gestion_postulantes.html">
+      <span class="material-symbols-outlined">groups</span>
+      <span class="font-label-md text-label-md">Postulantes</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="perfil_empresa.html">
+      <span class="material-symbols-outlined">business</span>
+      <span class="font-label-md text-label-md">Perfil Empresa</span>
+    </a>
+  </nav>
+  <div class="space-y-1 border-t border-outline-variant pt-4 mt-4">
+    <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="javascript:void(0)">
+      <span class="material-symbols-outlined">settings</span>
+      <span class="font-label-md text-label-md">Ajustes</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/10 rounded-xl transition-all" href="index.html">
+      <span class="material-symbols-outlined">logout</span>
+      <span class="font-label-md text-label-md">Cerrar Sesión</span>
+    </a>
+  </div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 p-margin-desktop max-w-container-max mx-auto">
+<header class="mb-stack-lg flex justify-between items-end">
+<div>
+<nav class="flex items-center gap-2 text-on-surface-variant font-label-md mb-2">
+<span class="">Pasantías</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">Nueva Publicación</span>
+</nav>
+<h2 class="font-headline-md text-headline-md text-on-background">Crear Nueva Pasantía</h2>
+<p class="text-on-surface-variant font-body-md mt-1">Completa los detalles para atraer al mejor talento joven.</p>
+</div>
+<div class="flex gap-stack-md">
+<a class="px-6 py-2.5 rounded-xl border border-primary text-primary font-label-md hover:bg-surface-container-high transition-all text-center" href="gestion_pasantias.html">Guardar Borrador</a>
+<a class="px-6 py-2.5 rounded-xl bg-primary text-on-primary font-label-md shadow-sm hover:opacity-90 transition-all text-center" href="gestion_pasantias.html">Publicar Ahora</a>
+</div>
+</header>
+<!-- Form Bento Grid Layout -->
+<form class="grid grid-cols-12 gap-gutter">
+<!-- Main Content Area (8 Columns) -->
+<div class="col-span-12 lg:col-span-8 space-y-gutter">
+<!-- Section 1: General Info -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-[0px_2px_8px_rgba(0,0,0,0.05)] border border-outline-variant">
+<div class="flex items-center gap-2 mb-stack-md text-primary">
+<span class="material-symbols-outlined">description</span>
+<h3 class="font-title-lg text-title-lg">Información General</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div class="space-y-unit">
+<label class="font-label-md text-label-md text-on-surface-variant">Título de la posición</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-surface transition-all font-body-md" placeholder="Ej. Desarrollador Frontend Jr." type="text"/>
+</div>
+<div class="space-y-unit">
+<label class="font-label-md text-label-md text-on-surface-variant">Departamento</label>
+<select class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-surface transition-all font-body-md appearance-none">
+<option>Tecnología / IT</option>
+<option>Marketing y Comunicación</option>
+<option>Recursos Humanos</option>
+<option>Finanzas</option>
+<option>Diseño y Producto</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Section 2: Rich Text Editor Concept -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-[0px_2px_8px_rgba(0,0,0,0.05)] border border-outline-variant">
+<div class="flex items-center gap-2 mb-stack-md text-primary">
+<span class="material-symbols-outlined">edit_note</span>
+<h3 class="font-title-lg text-title-lg">Descripción del Puesto</h3>
+</div>
+<div class="border border-outline-variant rounded-lg overflow-hidden">
+<div class="bg-surface-container-low px-4 py-2 border-b border-outline-variant flex gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" type="button">format_bold</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" type="button">format_italic</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" type="button">format_list_bulleted</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" type="button">link</button>
+</div>
+<textarea class="w-full px-4 py-3 outline-none bg-surface font-body-md resize-none" placeholder="Describe las responsabilidades clave, el equipo y la cultura..." rows="8"></textarea>
+</div>
+</div>
+<!-- Section 3: Tech Requirements Tags -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-[0px_2px_8px_rgba(0,0,0,0.05)] border border-outline-variant">
+<div class="flex items-center gap-2 mb-stack-md text-primary">
+<span class="material-symbols-outlined">terminal</span>
+<h3 class="font-title-lg text-title-lg">Requisitos Técnicos</h3>
+</div>
+<div class="space-y-stack-sm">
+<div class="flex flex-wrap gap-2 mb-stack-sm">
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-md flex items-center gap-1">
+                                React <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-md flex items-center gap-1">
+                                Tailwind CSS <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-md flex items-center gap-1">
+                                Git <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</span>
+</div>
+<div class="relative">
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-surface transition-all font-body-md pr-12" placeholder="Agregar requisito (Presiona Enter)..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Info (4 Columns) -->
+<div class="col-span-12 lg:col-span-4 space-y-gutter">
+<!-- Section 4: Modality & Schedule -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-[0px_2px_8px_rgba(0,0,0,0.05)] border border-outline-variant">
+<div class="flex items-center gap-2 mb-stack-md text-primary">
+<span class="material-symbols-outlined">schedule</span>
+<h3 class="font-title-lg text-title-lg">Modalidad y Horario</h3>
+</div>
+<div class="space-y-stack-md">
+<div class="space-y-unit">
+<label class="font-label-md text-label-md text-on-surface-variant">Tipo de Jornada</label>
+<div class="grid grid-cols-2 gap-2 mt-2">
+<label class="cursor-pointer">
+<input class="hidden peer" name="jornada" type="radio"/>
+<div class="text-center py-2.5 rounded-lg border border-outline-variant peer-checked:bg-primary-fixed peer-checked:text-on-primary-fixed peer-checked:border-primary font-label-md transition-all">Full-time</div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="hidden peer" name="jornada" type="radio"/>
+<div class="text-center py-2.5 rounded-lg border border-outline-variant peer-checked:bg-primary-fixed peer-checked:text-on-primary-fixed peer-checked:border-primary font-label-md transition-all">Part-time</div>
+</label>
+</div>
+</div>
+<div class="space-y-unit pt-stack-sm">
+<label class="font-label-md text-label-md text-on-surface-variant">Modalidad</label>
+<select class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-surface transition-all font-body-md mt-2 appearance-none">
+<option>Presencial</option>
+<option selected="">Híbrido</option>
+<option>Remoto</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Section 5: Benefits & Compensation -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-[0px_2px_8px_rgba(0,0,0,0.05)] border border-outline-variant">
+<div class="flex items-center gap-2 mb-stack-md text-primary">
+<span class="material-symbols-outlined">payments</span>
+<h3 class="font-title-lg text-title-lg">Compensación</h3>
+</div>
+<div class="space-y-stack-md">
+<div class="space-y-unit">
+<label class="font-label-md text-label-md text-on-surface-variant">Estipendio Mensual (USD)</label>
+<div class="relative mt-2">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">$</span>
+<input class="w-full pl-8 pr-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-surface transition-all font-body-md" placeholder="0.00" type="number"/>
+</div>
+</div>
+<div class="space-y-unit pt-stack-sm">
+<label class="font-label-md text-label-md text-on-surface-variant">Beneficios Adicionales</label>
+<div class="space-y-2 mt-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Seguro Médico</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Cursos Gratuitos</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Equipamiento de Oficina</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 6: Image Preview Concept -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-lg shadow-[0px_2px_8px_rgba(0,0,0,0.05)] border border-outline-variant overflow-hidden">
+<div class="flex items-center gap-2 mb-stack-md text-primary">
+<span class="material-symbols-outlined">image</span>
+<h3 class="font-title-lg text-title-lg">Imagen Destacada</h3>
+</div>
+<div class="aspect-video bg-surface-container-low rounded-lg border-2 border-dashed border-outline-variant flex flex-col items-center justify-center text-on-surface-variant hover:border-primary hover:bg-primary-fixed hover:text-on-primary-fixed transition-all cursor-pointer overflow-hidden relative">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale" data-alt="A professional collaborative workspace with diverse young professionals engaged in a creative brainstorming session. Natural sunlight floods the modern, minimalist office featuring sleek white desks and ergonomic furniture. The atmosphere is vibrant, academic yet corporate, with a soft focus on digital tools and structural clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBclqOECUsEXZjeXzR6PE4NKYtHeysIPSlCBfY9z0Pj4Q5URSv4RUDPdeLFYquyuA_Rk7nW2CNI18FcyDx-l7zFYBmahp4bU8SQF-zQJ-qP-97kB8Sg61nRnQHg7_yRMkIwsThFcPlwkyMBKWM_XMr9GQScrlaiArCZjSjfYsRWm7m5aIaKEkO-Mh252EQZcbk8jksM3kQO4BrQTPk1mW1i075DZYIR1wIOOc8OLzqRE8TDjYvZttECeGCNKN-wdS2gEFgrsOouE-fz"/>
+<span class="material-symbols-outlined text-[32px] mb-2">upload_file</span>
+<p class="font-label-md">Subir Banner de Pasantía</p>
+<p class="text-[10px] opacity-70">Recomendado 1200x630px</p>
+</div>
+</div>
+</div>
+</form>
+<!-- Footer (Shared Component Context) -->
+<footer class="mt-stack-lg border-t border-outline-variant pt-stack-lg pb-stack-md flex flex-col md:flex-row justify-between items-center w-full">
+<div class="mb-4 md:mb-0">
+<h4 class="font-title-lg text-title-lg font-bold text-on-surface">MatchStage</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2026 MatchStage. Todos los derechos reservados.</p>
+</div>
+<div class="flex gap-stack-md">
+<a class="text-on-surface-variant font-label-sm hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="text-on-surface-variant font-label-sm hover:text-primary transition-colors" href="#">Términos y Condiciones</a>
+<a class="text-on-surface-variant font-label-sm hover:text-primary transition-colors" href="#">Contacto</a>
+</div>
+</footer>
+</main>
+<!-- Micro-interactions Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.parentElement.classList.add('scale-[1.01]');
+                    input.parentElement.style.transition = 'all 0.2s ease';
+                });
+                input.addEventListener('blur', () => {
+                    input.parentElement.classList.remove('scale-[1.01]');
+                });
+            });
+
+            // Status chip close interaction
+            const chips = document.querySelectorAll('.rounded-full .material-symbols-outlined');
+            chips.forEach(chip => {
+                chip.addEventListener('click', (e) => {
+                    e.target.parentElement.style.opacity = '0';
+                    setTimeout(() => e.target.parentElement.remove(), 200);
+                });
+            });
+        });
+    </script>
+</body></html>

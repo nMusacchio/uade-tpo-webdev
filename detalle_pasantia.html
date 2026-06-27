@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+  <title>Detalle de Pasantía | MatchStage</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(223, 225, 230, 0.5);
+        }
+    </style>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary":                    "#6554C0",
+                    "primary-container":          "#E6DEFF",
+                    "on-primary":                 "#ffffff",
+                    "on-primary-container":       "#1A0063",
+                    "primary-fixed":              "#E5DEFF",
+                    "primary-fixed-dim":          "#C9BFFF",
+                    "on-primary-fixed":           "#1A0063",
+                    "on-primary-fixed-variant":   "#4633A0",
+                    "inverse-primary":            "#C9BFFF",
+                    "surface-tint":               "#6554C0",
+                    "secondary":                  "#00B8D9",
+                    "secondary-container":        "#D6F8FF",
+                    "on-secondary":               "#ffffff",
+                    "on-secondary-container":     "#003640",
+                    "secondary-fixed":            "#AFECFF",
+                    "secondary-fixed-dim":        "#48D7F9",
+                    "on-secondary-fixed":         "#001F27",
+                    "on-secondary-fixed-variant": "#004E5D",
+                    "tertiary":                   "#6A5ACD",
+                    "tertiary-container":         "#EDE8FF",
+                    "on-tertiary":                "#ffffff",
+                    "on-tertiary-container":      "#2A1A7A",
+                    "tertiary-fixed":             "#EDE8FF",
+                    "tertiary-fixed-dim":         "#C9BFFF",
+                    "on-tertiary-fixed":          "#1A0063",
+                    "on-tertiary-fixed-variant":  "#4633A0",
+                    "surface":                    "#ffffff",
+                    "surface-bright":             "#f8f9fb",
+                    "surface-dim":                "#d9dadc",
+                    "surface-container-lowest":   "#ffffff",
+                    "surface-container-low":      "#f3f4f6",
+                    "surface-container":          "#edeef0",
+                    "surface-container-high":     "#e7e8ea",
+                    "surface-container-highest":  "#e1e2e4",
+                    "surface-variant":            "#e1e2e4",
+                    "on-surface":                 "#1A1C20",
+                    "on-surface-variant":         "#484552",
+                    "background":                 "#f8f9fb",
+                    "on-background":              "#191c1e",
+                    "outline":                    "#797584",
+                    "outline-variant":            "#C9C4D4",
+                    "inverse-surface":            "#2e3132",
+                    "inverse-on-surface":         "#f0f1f3",
+                    "error":                      "#ba1a1a",
+                    "error-container":            "#ffdad6",
+                    "on-error":                   "#ffffff",
+                    "on-error-container":         "#93000a"
+                },
+                borderRadius: {
+                    DEFAULT: "0.5rem",
+                    sm:      "0.375rem",
+                    lg:      "0.75rem",
+                    xl:      "1rem",
+                    "2xl":   "1.5rem",
+                    full:    "9999px"
+                },
+                spacing: {
+                    base:              "4px",
+                    gutter:            "24px",
+                    "margin-mobile":   "16px",
+                    "max-width":       "1440px",
+                    "margin-desktop":  "32px",
+                    "container-max":   "1280px",
+                    "stack-xs":        "4px",
+                    "stack-sm":        "8px",
+                    "stack-md":        "16px",
+                    "stack-lg":        "24px",
+                    "stack-xl":        "32px"
+                },
+                fontFamily: {
+                    "display-lg":         ["Inter", "sans-serif"],
+                    "headline-lg":        ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "title-md":           ["Inter", "sans-serif"],
+                    "body-lg":            ["Inter", "sans-serif"],
+                    "body-md":            ["Inter", "sans-serif"],
+                    "label-lg":           ["Inter", "sans-serif"],
+                    "label-md":           ["Inter", "sans-serif"],
+                    "label-sm":           ["Inter", "sans-serif"]
+                },
+                fontSize: {
+                    "display-lg":         ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}],
+                    "headline-lg":        ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}],
+                    "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}],
+                    "title-md":           ["18px", {lineHeight: "24px", fontWeight: "600"}],
+                    "body-lg":            ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                    "body-md":            ["14px", {lineHeight: "20px", fontWeight: "400"}],
+                    "label-lg":           ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}],
+                    "label-md":           ["13px", {lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500"}],
+                    "label-sm":           ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500"}]
+                }
+            }
+        }
+    };
+</script>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-surface border-b border-outline-variant sticky top-0 z-50 h-16">
+  <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+    <div class="flex items-center gap-8">
+      <a href="index.html" class="font-bold text-primary text-xl tracking-tight">MatchStage</a>
+      <nav class="hidden md:flex items-center gap-6 h-full">
+        <a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md h-full flex items-center" href="buscador_pasantias.html">Buscar Pasantías</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md h-full flex items-center" href="mis_postulaciones.html">Mis Postulaciones</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md h-full flex items-center" href="mi_perfil.html">Mi Perfil</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined">notifications</span>
+      </button>
+      <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined">settings</span>
+      </button>
+      <a href="mi_perfil.html" class="w-9 h-9 rounded-full overflow-hidden border border-outline-variant block ml-1 flex-shrink-0">
+        <img alt="Perfil" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvY-FybOewEmgrsj3-GlqVdJP_jCBdTiEp-gT4DUz36XeqW-1VB0dmkt9dtmnc7AWUi7ZtpMy86t0F8Ue8PmgH1u8P-It4xCI8ZGGibaq8_WmThdkI1xYv_KfclQF46CeeA3hy8pipjzvPubx3BFNxSRkVOWaRuQIXmGV-tH9_eX6RjRV-DweJNQASDkhEbMO6RoF0tnZkOzZrXHBoRtZFv6FF6EkuSr8ayhnpzkzLcGvc9LZlI7luBUmXPC3fc9iWEZyW1Z_l7oB3">
+      </a>
+    </div>
+  </div>
+</header>
+<main class="pt-24 pb-stack-lg">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-unit mb-stack-md text-on-surface-variant font-label-sm text-label-sm">
+<a class="hover:text-primary hover:underline transition-colors" href="buscador_pasantias.html">Pasantías</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="">Desarrollo de Software</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary">Fullstack Developer Intern</span>
+</div>
+<!-- Hero Section / Bento Header -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-stack-md mb-stack-lg">
+<!-- Main Header Card -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-stack-lg rounded-xl shadow-sm border border-outline-variant flex flex-col md:flex-row gap-stack-lg items-start">
+<div class="w-24 h-24 rounded-xl bg-surface-container flex items-center justify-center border border-outline-variant shrink-0">
+<img alt="Growth Engine Co. Logo" class="w-16 h-16 object-contain" data-alt="A minimalist and modern tech company logo featuring abstract geometric shapes representing growth and engines. The logo uses a professional tertiary purple and blue color scheme, set against a clean white background. The style is sharp, corporate, and digital-forward, suitable for a high-growth software firm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnZNjRkJmVUqpsHTa2LukfPriIcfp9st-6V4LPjQ3F1toqtwybWGw7mE2qpZfBOe6A1Smr6HRFrQQwVYN6ZyGp9VMhYoIjh4wluu58WJYoFHlvntPerB3Cqw2q90VXqQf8t61CWNMAbiCCwimUlHh0-nGlanPoAXFW6FekodT3qYCdKkOaoK9qiGfn4j63kYmDp4Hy2O0RwtE7LXG6VqZ7lJVNucyY2RnJVH043N4tGj_Fa9dYOjrpOxC2qKbAOdhymBvTayGDvBz4"/>
+</div>
+<div class="flex-grow">
+<div class="flex flex-wrap gap-stack-sm mb-stack-sm">
+<span class="bg-surface-container-high px-stack-sm py-unit rounded-full font-label-sm text-label-sm text-on-surface-variant">Full-time</span>
+<span class="bg-surface-container-high px-stack-sm py-unit rounded-full font-label-sm text-label-sm text-on-surface-variant">Remoto</span>
+<span class="bg-primary-container/10 px-stack-sm py-unit rounded-full font-label-sm text-label-sm text-primary">Abierta</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-unit">Fullstack Developer Intern</h1>
+<p class="font-title-lg text-title-lg text-secondary mb-stack-md">Growth Engine Co.</p>
+<div class="flex flex-wrap gap-stack-lg text-on-surface-variant font-body-md text-body-md">
+<div class="flex items-center gap-unit">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="">Buenos Aires, Argentina</span>
+</div>
+<div class="flex items-center gap-unit">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+<span class="">Publicado hace 2 días</span>
+</div>
+<div class="flex items-center gap-unit">
+<span class="material-symbols-outlined text-primary">payments</span>
+<span class="">Estipendio Competitivo</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Card -->
+<div class="bg-primary-container p-stack-lg rounded-xl shadow-lg flex flex-col justify-center items-center text-center">
+<h3 class="font-title-lg text-title-lg text-on-primary mb-stack-md">¿Listo para el desafío?</h3>
+<p class="font-body-md text-body-md text-on-primary-container mb-stack-lg opacity-90">Únete a un equipo de élite y acelera tu carrera profesional con proyectos reales.</p>
+<a class="w-full bg-white text-primary font-label-md text-label-md py-4 rounded-xl font-bold shadow-md hover:scale-[1.02] active:scale-95 transition-all block text-center" href="mis_postulaciones.html">Postularme</a>
+<p class="font-label-sm text-label-sm text-on-primary-container mt-stack-md opacity-75">124 estudiantes ya se postularon</p>
+</div>
+</div>
+<!-- Main Content Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-stack-lg">
+<!-- Left Column: Details -->
+<div class="lg:col-span-2 space-y-stack-lg">
+<!-- Job Description -->
+<section class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-sm border border-outline-variant">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Descripción del Puesto</h2>
+<div class="space-y-stack-md font-body-md text-body-md text-on-surface-variant">
+<p class="">En <strong>Growth Engine Co.</strong>, estamos buscando mentes curiosas y apasionadas por la tecnología para unirse a nuestro equipo de ingeniería como pasantes de Desarrollo Fullstack. Trabajarás codo a codo con ingenieros senior en el desarrollo de nuestra plataforma core, escalando soluciones que impactan a miles de usuarios globales.</p>
+<p class="">Esta no es una pasantía de observación. Tendrás ownership sobre tareas reales, participarás en daily standups y contribuirás directamente al repositorio de producción desde el primer mes.</p>
+</div>
+</section>
+<!-- Requirements -->
+<section class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-sm border border-outline-variant">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Requisitos Técnicos</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div class="flex items-start gap-stack-md p-stack-md border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-2 rounded-lg">code</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">React &amp; Frontend</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Conocimientos sólidos de hooks, estado y componentes funcionales.</p>
+</div>
+</div>
+<div class="flex items-start gap-stack-md p-stack-md border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-2 rounded-lg">terminal</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Node.js &amp; Backend</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Entendimiento de APIs RESTful y bases de datos relacionales.</p>
+</div>
+</div>
+<div class="flex items-start gap-stack-md p-stack-md border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-2 rounded-lg">data_object</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">JavaScript/TypeScript</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Familiaridad con ES6+ y tipado estático opcional.</p>
+</div>
+</div>
+<div class="flex items-start gap-stack-md p-stack-md border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-primary bg-primary-fixed p-2 rounded-lg">art_track</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Control de Versiones</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Uso básico de Git para colaboración en equipo.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits -->
+<section class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-sm border border-outline-variant">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Beneficios MatchStage</h2>
+<ul class="space-y-stack-md">
+<li class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-body-md text-body-md text-on-surface-variant"><strong>Mentorship 1:1:</strong> Se te asignará un mentor senior para guiar tu crecimiento profesional.</span>
+</li>
+<li class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<span class="font-body-md text-body-md text-on-surface-variant"><strong>Horas Flexibles:</strong> Priorizamos tus estudios. Coordinamos los horarios según tu cursada académica.</span>
+</li>
+<li class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">laptop_mac</span>
+<span class="font-body-md text-body-md text-on-surface-variant"><strong>Equipamiento:</strong> MacBook Pro o equivalente de última generación provisto por la empresa.</span>
+</li>
+<li class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<span class="font-body-md text-body-md text-on-surface-variant"><strong>Wellness &amp; Health:</strong> Cobertura médica premium y suscripción a plataformas de bienestar.</span>
+</li>
+</ul>
+</section>
+</div>
+<!-- Right Column: Sidebar -->
+<aside class="space-y-stack-lg">
+<!-- Progress Stepper -->
+<div class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-sm border border-outline-variant">
+<h3 class="font-label-md text-label-md text-on-surface mb-stack-lg">Proceso de Selección</h3>
+<div class="relative flex flex-col gap-stack-lg ml-3">
+<div class="absolute left-0 top-0 h-full w-[2px] bg-outline-variant -ml-[1px]"></div>
+<div class="relative z-10 flex items-center gap-stack-md">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center ring-4 ring-primary-fixed">
+<span class="material-symbols-outlined text-[14px] text-white">check</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Postulación</span>
+</div>
+<div class="relative z-10 flex items-center gap-stack-md">
+<div class="w-6 h-6 rounded-full bg-outline-variant flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Tech Challenge</span>
+</div>
+<div class="relative z-10 flex items-center gap-stack-md">
+<div class="w-6 h-6 rounded-full bg-outline-variant flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Entrevista Técnica</span>
+</div>
+<div class="relative z-10 flex items-center gap-stack-md">
+<div class="w-6 h-6 rounded-full bg-outline-variant flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Oferta Final</span>
+</div>
+</div>
+</div>
+<!-- Culture Card -->
+<div class="bg-surface-container-low p-stack-lg rounded-xl border border-outline-variant overflow-hidden relative group">
+<div class="relative z-10">
+<h3 class="font-title-lg text-title-lg text-on-surface mb-stack-sm">Vida en Growth Engine</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Descubre cómo es trabajar en el corazón de la innovación.</p>
+<a class="flex items-center gap-unit text-primary font-label-md text-label-md hover:underline" href="buscador_pasantias.html">
+                                Ver perfil de empresa <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<div class="mt-stack-lg rounded-lg overflow-hidden h-40">
+<img alt="Team collaborating" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A diverse team of young professional developers collaborating in a modern, open-plan office. They are gathered around a large screen showing code snippets and architectural diagrams. The office has high ceilings, plenty of plants, and warm natural light filtering through large windows. The mood is collaborative, energetic, and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_B0E7wo2RlVQd4D_p0RHAQuzVrCNtzUyQxNF-92PkjBthFAOTumdtkY9sBagOJ1qmY8cOS95GTtkbyiildoHDN7ajayjeoBZcDslVje3xx8MZ0MfjKMPGKR0LFcyO0ys54JMG1wEJS6juCFaK-JK01JGev2bNyIWIYQoWm5PAcI0-smXHKrsk5b5xFWUzTNYhlRx1E4Kn4IiLCKOUVZA21uaNX40GKdceQvjhDb9C5UMWk_L1aeYruucJ_XC8CfzkIL44-dj7aO40"/>
+</div>
+</div>
+<!-- Related Postings -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-stack-md">Pasantías Similares</h3>
+<div class="space-y-stack-sm">
+<a class="block p-stack-md bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-md hover:border-primary/50 transition-all" href="#">
+<p class="font-label-md text-label-md text-on-surface">Frontend Developer (React)</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">TechNexus Solutions</p>
+</a>
+<a class="block p-stack-md bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-md hover:border-primary/50 transition-all" href="#">
+<p class="font-label-md text-label-md text-on-surface">Backend Developer Intern</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Cloud Flow Systems</p>
+</a>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface border-t border-outline-variant mt-stack-lg" id="footer">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-margin-desktop w-full max-w-container-max mx-auto gap-stack-md">
+<div class="flex flex-col items-center md:items-start">
+<a class="font-title-lg text-title-lg font-bold text-on-surface" href="index.html">MatchStage</a>
+<p class="font-body-md text-body-md text-on-surface-variant mt-unit">Conectando ambición con oportunidad.</p>
+</div>
+<div class="flex gap-stack-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline" href="#footer">Privacidad</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline" href="#footer">Términos y Condiciones</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline" href="#footer">Contacto</a>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-75">© 2026 MatchStage. Todos los derechos reservados.</p>
+</div>
+</footer>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', function() {
+                this.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', function() {
+                this.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', function() {
+                this.classList.remove('scale-95');
+            });
+        });
+
+        // Simple scroll effect for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.add('shadow-sm');
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

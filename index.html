@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+  <title>MatchStage — Portal de Pasantías</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary":                    "#6554C0",
+                    "primary-container":          "#E6DEFF",
+                    "on-primary":                 "#ffffff",
+                    "on-primary-container":       "#1A0063",
+                    "primary-fixed":              "#E5DEFF",
+                    "primary-fixed-dim":          "#C9BFFF",
+                    "on-primary-fixed":           "#1A0063",
+                    "on-primary-fixed-variant":   "#4633A0",
+                    "inverse-primary":            "#C9BFFF",
+                    "surface-tint":               "#6554C0",
+                    "secondary":                  "#00B8D9",
+                    "secondary-container":        "#D6F8FF",
+                    "on-secondary":               "#ffffff",
+                    "on-secondary-container":     "#003640",
+                    "secondary-fixed":            "#AFECFF",
+                    "secondary-fixed-dim":        "#48D7F9",
+                    "on-secondary-fixed":         "#001F27",
+                    "on-secondary-fixed-variant": "#004E5D",
+                    "tertiary":                   "#6A5ACD",
+                    "tertiary-container":         "#EDE8FF",
+                    "on-tertiary":                "#ffffff",
+                    "on-tertiary-container":      "#2A1A7A",
+                    "tertiary-fixed":             "#EDE8FF",
+                    "tertiary-fixed-dim":         "#C9BFFF",
+                    "on-tertiary-fixed":          "#1A0063",
+                    "on-tertiary-fixed-variant":  "#4633A0",
+                    "surface":                    "#ffffff",
+                    "surface-bright":             "#f8f9fb",
+                    "surface-dim":                "#d9dadc",
+                    "surface-container-lowest":   "#ffffff",
+                    "surface-container-low":      "#f3f4f6",
+                    "surface-container":          "#edeef0",
+                    "surface-container-high":     "#e7e8ea",
+                    "surface-container-highest":  "#e1e2e4",
+                    "surface-variant":            "#e1e2e4",
+                    "on-surface":                 "#1A1C20",
+                    "on-surface-variant":         "#484552",
+                    "background":                 "#f8f9fb",
+                    "on-background":              "#191c1e",
+                    "outline":                    "#797584",
+                    "outline-variant":            "#C9C4D4",
+                    "inverse-surface":            "#2e3132",
+                    "inverse-on-surface":         "#f0f1f3",
+                    "error":                      "#ba1a1a",
+                    "error-container":            "#ffdad6",
+                    "on-error":                   "#ffffff",
+                    "on-error-container":         "#93000a"
+                },
+                borderRadius: {
+                    DEFAULT: "0.5rem",
+                    sm:      "0.375rem",
+                    lg:      "0.75rem",
+                    xl:      "1rem",
+                    "2xl":   "1.5rem",
+                    full:    "9999px"
+                },
+                spacing: {
+                    base:              "4px",
+                    gutter:            "24px",
+                    "margin-mobile":   "16px",
+                    "max-width":       "1440px",
+                    "margin-desktop":  "32px",
+                    "container-max":   "1280px",
+                    "stack-xs":        "4px",
+                    "stack-sm":        "8px",
+                    "stack-md":        "16px",
+                    "stack-lg":        "24px",
+                    "stack-xl":        "32px"
+                },
+                fontFamily: {
+                    "display-lg":         ["Inter", "sans-serif"],
+                    "headline-lg":        ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "title-md":           ["Inter", "sans-serif"],
+                    "body-lg":            ["Inter", "sans-serif"],
+                    "body-md":            ["Inter", "sans-serif"],
+                    "label-lg":           ["Inter", "sans-serif"],
+                    "label-md":           ["Inter", "sans-serif"],
+                    "label-sm":           ["Inter", "sans-serif"]
+                },
+                fontSize: {
+                    "display-lg":         ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}],
+                    "headline-lg":        ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}],
+                    "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}],
+                    "title-md":           ["18px", {lineHeight: "24px", fontWeight: "600"}],
+                    "body-lg":            ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                    "body-md":            ["14px", {lineHeight: "20px", fontWeight: "400"}],
+                    "label-lg":           ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}],
+                    "label-md":           ["13px", {lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500"}],
+                    "label-sm":           ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500"}]
+                }
+            }
+        }
+    };
+</script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 70% 30%, rgba(101, 84, 192, 0.08) 0%, rgba(244, 245, 247, 1) 70%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(101, 84, 192, 0.1);
+        }
+        .animate-bounce-subtle {
+            animation: bounce-subtle 3s infinite;
+        }
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<nav class="bg-surface border-b border-outline-variant sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-16">
+<div class="flex items-center gap-8">
+<a class="text-xl font-bold text-primary" href="index.html">MatchStage</a>
+<div class="hidden md:flex gap-6">
+<a class="text-primary border-b-2 border-primary font-bold pb-1 text-sm hover:opacity-80 transition-colors" href="buscador_pasantias.html">Buscar Pasantías</a>
+<a class="text-on-surface-variant text-sm hover:text-primary transition-colors" href="mis_postulaciones.html">Mis Postulaciones</a>
+<a class="text-on-surface-variant text-sm hover:text-primary transition-colors" href="mi_perfil.html">Mi Perfil</a>
+</div>
+</div>
+<div class="flex items-center gap-4"><div class="hidden sm:block relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span><input class="bg-surface-container-low border border-outline-variant rounded-full py-1.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all w-48 lg:w-64" placeholder="Buscar..." type="text"/></div><button class="text-sm font-medium text-on-surface-variant hover:text-primary px-4 py-2" onclick="window.location.href='login.html'">Iniciar Sesión</button><button class="bg-primary text-on-primary px-6 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-opacity" onclick="window.location.href='registro_seleccion.html'">Registrarse</button></div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="hero-gradient pt-16 pb-24 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<div class="inline-flex items-center gap-2 bg-primary-fixed text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="">Conectando Talento y Futuro</span>
+</div>
+<h1 class="text-display-lg text-on-background max-w-lg">Encuentra la pasantía que define tu carrera.</h1>
+<p class="text-body-lg text-on-surface-variant max-w-md">La plataforma líder donde estudiantes ambiciosos y organizaciones innovadoras se encuentran para crear impacto real.</p>
+<!-- Role Selector Segmented Control -->
+<div class="flex p-1 bg-surface-container rounded-xl w-fit mt-8 border border-outline-variant">
+<button class="px-6 py-2 rounded-lg text-sm font-bold transition-all bg-primary text-on-primary shadow-sm" id="studentBtn" onclick="window.location.href='registro_seleccion.html'">Soy Estudiante</button>
+<button class="px-6 py-2 rounded-lg text-sm font-bold transition-all text-on-surface-variant hover:bg-surface-container-highest" id="companyBtn" onclick="window.location.href='registro_organizacion.html'">Soy Empresa</button>
+</div>
+<!-- Quick Search Bar -->
+<div class="mt-8 glass-card p-2 rounded-xl flex flex-col md:flex-row gap-2 shadow-sm">
+<div class="flex-1 flex items-center px-4 bg-surface-container-lowest rounded-lg border border-outline-variant focus-within:border-primary">
+<span class="material-symbols-outlined text-primary">work</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-body-md py-3 px-3" placeholder="Cargo o palabra clave" type="text"/>
+</div>
+<div class="flex-1 flex items-center px-4 bg-surface-container-lowest rounded-lg border border-outline-variant focus-within:border-primary">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-body-md py-3 px-3" placeholder="Ciudad o Remoto" type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity flex items-center justify-center gap-2" onclick="window.location.href='buscador_pasantias.html'">
+<span class="">Buscar</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<div class="aspect-square rounded-xl overflow-hidden shadow-xl border-4 border-white">
+<img alt="Students collaborating" class="w-full h-full object-cover" data-alt="A group of diverse university students collaborating around a large wooden table in a brightly lit, modern library with floor-to-ceiling windows. They are using laptops and tablets, discussing a project with enthusiasm. The lighting is warm and natural, creating a mood of academic ambition and professional teamwork, with a soft blur on the modern architectural background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgYjo5SonYpbr90S1IMiaDm8TYYjHJ9wWK7dmbcwg9OTqBvU0eAzJBwRKhCoV-ncC1_71VKYPfzbKkPlFk1VOYgKGjM68pPrZQkIKwHAvBqBIBrl83uGDQWpy9Sy6yrkynVDKmbF6C8HOcEdiNuN2QJ7Lfk0BkLO3x6hC8tSpaArQkFCjmIfm89LqTfz4YzOljg0WMluNSl7QK7wu62kF67qP9XQiZKIyB0CsNwm7jrCapdWtyTj7zrU-xdUN6baceG9Djpp16enH2"/>
+</div>
+<!-- Floating Achievement Card -->
+<div class="absolute -bottom-6 -left-12 glass-card p-6 rounded-xl shadow-lg animate-bounce-subtle">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Pasantías Verificadas</p>
+<p class="text-xs text-on-surface-variant">+500 empresas activas</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Benefits -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-headline-md text-on-background mb-4">¿Por qué elegir MatchStage?</h2>
+<p class="text-body-lg text-on-surface-variant">Diseñamos el camino más corto entre tu potencial y tu primera gran oportunidad.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+<!-- Large Card: AI Matching -->
+<div class="md:col-span-2 md:row-span-1 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-sm flex flex-col md:flex-row items-center gap-8 group hover:shadow-md transition-shadow">
+<div class="flex-1">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed mb-4 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">Smart Matching AI</h3>
+<p class="text-body-md text-on-surface-variant">Nuestro algoritmo analiza tus habilidades y proyectos para recomendarte las pasantías que mejor se adaptan a tu perfil, aumentando tus chances de éxito en un 40%.</p>
+</div>
+<div class="flex-1 w-full h-full overflow-hidden rounded-lg">
+<img alt="Data visualization" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, minimalist 3D visualization of data points and connecting lines glowing in soft blue against a white background. The image represents modern artificial intelligence and networking, with a high-key professional look that feels technological but accessible. The composition is clean and focused, symbolizing structural clarity and curated opportunities." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJcPsj6s-s5crzzromLSpeqeMq0nSuvCBsjJQjNKSEVw838_GcBxaOg-0GSwqBb1gaDeI1OQOPzB1QW7T7njc7x_gShfq7eqln0sijSdhw-mBc51qKhlN2cw9OZ_HBBSq_yVCrupKl8XSGIjYwidmuXgYetwyUzXsTXICvI4V4cfwh1iSnPrm33cKeHnyWpn6ZRfF6akg0K_XKje_35fsLaThaJ1r1BswLeNRMBg4K8CewBOivs55LmdLzKNBgiLREzVFSOs-UDCa4"/>
+</div>
+</div>
+<!-- Small Card: Global reach -->
+<div class="md:col-span-1 md:row-span-1 bg-secondary text-on-secondary p-8 rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-[40px] mb-4">public</span>
+<h3 class="text-2xl font-bold mb-2">Alcance Global</h3>
+</div>
+<p class="text-sm font-medium">Accede a oportunidades en las startups más innovadoras y corporaciones Fortune 500 de todo el mundo.</p>
+</div>
+<!-- Small Card: Fast Apply -->
+<div class="md:col-span-1 md:row-span-1 bg-primary text-on-primary px-8 py-8 rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-[40px] mb-4 text-on-primary">bolt</span>
+<h3 class="text-2xl font-bold mb-2">Postulación en un Click</h3>
+</div>
+<p class="text-sm font-medium">Guarda tu perfil y postúlate a múltiples ofertas instantáneamente. Sin formularios interminables.</p>
+</div>
+<!-- Large Card: For Organizations -->
+<div class="md:col-span-2 md:row-span-1 bg-surface-container-highest p-8 rounded-xl border border-outline-variant shadow-sm flex flex-col md:flex-row-reverse items-center gap-8 group hover:shadow-md transition-shadow">
+<div class="flex-1">
+<div class="w-12 h-12 rounded-lg bg-secondary px-2 flex items-center justify-center text-white mb-4">
+<span class="material-symbols-outlined">business_center</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">Para Organizaciones</h3>
+<p class="text-body-md text-on-surface-variant">Gestiona todo el ciclo de vida del pasante. Desde la publicación hasta la contratación final, con herramientas de filtrado avanzado y entrevistas integradas.</p>
+<button class="mt-4 text-primary font-bold hover:underline flex items-center gap-1" onclick="window.location.href='registro_organizacion.html'">
+                                Ver soluciones corporativas
+                                <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+<div class="flex-1 w-full h-full overflow-hidden rounded-lg">
+<img alt="Business meeting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A diverse team of HR professionals and executives meeting in a sleek, glass-walled conference room. They are looking at a screen displaying talent analytics with satisfied expressions. The lighting is professional and bright, emphasizing a minimalist corporate environment that conveys reliability, structure, and high-potential talent recruitment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4OE7vyDZ3apu9H9ymrBHRGAinlduRHG8KgPZwpB_R_EtM6eV8RrgKHlq7KdGO0_yHPxvUQYL_aJXCpEOLg85JVse5ACnuoSMgUnQ704butU99IgsKdaBerpjl_6QHmjUVH8lC5fF-_v_7IKH03CGEoSbKcsEDv89drhitgJGcE48sGzcffrF6XvNoWIZ1Ngt6Pwv-Kst4v0X8CEj9HtC4_24Vzn-flVBHEtKAxFStT_zA-ofv7xHjGaTTveB9Qo4_SjxDr0j08fe0"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest Internships (Asymmetric Cards) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-background">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-headline-md text-on-background">Pasantías destacadas</h2>
+<p class="text-body-md text-on-surface-variant">Nuevas oportunidades publicadas hoy mismo.</p>
+</div>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="buscador_pasantias.html">Ver todas las ofertas <span class="material-symbols-outlined">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Internship Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg p-2 flex items-center justify-center">
+<img alt="TechCorp Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi4anh3OguzeLZ1UOFjbGFMWFHQ07sNQMAmkk3x-C7QuA47mOXU66XBWChaSB9DZtt_ZfEBhThIDPHJfB8cWkpT9eg0Du6Zonil6t5yC_S6RDrDCl2YscAtzeaYpWxrm4k5xrdil7VAVMgXOVuCvY42bKaP6e_L2FU0YEJ5JRJJwWwjb5IYuzvJQBEQB6rdg3_CA-mPUonoz9uy5KmYEAJrgTlV3DbWQTloz7PeQOLxLfyeNwPZBz5di3u7tJpv-vzI-3Rbdf0xwpx"/>
+</div>
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-full text-xs font-bold">Remoto</span>
+</div>
+<h4 class="text-xl font-bold text-on-surface mb-1">UX Design Intern</h4>
+<p class="text-sm font-bold text-primary mb-4">TechCorp Inc.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">Figma</span>
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">Research</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary-fixed transition-colors" onclick="window.location.href='detalle_pasantia.html'">Postulación Rápida</button>
+</div>
+<!-- Internship Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg p-2 flex items-center justify-center">
+<img alt="GrowthCo Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAege2THXF7RTPUSLXEt1Dmr8kb1CZTgCWbWluZAS48rn8WkAp9B0HWI6QPPGsfWGTfm4YrlWnPzhnKcZ_p9njwzbtnWRM9N8FNbr55eiibCbgw5QJh-vGamrIQE6S1unEJXXVaofQTOMvT7lWjeKTaVSJL7qQrnY3lIFvovRyNw7FVtoJbjNdyp2Y2xd2lnx-gCVa4__1WbbjS2Gxo7yf-SDVryg2XrUB7i2zPJEoKUVF4HgnBe5T1-9XklgSQ4cC-oAAK8NzH7jib"/>
+</div>
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-full text-xs font-bold">Híbrido</span>
+</div>
+<h4 class="text-xl font-bold text-on-surface mb-1">Marketing Digital</h4>
+<p class="text-sm font-bold text-primary mb-4">GrowthCo</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">SEO</span>
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">Content</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary-fixed transition-colors" onclick="window.location.href='detalle_pasantia.html'">Postulación Rápida</button>
+</div>
+<!-- Internship Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg p-2 flex items-center justify-center">
+<img alt="DataMind Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPNBlU7IptFrpv9AO1tll_B4qLGXzA3ARfUJ-d4kJvO3FIV5B3CzHJ7uz1d1OE5eQssJq9etAuuckO22xfH_OH6xOjw6hj759HDCPbleUhlgPlPllpQJBQko-tCVJfDx-rr0Nq-w1Ra_HTeXJ39USVLwt6QBb5jOH_mzW4lvIrztesAJJVqpuW-i-FNOm_2fKMG67QGC_qUJvc_xPwl3XDMikq5u5gMHj10G4zfblWX7umVu_0lqmtEKoqD8j7I4yOg081bxUfYxxx"/>
+</div>
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-full text-xs font-bold">Remoto</span>
+</div>
+<h4 class="text-xl font-bold text-on-surface mb-1">Data Analyst Intern</h4>
+<p class="text-sm font-bold text-primary mb-4">DataMind Solutions</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">Python</span>
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">SQL</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary-fixed transition-colors" onclick="window.location.href='detalle_pasantia.html'">Postulación Rápida</button>
+</div>
+<!-- Internship Card 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg p-2 flex items-center justify-center">
+<img alt="SocialFlow Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB061_OBys_Ogm3UfCl-HOKmpF99GJltCtRD9DcWO2xV1NyS5ecRxWVUNzSA86o7gtwfLJWql3klUB7Es-Ki1kbJQ-E931EjjSNuhSWfLfxZt8Pd6zVELYXAEGR_fXeEelX3ZiObvfc8TtLfpNWo0BsufnWdeXJvh0VutJBHMP_HU9Pt6ZVc-66h3DXMVBq2vbqAA67efDWnt6wBOYrsEDrNpl9hq430u_yAvqfLwDGg-IRH4bn3QvDdp2BNN-XW-T0hnZPdXpPluQI"/>
+</div>
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-full text-xs font-bold">Presencial</span>
+</div>
+<h4 class="text-xl font-bold text-on-surface mb-1">Project Manager</h4>
+<p class="text-sm font-bold text-primary mb-4">SocialFlow</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">Agile</span>
+<span class="bg-surface-container-highest px-2 py-0.5 rounded text-xs text-on-surface-variant">English</span>
+</div>
+<button class="w-full py-2.5 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary-fixed transition-colors" onclick="window.location.href='detalle_pasantia.html'">Postulación Rápida</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-20 bg-primary text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+<div>
+<div class="text-display-lg-mobile md:text-display-lg font-bold mb-2">15k+</div>
+<div class="text-sm font-medium opacity-90 uppercase tracking-widest">Pasantías Activas</div>
+</div>
+<div>
+<div class="text-display-lg-mobile md:text-display-lg font-bold mb-2">2.5k</div>
+<div class="text-sm font-medium opacity-90 uppercase tracking-widest">Empresas Aliadas</div>
+</div>
+<div>
+<div class="text-display-lg-mobile md:text-display-lg font-bold mb-2">94%</div>
+<div class="text-sm font-medium opacity-90 uppercase tracking-widest">Satisfacción</div>
+</div>
+<div>
+<div class="text-display-lg-mobile md:text-display-lg font-bold mb-2">50k+</div>
+<div class="text-sm font-medium opacity-90 uppercase tracking-widest">Estudiantes Hired</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto bg-surface-container rounded-xl p-12 md:p-24 border border-outline-variant shadow-xl relative overflow-hidden text-center">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full -mr-32 -mt-32 opacity-5"></div>
+<div class="absolute bottom-0 left-0 w-48 h-48 bg-secondary rounded-full -ml-24 -mb-24 opacity-10"></div>
+<h2 class="text-display-lg text-on-surface relative z-10">¿Listo para dar el siguiente paso?</h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto mt-6 relative z-10">Únete a la comunidad de MatchStage hoy mismo y comienza a construir tu futuro profesional con las mejores herramientas a tu disposición.</p>
+<div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all" onclick="window.location.href='registro_seleccion.html'">Crear Perfil Estudiante</button>
+<button class="bg-surface-container-highest text-on-surface px-10 py-4 rounded-lg font-bold hover:bg-outline-variant transition-all" onclick="window.location.href='registro_organizacion.html'">Registrar Organización</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant" id="footer">
+<div class="w-full py-8 px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start">
+<span class="text-sm font-bold text-on-surface">MatchStage Portal</span>
+<p class="text-xs text-on-surface-variant mt-2">© 2026 MatchStage. Todos los derechos reservados.</p>
+</div>
+<div class="flex gap-8 text-tertiary">
+<a class="text-xs hover:underline transition-all" href="#footer">Privacidad</a>
+<a class="text-xs hover:underline transition-all" href="#footer">Términos</a>
+<a class="text-xs hover:underline transition-all" href="#footer">Contacto</a>
+<a class="text-xs hover:underline transition-all" href="#footer">Soporte</a>
+</div>
+<div class="flex gap-4">
+<a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary-fixed transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary-fixed transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">language</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        function toggleRole(role) {
+            const studentBtn = document.getElementById('studentBtn');
+            const companyBtn = document.getElementById('companyBtn');
+            
+            if (role === 'student') {
+                studentBtn.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-highest');
+                studentBtn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+                
+                companyBtn.classList.add('text-on-surface-variant', 'hover:bg-surface-container-highest');
+                companyBtn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+            } else {
+                companyBtn.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-highest');
+                companyBtn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+                
+                studentBtn.classList.add('text-on-surface-variant', 'hover:bg-surface-container-highest');
+                studentBtn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+            }
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.querySelector('.hero-gradient');
+            if (glow) {
+                const x = (e.clientX / window.innerWidth) * 100;
+                const y = (e.clientY / window.innerHeight) * 100;
+                glow.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(101, 84, 192, 0.08) 0%, rgba(244, 245, 247, 1) 70%)`;
+            }
+        });
+    </script>
+</body></html>

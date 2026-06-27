@@ -1,0 +1,365 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>MatchStage | Dashboard Estudiante</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary":                    "#6554C0",
+                    "primary-container":          "#E6DEFF",
+                    "on-primary":                 "#ffffff",
+                    "on-primary-container":       "#1A0063",
+                    "primary-fixed":              "#E5DEFF",
+                    "primary-fixed-dim":          "#C9BFFF",
+                    "on-primary-fixed":           "#1A0063",
+                    "on-primary-fixed-variant":   "#4633A0",
+                    "inverse-primary":            "#C9BFFF",
+                    "surface-tint":               "#6554C0",
+                    "secondary":                  "#00B8D9",
+                    "secondary-container":        "#D6F8FF",
+                    "on-secondary":               "#ffffff",
+                    "on-secondary-container":     "#003640",
+                    "secondary-fixed":            "#AFECFF",
+                    "secondary-fixed-dim":        "#48D7F9",
+                    "on-secondary-fixed":         "#001F27",
+                    "on-secondary-fixed-variant": "#004E5D",
+                    "tertiary":                   "#6A5ACD",
+                    "tertiary-container":         "#EDE8FF",
+                    "on-tertiary":                "#ffffff",
+                    "on-tertiary-container":      "#2A1A7A",
+                    "tertiary-fixed":             "#EDE8FF",
+                    "tertiary-fixed-dim":         "#C9BFFF",
+                    "on-tertiary-fixed":          "#1A0063",
+                    "on-tertiary-fixed-variant":  "#4633A0",
+                    "surface":                    "#ffffff",
+                    "surface-bright":             "#f8f9fb",
+                    "surface-dim":                "#d9dadc",
+                    "surface-container-lowest":   "#ffffff",
+                    "surface-container-low":      "#f3f4f6",
+                    "surface-container":          "#edeef0",
+                    "surface-container-high":     "#e7e8ea",
+                    "surface-container-highest":  "#e1e2e4",
+                    "surface-variant":            "#e1e2e4",
+                    "on-surface":                 "#1A1C20",
+                    "on-surface-variant":         "#484552",
+                    "background":                 "#f8f9fb",
+                    "on-background":              "#191c1e",
+                    "outline":                    "#797584",
+                    "outline-variant":            "#C9C4D4",
+                    "inverse-surface":            "#2e3132",
+                    "inverse-on-surface":         "#f0f1f3",
+                    "error":                      "#ba1a1a",
+                    "error-container":            "#ffdad6",
+                    "on-error":                   "#ffffff",
+                    "on-error-container":         "#93000a"
+                },
+                borderRadius: {
+                    DEFAULT: "0.5rem",
+                    sm:      "0.375rem",
+                    lg:      "0.75rem",
+                    xl:      "1rem",
+                    "2xl":   "1.5rem",
+                    full:    "9999px"
+                },
+                spacing: {
+                    base:              "4px",
+                    gutter:            "24px",
+                    "margin-mobile":   "16px",
+                    "max-width":       "1440px",
+                    "margin-desktop":  "32px",
+                    "container-max":   "1280px",
+                    "stack-xs":        "4px",
+                    "stack-sm":        "8px",
+                    "stack-md":        "16px",
+                    "stack-lg":        "24px",
+                    "stack-xl":        "32px"
+                },
+                fontFamily: {
+                    "display-lg":         ["Inter", "sans-serif"],
+                    "headline-lg":        ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "title-md":           ["Inter", "sans-serif"],
+                    "body-lg":            ["Inter", "sans-serif"],
+                    "body-md":            ["Inter", "sans-serif"],
+                    "label-lg":           ["Inter", "sans-serif"],
+                    "label-md":           ["Inter", "sans-serif"],
+                    "label-sm":           ["Inter", "sans-serif"]
+                },
+                fontSize: {
+                    "display-lg":         ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}],
+                    "headline-lg":        ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}],
+                    "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}],
+                    "title-md":           ["18px", {lineHeight: "24px", fontWeight: "600"}],
+                    "body-lg":            ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                    "body-md":            ["14px", {lineHeight: "20px", fontWeight: "400"}],
+                    "label-lg":           ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}],
+                    "label-md":           ["13px", {lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500"}],
+                    "label-sm":           ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500"}]
+                }
+            }
+        }
+    };
+</script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F4F5F7; }
+        h1, h2, h3, .font-title-lg { font-family: 'Playfair Display', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border: 1px solid #c9c4d4; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e2e9; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="bg-surface border-b border-outline-variant sticky top-0 z-50 h-16">
+  <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+    <div class="flex items-center gap-8">
+      <a href="index.html" class="font-bold text-primary text-xl tracking-tight">MatchStage</a>
+      <nav class="hidden md:flex items-center gap-6 h-full">
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md h-full flex items-center" href="buscador_pasantias.html">Buscar Pasantías</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md h-full flex items-center" href="mis_postulaciones.html">Mis Postulaciones</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md h-full flex items-center" href="mi_perfil.html">Mi Perfil</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined">notifications</span>
+      </button>
+      <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+        <span class="material-symbols-outlined">settings</span>
+      </button>
+      <a href="mi_perfil.html" class="w-9 h-9 rounded-full overflow-hidden border border-outline-variant block ml-1 flex-shrink-0">
+        <img alt="Perfil" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvY-FybOewEmgrsj3-GlqVdJP_jCBdTiEp-gT4DUz36XeqW-1VB0dmkt9dtmnc7AWUi7ZtpMy86t0F8Ue8PmgH1u8P-It4xCI8ZGGibaq8_WmThdkI1xYv_KfclQF46CeeA3hy8pipjzvPubx3BFNxSRkVOWaRuQIXmGV-tH9_eX6RjRV-DweJNQASDkhEbMO6RoF0tnZkOzZrXHBoRtZFv6FF6EkuSr8ayhnpzkzLcGvc9LZlI7luBUmXPC3fc9iWEZyW1Z_l7oB3">
+      </a>
+    </div>
+  </div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg min-h-screen">
+<!-- Hero Search Section -->
+<section class="mb-stack-lg">
+<div class="flex flex-col gap-unit">
+<h1 class="text-display-lg font-display-lg text-on-surface">Explora tu futuro profesional</h1>
+<h2 class="text-body-lg font-body-lg text-on-surface-variant">Encuentra pasantías que se alineen con tus pasiones y habilidades.</h2>
+</div>
+<div class="mt-stack-md flex flex-col md:flex-row gap-4">
+<div class="flex-grow relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-surface outline-none text-body-md font-body-md transition-all shadow-sm" placeholder="Buscar por cargo, empresa o tecnología..." type="text">
+</div>
+<button class="px-8 py-4 bg-primary text-on-primary rounded-xl font-label-md text-label-md shadow-md hover:opacity-90 transition-all flex items-center justify-center gap-2" onclick="window.location.href='detalle_pasantia.html'">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                Filtrar Resultados
+            </button>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Recommendations Feed -->
+<div class="lg:col-span-8 space-y-stack-md">
+<div class="flex justify-between items-end">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Pasantías Recomendadas</h2>
+<a class="text-label-md font-label-md text-primary hover:underline transition-all" href="detalle_pasantia.html">Ver todas</a>
+</div>
+<!-- Bento Grid Layout for Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<!-- Featured Card -->
+<div class="glass-card p-6 rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer border-l-4 border-l-primary" onclick="window.location.href='detalle_pasantia.html'">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="code">code</span>
+</div>
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-label-sm font-label-sm">Remoto</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface group-hover:text-primary transition-colors">Desarrollador Frontend Junior</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">TechCorp Global Solutions</p>
+<div class="flex gap-2 mt-4 flex-wrap">
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded text-label-sm font-label-sm">React</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded text-label-sm font-label-sm">Tailwind CSS</span>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface-variant">Hace 2 días</span>
+<button class="text-primary font-bold text-label-md flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Aplicar Ahora <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Regular Card -->
+<div class="glass-card p-6 rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer" onclick="window.location.href='detalle_pasantia.html'">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="palette">palette</span>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-sm font-label-sm">Híbrido</span>
+</div>
+<h3 class="text-title-lg font-title-lg text-on-surface group-hover:text-primary transition-colors">UX/UI Designer Intern</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Creative Hub Agencies</p>
+<div class="flex gap-2 mt-4 flex-wrap">
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded text-label-sm font-label-sm">Figma</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded text-label-sm font-label-sm">Research</span>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface-variant">Hace 5 horas</span>
+<button class="text-primary font-bold text-label-md flex items-center gap-1">
+                            Aplicar <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Another Card -->
+<div class="glass-card p-6 rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer" onclick="window.location.href='detalle_pasantia.html'">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="analytics">analytics</span>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-sm font-label-sm">Presencial</span>
+</div>
+<h3 class="text-title-lg font-title-lg text-on-surface group-hover:text-primary transition-colors">Data Analyst Trainee</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">FinanceFlow Partners</p>
+<div class="flex gap-2 mt-4 flex-wrap">
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded text-label-sm font-label-sm">Python</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded text-label-sm font-label-sm">SQL</span>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface-variant">Hace 1 día</span>
+<button class="text-primary font-bold text-label-md flex items-center gap-1">
+                            Aplicar <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Another Card with Secondary Color accent -->
+<div class="glass-card p-6 rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer border-l-4 border-l-secondary" onclick="window.location.href='detalle_pasantia.html'">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="campaign">campaign</span>
+</div>
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-label-sm font-label-sm">Remoto</span>
+</div>
+<h3 class="text-title-lg font-title-lg text-on-surface group-hover:text-primary transition-colors">Digital Marketing Intern</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Growth Engine Co.</p>
+<div class="flex gap-2 mt-4 flex-wrap">
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded text-label-sm font-label-sm">SEO</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded text-label-sm font-label-sm">Ads</span>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface-variant">Ayer</span>
+<button class="text-primary font-bold text-label-md flex items-center gap-1">
+                            Aplicar <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar: Status of Applications -->
+<aside class="lg:col-span-4 space-y-stack-md">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Estado de mis postulaciones</h2>
+<div class="bg-surface rounded-xl p-6 border border-outline-variant shadow-sm">
+<div class="space-y-6">
+<!-- Status Item: Interviewing -->
+<div class="relative pl-8">
+<div class="absolute left-0 top-0 bottom-0 w-px bg-outline-variant"></div>
+<div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-wider">Entrevistando</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Hoy, 10:00 AM</span>
+</div>
+<h4 class="text-body-md font-body-md font-bold text-on-surface">Fullstack Developer</h4>
+<p class="text-label-md font-label-md text-on-surface-variant">Innovate Solutions S.A.</p>
+<div class="mt-2 flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="video_call">video_call</span>
+<span class="text-label-md font-label-md">Link de la reunión enviado</span>
+</div>
+</div>
+</div>
+<!-- Status Item: Applied -->
+<div class="relative pl-8">
+<div class="absolute left-0 top-0 bottom-0 w-px bg-outline-variant"></div>
+<div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-outline"></div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Aplicado</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">22 May</span>
+</div>
+<h4 class="text-body-md font-body-md font-bold text-on-surface">Backend Intern (Node.js)</h4>
+<p class="text-label-md font-label-md text-on-surface-variant">CloudScale Systems</p>
+<div class="mt-2 w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-1/3"></div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant mt-1">Revisión de CV en curso</span>
+</div>
+</div>
+<!-- Status Item: Hired -->
+<div class="relative pl-8 opacity-60">
+<div class="absolute left-0 top-0 bottom-0 w-px bg-outline-variant"></div>
+<div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-secondary"></div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="text-label-sm font-label-sm text-secondary uppercase tracking-wider">Contratado</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">15 May</span>
+</div>
+<h4 class="text-body-md font-body-md font-bold text-on-surface">Software QA Trainee</h4>
+<p class="text-label-md font-label-md text-on-surface-variant">QualityFirst Labs</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 rounded-lg border border-primary text-primary font-bold text-label-md hover:bg-primary/5 transition-all" onclick="window.location.href='detalle_pasantia.html'">
+                    Ver todo el historial
+                </button>
+</div>
+<!-- Career Tip Widget -->
+<div class="bg-primary-container text-on-primary-container p-6 rounded-xl shadow-md relative overflow-hidden">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl mb-2" data-icon="lightbulb" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">lightbulb</span>
+<h4 class="text-title-lg font-title-lg mb-2">Tip de Carrera</h4>
+<p class="text-body-md font-body-md opacity-90">Personaliza tu CV para cada postulación resaltando las palabras clave de la descripción del cargo.</p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+<div class="w-full py-8 px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto">
+<div class="flex flex-col gap-2 mb-6 md:mb-0">
+<span class="text-label-md font-label-md font-bold text-on-surface"><h4 class="font-title-lg text-title-lg font-bold text-on-surface cursor-text" spellcheck="false" data-stitch-added-classes="cursor-text" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-size: medium; font-family: Inter; --tw-text-opacity: 1; color: rgb(25, 28, 30); letter-spacing: normal; background-color: rgb(248, 249, 251); outline: none !important; box-shadow: none !important;">MatchStage</h4></span>
+<p class="text-label-sm font-label-sm text-on-surface-variant">© 2026 MatchStage. Todos los derechos reservados.</p>
+</div>
+<div class="flex gap-6">
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:underline transition-all" href="#">Privacidad</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:underline transition-all" href="#">Términos</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:underline transition-all" href="#">Contacto</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:underline transition-all" href="#">Soporte</a>
+</div>
+</div>
+</footer>
+<script>
+    const searchInput = document.querySelector('input[type="text"]');
+    const searchContainer = searchInput.parentElement;
+    
+    searchInput.addEventListener('focus', () => {
+        searchContainer.classList.add('scale-[1.01]');
+    });
+    
+    searchInput.addEventListener('blur', () => {
+        searchContainer.classList.remove('scale-[1.01]');
+    });
+</script>
+
+
+</body></html>

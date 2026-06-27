@@ -1,0 +1,298 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Registro Estudiante | MatchStage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .step-transition {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary":                    "#6554C0",
+                    "primary-container":          "#E6DEFF",
+                    "on-primary":                 "#ffffff",
+                    "on-primary-container":       "#1A0063",
+                    "primary-fixed":              "#E5DEFF",
+                    "primary-fixed-dim":          "#C9BFFF",
+                    "on-primary-fixed":           "#1A0063",
+                    "on-primary-fixed-variant":   "#4633A0",
+                    "inverse-primary":            "#C9BFFF",
+                    "surface-tint":               "#6554C0",
+                    "secondary":                  "#00B8D9",
+                    "secondary-container":        "#D6F8FF",
+                    "on-secondary":               "#ffffff",
+                    "on-secondary-container":     "#003640",
+                    "secondary-fixed":            "#AFECFF",
+                    "secondary-fixed-dim":        "#48D7F9",
+                    "on-secondary-fixed":         "#001F27",
+                    "on-secondary-fixed-variant": "#004E5D",
+                    "tertiary":                   "#6A5ACD",
+                    "tertiary-container":         "#EDE8FF",
+                    "on-tertiary":                "#ffffff",
+                    "on-tertiary-container":      "#2A1A7A",
+                    "tertiary-fixed":             "#EDE8FF",
+                    "tertiary-fixed-dim":         "#C9BFFF",
+                    "on-tertiary-fixed":          "#1A0063",
+                    "on-tertiary-fixed-variant":  "#4633A0",
+                    "surface":                    "#ffffff",
+                    "surface-bright":             "#f8f9fb",
+                    "surface-dim":                "#d9dadc",
+                    "surface-container-lowest":   "#ffffff",
+                    "surface-container-low":      "#f3f4f6",
+                    "surface-container":          "#edeef0",
+                    "surface-container-high":     "#e7e8ea",
+                    "surface-container-highest":  "#e1e2e4",
+                    "surface-variant":            "#e1e2e4",
+                    "on-surface":                 "#1A1C20",
+                    "on-surface-variant":         "#484552",
+                    "background":                 "#f8f9fb",
+                    "on-background":              "#191c1e",
+                    "outline":                    "#797584",
+                    "outline-variant":            "#C9C4D4",
+                    "inverse-surface":            "#2e3132",
+                    "inverse-on-surface":         "#f0f1f3",
+                    "error":                      "#ba1a1a",
+                    "error-container":            "#ffdad6",
+                    "on-error":                   "#ffffff",
+                    "on-error-container":         "#93000a"
+                },
+                borderRadius: {
+                    DEFAULT: "0.5rem",
+                    sm:      "0.375rem",
+                    lg:      "0.75rem",
+                    xl:      "1rem",
+                    "2xl":   "1.5rem",
+                    full:    "9999px"
+                },
+                spacing: {
+                    base:              "4px",
+                    gutter:            "24px",
+                    "margin-mobile":   "16px",
+                    "max-width":       "1440px",
+                    "margin-desktop":  "32px",
+                    "container-max":   "1280px",
+                    "stack-xs":        "4px",
+                    "stack-sm":        "8px",
+                    "stack-md":        "16px",
+                    "stack-lg":        "24px",
+                    "stack-xl":        "32px"
+                },
+                fontFamily: {
+                    "display-lg":         ["Inter", "sans-serif"],
+                    "headline-lg":        ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "title-md":           ["Inter", "sans-serif"],
+                    "body-lg":            ["Inter", "sans-serif"],
+                    "body-md":            ["Inter", "sans-serif"],
+                    "label-lg":           ["Inter", "sans-serif"],
+                    "label-md":           ["Inter", "sans-serif"],
+                    "label-sm":           ["Inter", "sans-serif"]
+                },
+                fontSize: {
+                    "display-lg":         ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}],
+                    "headline-lg":        ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}],
+                    "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}],
+                    "title-md":           ["18px", {lineHeight: "24px", fontWeight: "600"}],
+                    "body-lg":            ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                    "body-md":            ["14px", {lineHeight: "20px", fontWeight: "400"}],
+                    "label-lg":           ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}],
+                    "label-md":           ["13px", {lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500"}],
+                    "label-sm":           ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500"}]
+                }
+            }
+        }
+    };
+</script>
+</head>
+<body class="bg-surface-bright min-h-screen flex items-center justify-center p-margin-mobile md:p-margin-desktop overflow-x-hidden">
+<!-- Abstract Background Elements -->
+<div class="fixed inset-0 -z-10 overflow-hidden">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary-container/10 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-secondary-container/10 rounded-full blur-[120px]"></div>
+</div>
+<!-- Main Registration Container -->
+<main class="w-full max-w-[1100px] grid md:grid-cols-2 bg-surface-container-lowest rounded-[2rem] shadow-xl overflow-hidden border border-outline-variant/30">
+<!-- Left Side: Visual Branding/Context -->
+<section class="hidden md:flex flex-col justify-between p-12 bg-primary relative overflow-hidden">
+<div class="relative z-10">
+<a href="index.html" class="flex items-center gap-2 mb-12 hover:opacity-90 transition-opacity">
+<div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-primary" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-white tracking-tight">MatchStage</span>
+</a>
+<h1 class="font-display-lg text-white mb-6 leading-tight">Impulsa tu carrera profesional.</h1>
+<p class="font-body-lg text-white/80 max-w-sm">Conecta con las mejores empresas y encuentra la pasantía que transformará tu futuro académico en éxito laboral.</p>
+</div>
+<div class="relative z-10 mt-auto">
+<div class="flex -space-x-4 mb-4">
+<img alt="Student" class="w-12 h-12 rounded-full border-4 border-primary" data-alt="A professional portrait of a diverse university student smiling warmly, captured in a bright campus environment with soft natural lighting. The image emphasizes clarity, ambition, and a clean professional aesthetic consistent with a modern career portal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAboCrskjlb5IHg2xsjfgLKK9Rs_nf4KP2Ww5NA1sj5QhitP0-2pcOfMLIKXgkcSQD9nC_tUfQBjRvkneKJwPB5bCe0LrlrVrVSy2mrNoZoei6tg4h_38OzggNxPgaQjdPSsFoQHu1siW4ZqvrKQXsh4cwRqXRBMnYhThXIlvw0-LcxQnHy06ZmFSiDgpVRwSoQlvujbVOVuHJjRgw1S-X9ugkHCx8RItoW4OW0oFoEWSS9zJshtSa3ZaRK_DEZN5kc7AQJl8YGJ9d8">
+<img alt="Student" class="w-12 h-12 rounded-full border-4 border-primary" data-alt="A side-profile shot of a young female professional in a minimalist creative studio setting. She is looking thoughtfully towards the camera, conveying confidence and academic excellence. The color palette is composed of soft blues and crisp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEKMrVIKaCsox3Xf3ZMMVB41p0Kvsvzz8WnIruL3ra17uwq-jLJB8siLkQuPNiwV3MYUDsZ2eP0UhIy9xpBwvvz-CbgNQKuE71IsXHZz00zSH__2ZUwb1fsdvu3OxYJRVQzGx3MNteoPvugfHI3KTwcs_rV5ZzNXUCpavER88CJIZ4qN6vgaNi0RRbqC_XjYTSv_Ow1lXCRIesejL8X2UKikeb-yzyH8-HwxAKxoJaL5ekwD9Ydk2TkNxvQYAKXYLvUZa6U8Ji0HDP">
+<img alt="Student" class="w-12 h-12 rounded-full border-4 border-primary" data-alt="A high-quality image of a focused male student working on a laptop in a bright, modern library with large windows and lush green plants. The atmosphere is quiet, studious, and filled with soft, diffused sunlight, matching a minimalist corporate design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtkHPgPeZbbsnxsauFlBJ5mCaOXhk3S37KAnZtA5JWRa9qYFrACnZARq9zs8yMkf0PsWVI1vI_yLUOPFeB1NL_tEaHFhfHemr7VmVOTkCqua1WdYW2OwY9W16VKH-moHNIOF1Xz9Z03cPb73XwQbCosE_mBqdG8cp51aL4PuBGP0TlZOjbE1yQ_MLBYqtU6d-Tk4b8ka590CCZxXVjPqMjRG6x1Ho1kaCKh6UJWuyIeeoV2YjSQxEnSfmhYb1UtJ1xX78ToV8tidly">
+</div>
+<p class="font-label-md text-white/90 font-medium">+5,000 estudiantes ya están postulando</p>
+</div>
+<!-- Background Decoration -->
+<div class="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
+<svg class="w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,400 C150,300 250,500 400,400 L400,0 L0,0 Z" fill="white"></path>
+</svg>
+</div>
+</section>
+<!-- Right Side: Form -->
+<section class="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+<!-- Role Indicator Chip -->
+<div class="inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed px-4 py-1.5 rounded-full self-start mb-8 transition-transform hover:scale-105 cursor-default">
+<span class="material-symbols-outlined text-[18px]" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Registro: Estudiante</span>
+</div>
+<div class="mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Crear una cuenta</h2>
+<p class="font-body-md text-on-surface-variant">Únete a MatchStage y comienza tu búsqueda hoy mismo.</p>
+</div>
+<!-- Social Auth -->
+<div class="grid grid-cols-2 gap-4 mb-8">
+<a href="dashboard_estudiante.html" class="flex items-center justify-center gap-3 border border-outline-variant py-3 rounded-xl font-label-md text-on-surface hover:bg-surface-container-low transition-all duration-200">
+<svg class="w-5 h-5" viewBox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+Google
+</a>
+<a href="dashboard_estudiante.html" class="flex items-center justify-center gap-3 border border-outline-variant py-3 rounded-xl font-label-md text-on-surface hover:bg-surface-container-low transition-all duration-200">
+<svg class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
+<path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
+</svg>
+LinkedIn
+</a>
+</div>
+<div class="relative flex items-center mb-8">
+<div class="flex-grow border-t border-outline-variant/50"></div>
+<span class="flex-shrink mx-4 font-label-sm text-outline uppercase tracking-widest">o usa tu correo</span>
+<div class="flex-grow border-t border-outline-variant/50"></div>
+</div>
+<!-- Registration Form -->
+<form class="space-y-5" onsubmit="return false;">
+<!-- Full Name -->
+<div class="group">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5 transition-colors group-focus-within:text-primary" for="full_name">Nombre completo</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline group-focus-within:text-primary transition-colors" data-icon="person_outline">person_outline</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline/50 font-body-md" id="full_name" placeholder="Ej. Juan Pérez" type="text">
+</div>
+</div>
+<!-- Email -->
+<div class="group">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5 transition-colors group-focus-within:text-primary" for="email">Correo electrónico (institucional/personal)</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline group-focus-within:text-primary transition-colors" data-icon="alternate_email">alternate_email</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline/50 font-body-md" id="email" placeholder="juan.perez@universidad.edu" type="email">
+</div>
+</div>
+<!-- Univ & Career Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="group">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5 transition-colors group-focus-within:text-primary" for="university">Universidad</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline group-focus-within:text-primary transition-colors" data-icon="account_balance">account_balance</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline/50 font-body-md" id="university" placeholder="Buscar universidad" type="text">
+</div>
+</div>
+<div class="group">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5 transition-colors group-focus-within:text-primary" for="career">Carrera</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline group-focus-within:text-primary transition-colors" data-icon="work_outline">work_outline</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline/50 font-body-md" id="career" placeholder="Carrera académica" type="text">
+</div>
+</div>
+</div>
+<!-- Password -->
+<div class="group">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5 transition-colors group-focus-within:text-primary" for="password">Contraseña</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline group-focus-within:text-primary transition-colors" data-icon="lock_outline">lock_outline</span>
+<input class="w-full pl-12 pr-12 py-3 bg-surface rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline/50 font-body-md" id="password" placeholder="Mínimo 8 caracteres" type="password">
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Terms -->
+<div class="flex items-start gap-3 py-2">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary/20" id="terms" type="checkbox">
+</div>
+<label class="font-label-sm text-on-surface-variant" for="terms">
+                        Acepto los <a class="text-primary font-bold hover:underline" href="#">Términos y Condiciones</a> y la <a class="text-primary font-bold hover:underline" href="#">Política de Privacidad</a> de MatchStage.
+                    </label>
+</div>
+<!-- Submit Button -->
+<a href="dashboard_estudiante.html" class="w-full bg-primary hover:bg-primary-container text-white py-4 rounded-xl font-title-lg shadow-md hover:shadow-lg transition-all transform active:scale-[0.98] mt-4 flex items-center justify-center gap-2 group">
+Crear Cuenta Estudiante
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</form>
+<div class="mt-8 text-center">
+<p class="font-body-md text-on-surface-variant">
+                    ¿Ya tienes una cuenta? <a class="text-primary font-bold hover:underline" href="login.html">Inicia sesión</a>
+</p>
+</div>
+</section>
+</main>
+<!-- Footer-like link -->
+<div class="fixed bottom-6 text-center w-full">
+<p class="font-label-sm text-outline-variant">© 2026 MatchStage. Estás en la plataforma para estudiantes.</p>
+</div>
+<script>
+        // Simple Interaction: Ripple-like effect or hover depth change
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', function() {
+                this.classList.add('scale-[0.97]');
+            });
+            button.addEventListener('mouseup', function() {
+                this.classList.remove('scale-[0.97]');
+            });
+            button.addEventListener('mouseleave', function() {
+                this.classList.remove('scale-[0.97]');
+            });
+        });
+
+        // Form Focus Visual Enhancement
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.parentElement.classList.add('is-focused');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.parentElement.classList.remove('is-focused');
+            });
+        });
+    </script>
+
+
+
+
+</body></html>

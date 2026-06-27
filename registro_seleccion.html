@@ -1,0 +1,277 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+  <title>Registro | MatchStage</title>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fb;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid #DFE1E6;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary":                    "#6554C0",
+                    "primary-container":          "#E6DEFF",
+                    "on-primary":                 "#ffffff",
+                    "on-primary-container":       "#1A0063",
+                    "primary-fixed":              "#E5DEFF",
+                    "primary-fixed-dim":          "#C9BFFF",
+                    "on-primary-fixed":           "#1A0063",
+                    "on-primary-fixed-variant":   "#4633A0",
+                    "inverse-primary":            "#C9BFFF",
+                    "surface-tint":               "#6554C0",
+                    "secondary":                  "#00B8D9",
+                    "secondary-container":        "#D6F8FF",
+                    "on-secondary":               "#ffffff",
+                    "on-secondary-container":     "#003640",
+                    "secondary-fixed":            "#AFECFF",
+                    "secondary-fixed-dim":        "#48D7F9",
+                    "on-secondary-fixed":         "#001F27",
+                    "on-secondary-fixed-variant": "#004E5D",
+                    "tertiary":                   "#6A5ACD",
+                    "tertiary-container":         "#EDE8FF",
+                    "on-tertiary":                "#ffffff",
+                    "on-tertiary-container":      "#2A1A7A",
+                    "tertiary-fixed":             "#EDE8FF",
+                    "tertiary-fixed-dim":         "#C9BFFF",
+                    "on-tertiary-fixed":          "#1A0063",
+                    "on-tertiary-fixed-variant":  "#4633A0",
+                    "surface":                    "#ffffff",
+                    "surface-bright":             "#f8f9fb",
+                    "surface-dim":                "#d9dadc",
+                    "surface-container-lowest":   "#ffffff",
+                    "surface-container-low":      "#f3f4f6",
+                    "surface-container":          "#edeef0",
+                    "surface-container-high":     "#e7e8ea",
+                    "surface-container-highest":  "#e1e2e4",
+                    "surface-variant":            "#e1e2e4",
+                    "on-surface":                 "#1A1C20",
+                    "on-surface-variant":         "#484552",
+                    "background":                 "#f8f9fb",
+                    "on-background":              "#191c1e",
+                    "outline":                    "#797584",
+                    "outline-variant":            "#C9C4D4",
+                    "inverse-surface":            "#2e3132",
+                    "inverse-on-surface":         "#f0f1f3",
+                    "error":                      "#ba1a1a",
+                    "error-container":            "#ffdad6",
+                    "on-error":                   "#ffffff",
+                    "on-error-container":         "#93000a"
+                },
+                borderRadius: {
+                    DEFAULT: "0.5rem",
+                    sm:      "0.375rem",
+                    lg:      "0.75rem",
+                    xl:      "1rem",
+                    "2xl":   "1.5rem",
+                    full:    "9999px"
+                },
+                spacing: {
+                    base:              "4px",
+                    gutter:            "24px",
+                    "margin-mobile":   "16px",
+                    "max-width":       "1440px",
+                    "margin-desktop":  "32px",
+                    "container-max":   "1280px",
+                    "stack-xs":        "4px",
+                    "stack-sm":        "8px",
+                    "stack-md":        "16px",
+                    "stack-lg":        "24px",
+                    "stack-xl":        "32px"
+                },
+                fontFamily: {
+                    "display-lg":         ["Inter", "sans-serif"],
+                    "headline-lg":        ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "title-md":           ["Inter", "sans-serif"],
+                    "body-lg":            ["Inter", "sans-serif"],
+                    "body-md":            ["Inter", "sans-serif"],
+                    "label-lg":           ["Inter", "sans-serif"],
+                    "label-md":           ["Inter", "sans-serif"],
+                    "label-sm":           ["Inter", "sans-serif"]
+                },
+                fontSize: {
+                    "display-lg":         ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}],
+                    "headline-lg":        ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}],
+                    "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}],
+                    "title-md":           ["18px", {lineHeight: "24px", fontWeight: "600"}],
+                    "body-lg":            ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                    "body-md":            ["14px", {lineHeight: "20px", fontWeight: "400"}],
+                    "label-lg":           ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}],
+                    "label-md":           ["13px", {lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500"}],
+                    "label-sm":           ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500"}]
+                }
+            }
+        }
+    };
+</script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center justify-center">
+<!-- Header Navigation (Simplified for Transactional Focus) -->
+<header class="fixed top-0 left-0 w-full bg-surface/80 backdrop-blur-md border-b border-outline-variant z-50">
+<div class="max-w-container-max mx-auto h-16 px-margin-desktop flex items-center justify-between">
+<div class="flex items-center gap-2">
+<a href="index.html" class="text-title-lg font-bold text-primary">MatchStage</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-label-md font-medium text-on-surface-variant">¿Ya tienes cuenta?</span>
+<a href="login.html" class="text-primary font-bold text-label-md hover:underline transition-all">Iniciar Sesión</a>
+</div>
+</div>
+</header>
+<main class="w-full max-w-container-max px-margin-mobile md:px-margin-desktop py-stack-lg mt-16">
+<!-- Hero Section -->
+<div class="text-center mb-12 animate-fade-in">
+<h1 class="text-headline-lg font-headline-lg text-on-surface mb-stack-sm">Comienza tu viaje profesional</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Selecciona el tipo de perfil que mejor se adapte a tus necesidades para conectar con las mejores oportunidades del mercado.</p>
+</div>
+<!-- Role Selection Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg max-w-5xl mx-auto">
+<!-- Student Option -->
+<button class="group relative flex flex-col text-left glass-card p-stack-lg rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 focus:ring-2 focus:ring-primary focus:outline-none" onclick="selectRole('student')" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: auto;">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-headline-md">arrow_forward</span>
+</div>
+<div class="w-16 h-16 rounded-lg bg-primary-fixed mb-stack-md flex items-center justify-center transition-colors group-hover:bg-primary-container">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-[32px]">school</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-on-surface mb-2">Soy Estudiante</h2>
+<p class="text-body-md text-on-surface-variant mb-stack-md">Impulsa tu carrera encontrando pasantías que se alineen con tus metas académicas y profesionales.</p>
+<ul class="space-y-2 mt-auto">
+<li class="flex items-center gap-2 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]" data-weight="fill">check_circle</span>
+                        Aplica a pasantías exclusivas
+                    </li>
+<li class="flex items-center gap-2 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]" data-weight="fill">check_circle</span>
+                        Construye tu perfil profesional
+                    </li>
+<li class="flex items-center gap-2 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]" data-weight="fill">check_circle</span>
+                        Recibe recomendaciones personalizadas
+                    </li>
+</ul>
+<a href="registro_estudiante.html" class="mt-stack-lg w-full bg-primary text-on-primary py-3 rounded-lg text-center font-bold text-label-md transition-all group-hover:bg-primary-container">
+                    Registrarme como Estudiante
+                </a>
+</button>
+<!-- Organization Option -->
+<button class="group relative flex flex-col text-left glass-card p-stack-lg rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 focus:ring-2 focus:ring-tertiary focus:outline-none" onclick="selectRole('org')" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: auto;">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-tertiary text-headline-md">arrow_forward</span>
+</div>
+<div class="w-16 h-16 rounded-lg bg-tertiary-fixed mb-stack-md flex items-center justify-center transition-colors group-hover:bg-tertiary-container">
+<span class="material-symbols-outlined text-tertiary group-hover:text-on-tertiary-container text-[32px]">business</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-on-surface mb-2">Soy Organización</h2>
+<p class="text-body-md text-on-surface-variant mb-stack-md">Encuentra el talento joven más prometedor para fortalecer tu equipo y proyectos estratégicos.</p>
+<ul class="space-y-2 mt-auto">
+<li class="flex items-center gap-2 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[18px]" data-weight="fill">check_circle</span>
+                        Publica ofertas de pasantía
+                    </li>
+<li class="flex items-center gap-2 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[18px]" data-weight="fill">check_circle</span>
+                        Gestiona postulantes eficientemente
+                    </li>
+<li class="flex items-center gap-2 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[18px]" data-weight="fill">check_circle</span>
+                        Accede a analíticas de reclutamiento
+                    </li>
+</ul>
+<a href="registro_organizacion.html" class="mt-stack-lg w-full bg-tertiary text-on-tertiary py-3 rounded-lg text-center font-bold text-label-md transition-all group-hover:bg-tertiary-container">
+                    Registrar mi Organización
+                </a>
+</button>
+</div>
+<!-- Decorative Background Element -->
+<div class="mt-stack-lg relative overflow-hidden rounded-xl h-64 md:h-80 w-full max-w-5xl mx-auto shadow-sm border border-outline-variant">
+<img class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" data-alt="A modern collaborative workspace featuring diverse young professionals working on laptops around a minimalist oak table. The room is filled with bright, natural sunlight filtering through large windows, creating a clean and professional atmosphere. The design follows a minimalist corporate aesthetic with soft shadows and a palette of crisp whites, subtle grays, and professional blues, reflecting a sense of ambition and career growth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXJUMoI_cSEBJUKVyPLmdzD64mw--XKeXmxvWe65-xm31fnDw0Syol1_22MT-D1ESj0uibVar6NFn5V1W-rNBLfPCF9lu1GmtQN9NePwlKX296J1DlKYm6WzuHhs81CMGhY5aWz1g79wHCeQz76gX_iR6Cr9x4J871eoVAiYrdou_mHXXCD6KP1e0NL-0ACxXpV1lnXEMcdai08jJ4eSmgINTuBkU6g_kknLHcif4q54edqhS-X-tACbm6x3JfZeeOh-65BBBZsxx2">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-8 left-8 right-8 text-center md:text-left">
+<p class="text-label-md font-bold text-primary uppercase tracking-widest mb-2">Comunidad MatchStage</p>
+<p class="text-headline-md font-headline-md text-on-surface">+5,000 conexiones exitosas el último año</p>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component Guidance) -->
+<footer class="w-full py-8 px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto border-t border-outline-variant mt-stack-lg">
+<div class="mb-4 md:mb-0">
+<span class="text-label-md font-bold text-on-surface">MatchStage</span>
+<span class="text-label-sm text-on-surface-variant ml-2">© 2026 MatchStage. Todos los derechos reservados.</span>
+</div>
+<div class="flex gap-stack-md">
+<a class="text-label-sm text-on-surface-variant hover:underline transition-all" href="#">Privacidad</a>
+<a class="text-label-sm text-on-surface-variant hover:underline transition-all" href="#">Términos</a>
+<a class="text-label-sm text-on-surface-variant hover:underline transition-all" href="#">Contacto</a>
+<a class="text-label-sm text-on-surface-variant hover:underline transition-all" href="#">Soporte</a>
+</div>
+</footer>
+<script>
+        function selectRole(role) {
+            console.log('Role selected:', role);
+            // Visual feedback before navigation
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach(card => {
+                card.style.opacity = '0.5';
+                card.style.pointerEvents = 'none';
+            });
+            
+            // Interaction effect
+            const selectedButton = event.currentTarget;
+            selectedButton.style.opacity = '1';
+            selectedButton.classList.add('scale-95');
+            
+            setTimeout(() => {
+                // In a real app, this would navigate to the specific signup form
+                alert('Redirigiendo al formulario de ' + (role === 'student' ? 'Estudiante' : 'Organización'));
+                cards.forEach(card => {
+                    card.style.opacity = '1';
+                    card.style.pointerEvents = 'auto';
+                    card.classList.remove('scale-95');
+                });
+            }, 300);
+        }
+
+        // Add subtle entrance animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * (index + 1));
+            });
+        });
+    </script>
+
+
+
+
+
+
+</body></html>

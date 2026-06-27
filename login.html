@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Iniciar Sesión | MatchStage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary":                    "#6554C0",
+                    "primary-container":          "#E6DEFF",
+                    "on-primary":                 "#ffffff",
+                    "on-primary-container":       "#1A0063",
+                    "primary-fixed":              "#E5DEFF",
+                    "primary-fixed-dim":          "#C9BFFF",
+                    "on-primary-fixed":           "#1A0063",
+                    "on-primary-fixed-variant":   "#4633A0",
+                    "inverse-primary":            "#C9BFFF",
+                    "surface-tint":               "#6554C0",
+                    "secondary":                  "#00B8D9",
+                    "secondary-container":        "#D6F8FF",
+                    "on-secondary":               "#ffffff",
+                    "on-secondary-container":     "#003640",
+                    "secondary-fixed":            "#AFECFF",
+                    "secondary-fixed-dim":        "#48D7F9",
+                    "on-secondary-fixed":         "#001F27",
+                    "on-secondary-fixed-variant": "#004E5D",
+                    "tertiary":                   "#6A5ACD",
+                    "tertiary-container":         "#EDE8FF",
+                    "on-tertiary":                "#ffffff",
+                    "on-tertiary-container":      "#2A1A7A",
+                    "tertiary-fixed":             "#EDE8FF",
+                    "tertiary-fixed-dim":         "#C9BFFF",
+                    "on-tertiary-fixed":          "#1A0063",
+                    "on-tertiary-fixed-variant":  "#4633A0",
+                    "surface":                    "#ffffff",
+                    "surface-bright":             "#f8f9fb",
+                    "surface-dim":                "#d9dadc",
+                    "surface-container-lowest":   "#ffffff",
+                    "surface-container-low":      "#f3f4f6",
+                    "surface-container":          "#edeef0",
+                    "surface-container-high":     "#e7e8ea",
+                    "surface-container-highest":  "#e1e2e4",
+                    "surface-variant":            "#e1e2e4",
+                    "on-surface":                 "#1A1C20",
+                    "on-surface-variant":         "#484552",
+                    "background":                 "#f8f9fb",
+                    "on-background":              "#191c1e",
+                    "outline":                    "#797584",
+                    "outline-variant":            "#C9C4D4",
+                    "inverse-surface":            "#2e3132",
+                    "inverse-on-surface":         "#f0f1f3",
+                    "error":                      "#ba1a1a",
+                    "error-container":            "#ffdad6",
+                    "on-error":                   "#ffffff",
+                    "on-error-container":         "#93000a"
+                },
+                borderRadius: {
+                    DEFAULT: "0.5rem",
+                    sm:      "0.375rem",
+                    lg:      "0.75rem",
+                    xl:      "1rem",
+                    "2xl":   "1.5rem",
+                    full:    "9999px"
+                },
+                spacing: {
+                    base:              "4px",
+                    gutter:            "24px",
+                    "margin-mobile":   "16px",
+                    "max-width":       "1440px",
+                    "margin-desktop":  "32px",
+                    "container-max":   "1280px",
+                    "stack-xs":        "4px",
+                    "stack-sm":        "8px",
+                    "stack-md":        "16px",
+                    "stack-lg":        "24px",
+                    "stack-xl":        "32px"
+                },
+                fontFamily: {
+                    "display-lg":         ["Inter", "sans-serif"],
+                    "headline-lg":        ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "title-md":           ["Inter", "sans-serif"],
+                    "body-lg":            ["Inter", "sans-serif"],
+                    "body-md":            ["Inter", "sans-serif"],
+                    "label-lg":           ["Inter", "sans-serif"],
+                    "label-md":           ["Inter", "sans-serif"],
+                    "label-sm":           ["Inter", "sans-serif"]
+                },
+                fontSize: {
+                    "display-lg":         ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}],
+                    "headline-lg":        ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}],
+                    "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}],
+                    "title-md":           ["18px", {lineHeight: "24px", fontWeight: "600"}],
+                    "body-lg":            ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                    "body-md":            ["14px", {lineHeight: "20px", fontWeight: "400"}],
+                    "label-lg":           ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}],
+                    "label-md":           ["13px", {lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500"}],
+                    "label-sm":           ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500"}]
+                }
+            }
+        }
+    };
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .bg-pattern {
+            background-color: #f8f9fb;
+            background-image: radial-gradient(#003d9b11 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-pattern min-h-screen flex flex-col font-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- Transactional Header: Suppressed Navigation as per "Semantic Shell" Mandate -->
+<header class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20 flex items-center">
+<div class="flex items-center gap-stack-sm cursor-pointer" onclick="window.location.href='index.html'">
+<span class="material-symbols-outlined text-primary text-headline-md" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">MatchStage</span>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center px-margin-mobile py-stack-lg">
+<div class="w-full max-w-[440px] animate-in fade-in slide-in-from-bottom-4 duration-700">
+<!-- Selection Segmented Control (Role Funneling) -->
+<div class="flex p-1 bg-surface-container rounded-xl mb-stack-lg shadow-inner">
+<button class="flex-1 py-2.5 rounded-lg font-label-md text-label-md transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm" id="studentTab" onclick="switchRole('student')">
+                    Estudiante
+                </button>
+<button class="flex-1 py-2.5 rounded-lg font-label-md text-label-md transition-all duration-200 text-on-surface-variant hover:text-on-surface" id="companyTab" onclick="switchRole('company')">
+                    Empresa
+                </button>
+</div>
+<!-- Login Card -->
+<div class="glass-card p-stack-lg rounded-xl shadow-[0px_8px_16px_rgba(0,0,0,0.08)] border border-outline-variant">
+<div class="mb-stack-lg">
+<h1 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Bienvenido de nuevo</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Ingresa tus credenciales para acceder a tu portal.</p>
+</div>
+<form class="space-y-stack-md" onsubmit="return false;">
+<!-- Email Field -->
+<div class="space-y-unit">
+<label class="font-label-md text-label-md text-on-surface-variant block" for="email">Correo electrónico</label>
+<div class="relative group">
+<input class="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" id="email" placeholder="nombre@ejemplo.com" type="email">
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none opacity-40">
+<span class="material-symbols-outlined">mail</span>
+</div>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-unit">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface-variant" for="password">Contraseña</label>
+<a class="font-label-sm text-label-sm text-primary hover:underline transition-all" href="#">Olvidé mi contraseña</a>
+</div>
+<div class="relative group">
+<input class="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" id="password" placeholder="••••••••" type="password">
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-on-surface-variant opacity-40 hover:opacity-100 transition-opacity" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center gap-stack-sm py-stack-sm">
+<input class="w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary cursor-pointer" id="remember" type="checkbox">
+<label class="font-label-md text-label-md text-on-surface-variant cursor-pointer select-none" for="remember">Recordar mi sesión</label>
+</div>
+<!-- Submit Button -->
+<button class="w-full py-4 bg-primary text-on-primary font-label-md text-label-md rounded-xl hover:shadow-lg hover:brightness-110 active:scale-[0.98] transition-all duration-200 mt-stack-sm flex justify-center items-center gap-stack-sm" id="submitBtn" onclick="window.location.href='dashboard_estudiante.html'">
+<span class="">Iniciar Sesión</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</form>
+<div class="relative my-stack-lg">
+<div class="absolute inset-0 flex items-center"><span class="w-full border-t border-outline-variant"></span></div>
+<div class="relative flex justify-center text-label-sm font-label-sm uppercase"><span class="bg-white px-stack-md text-on-surface-variant">O continúa con</span></div>
+</div>
+<!-- SSO Options -->
+<div class="grid grid-cols-2 gap-stack-md">
+<button class="flex items-center justify-center gap-stack-sm px-4 py-2.5 border border-outline-variant rounded-lg hover:bg-surface transition-colors duration-200" onclick="window.location.href='dashboard_estudiante.html'">
+<img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwFbjrTqikfFKDP2JjTDrWWZK3wIPCpHy2lAIICDGK-47fhB92cb6zNGBOa8v8c0tdGKcDEOh3y_C2XQIDxkFa_N0I0-2vFs6axc6VfIB1-xD-UL1tsVBDXUAZYs0ok_8FiG6030u9GMJv8jrS26u_uz8O1VxBWGu-EIe5NEuXd8ZajyTmTfL0ia-V_c5NthRQWK1tQ3tfQMx4IqnIHhjPD0DF5SM09JmrhecHtmnJBWiLb_TwdkM86L0dq-W3w1CgWYCCBbFkREAZ">
+<span class="font-label-md text-label-md text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center gap-stack-sm px-4 py-2.5 border border-outline-variant rounded-lg hover:bg-surface transition-colors duration-200" onclick="window.location.href='dashboard_estudiante.html'">
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 1;">work</span>
+<span class="font-label-md text-label-md text-on-surface">LinkedIn</span>
+</button>
+</div>
+</div>
+<!-- Footer Text -->
+<p class="text-center mt-stack-lg font-body-md text-body-md text-on-surface-variant">
+                No tengo cuenta, <a class="text-primary font-bold hover:underline transition-all" href="registro_seleccion.html">registrarse</a>
+</p>
+</div>
+</main>
+<!-- Visual Polish: Atmosphere Background Images -->
+<div class="fixed top-0 right-0 -z-10 w-1/3 h-1/2 opacity-20 hidden lg:block">
+<img class="w-full h-full object-cover rounded-bl-full" data-alt="A clean, minimalist high-key photograph of a modern university library with bright natural light coming through large windows. The scene is calm and focused, with a blurred background of bookshelves and architectural lines. The color palette is dominated by whites, light grays, and soft blue accents, embodying the professional and academic ambition of MatchStage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTMeh1zhZC5UsVcG7JAIy79tciZcfyUtgfJfKUhZsB6Nnm3EqowibnrbmRBbVdwB0hST1I51Y6DQF9l_1YyAD4OFQWCJbeX-gLbvoNvRwxUOhaoMeKk7jYWWjjYAbpLf9oD3JbCtQ_zg5o3rCpmDfHHe0C299YLWOb5CK5I7NhgUUcnqkV2pjpo0nVUG4Wan-KD4H9TmeCj1BtOiKVxiuL_3bXhVdnoZJekBvLi5fGaC4jmUM9eArvR_sYSu7K9PT6OBTBrEuT9TYH">
+</div>
+<!-- Bottom Footer Components -->
+<footer class="mt-auto w-full py-stack-md px-margin-desktop bg-surface flex flex-col md:flex-row justify-between items-center border-t border-outline-variant">
+<span class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2026 MatchStage. Todos los derechos reservados.</span>
+<div class="flex gap-stack-lg mt-stack-sm md:mt-0">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Términos y Condiciones</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Ayuda</a>
+</div>
+</footer>
+<script>
+        function switchRole(role) {
+            const studentBtn = document.getElementById('studentTab');
+            const companyBtn = document.getElementById('companyTab');
+            const submitBtn = document.getElementById('submitBtn');
+
+            if (role === 'student') {
+                studentBtn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+                studentBtn.classList.remove('text-on-surface-variant');
+                companyBtn.classList.remove('bg-surface-container-lowest', 'text-tertiary', 'shadow-sm');
+                companyBtn.classList.add('text-on-surface-variant');
+                
+                // Styling transition for primary student color
+                submitBtn.classList.remove('bg-tertiary');
+                submitBtn.classList.add('bg-primary');
+            } else {
+                companyBtn.classList.add('bg-surface-container-lowest', 'text-tertiary', 'shadow-sm');
+                companyBtn.classList.remove('text-on-surface-variant');
+                studentBtn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+                studentBtn.classList.add('text-on-surface-variant');
+                
+                // Styling transition for tertiary organization color
+                submitBtn.classList.remove('bg-primary');
+                submitBtn.classList.add('bg-tertiary');
+            }
+        }
+
+        // Simple ripple-like effect on button
+        document.getElementById('submitBtn').addEventListener('click', function(e) {
+            const btn = e.currentTarget;
+            btn.classList.add('scale-95');
+            setTimeout(() => btn.classList.remove('scale-95'), 150);
+        });
+    </script>
+
+
+
+
+</body></html>

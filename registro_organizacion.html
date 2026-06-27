@@ -1,0 +1,274 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+  <title>Registro Organización | MatchStage</title>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary":                    "#6554C0",
+                    "primary-container":          "#E6DEFF",
+                    "on-primary":                 "#ffffff",
+                    "on-primary-container":       "#1A0063",
+                    "primary-fixed":              "#E5DEFF",
+                    "primary-fixed-dim":          "#C9BFFF",
+                    "on-primary-fixed":           "#1A0063",
+                    "on-primary-fixed-variant":   "#4633A0",
+                    "inverse-primary":            "#C9BFFF",
+                    "surface-tint":               "#6554C0",
+                    "secondary":                  "#00B8D9",
+                    "secondary-container":        "#D6F8FF",
+                    "on-secondary":               "#ffffff",
+                    "on-secondary-container":     "#003640",
+                    "secondary-fixed":            "#AFECFF",
+                    "secondary-fixed-dim":        "#48D7F9",
+                    "on-secondary-fixed":         "#001F27",
+                    "on-secondary-fixed-variant": "#004E5D",
+                    "tertiary":                   "#6A5ACD",
+                    "tertiary-container":         "#EDE8FF",
+                    "on-tertiary":                "#ffffff",
+                    "on-tertiary-container":      "#2A1A7A",
+                    "tertiary-fixed":             "#EDE8FF",
+                    "tertiary-fixed-dim":         "#C9BFFF",
+                    "on-tertiary-fixed":          "#1A0063",
+                    "on-tertiary-fixed-variant":  "#4633A0",
+                    "surface":                    "#ffffff",
+                    "surface-bright":             "#f8f9fb",
+                    "surface-dim":                "#d9dadc",
+                    "surface-container-lowest":   "#ffffff",
+                    "surface-container-low":      "#f3f4f6",
+                    "surface-container":          "#edeef0",
+                    "surface-container-high":     "#e7e8ea",
+                    "surface-container-highest":  "#e1e2e4",
+                    "surface-variant":            "#e1e2e4",
+                    "on-surface":                 "#1A1C20",
+                    "on-surface-variant":         "#484552",
+                    "background":                 "#f8f9fb",
+                    "on-background":              "#191c1e",
+                    "outline":                    "#797584",
+                    "outline-variant":            "#C9C4D4",
+                    "inverse-surface":            "#2e3132",
+                    "inverse-on-surface":         "#f0f1f3",
+                    "error":                      "#ba1a1a",
+                    "error-container":            "#ffdad6",
+                    "on-error":                   "#ffffff",
+                    "on-error-container":         "#93000a"
+                },
+                borderRadius: {
+                    DEFAULT: "0.5rem",
+                    sm:      "0.375rem",
+                    lg:      "0.75rem",
+                    xl:      "1rem",
+                    "2xl":   "1.5rem",
+                    full:    "9999px"
+                },
+                spacing: {
+                    base:              "4px",
+                    gutter:            "24px",
+                    "margin-mobile":   "16px",
+                    "max-width":       "1440px",
+                    "margin-desktop":  "32px",
+                    "container-max":   "1280px",
+                    "stack-xs":        "4px",
+                    "stack-sm":        "8px",
+                    "stack-md":        "16px",
+                    "stack-lg":        "24px",
+                    "stack-xl":        "32px"
+                },
+                fontFamily: {
+                    "display-lg":         ["Inter", "sans-serif"],
+                    "headline-lg":        ["Inter", "sans-serif"],
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "title-md":           ["Inter", "sans-serif"],
+                    "body-lg":            ["Inter", "sans-serif"],
+                    "body-md":            ["Inter", "sans-serif"],
+                    "label-lg":           ["Inter", "sans-serif"],
+                    "label-md":           ["Inter", "sans-serif"],
+                    "label-sm":           ["Inter", "sans-serif"]
+                },
+                fontSize: {
+                    "display-lg":         ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}],
+                    "headline-lg":        ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}],
+                    "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}],
+                    "title-md":           ["18px", {lineHeight: "24px", fontWeight: "600"}],
+                    "body-lg":            ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                    "body-md":            ["14px", {lineHeight: "20px", fontWeight: "400"}],
+                    "label-lg":           ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}],
+                    "label-md":           ["13px", {lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500"}],
+                    "label-sm":           ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500"}]
+                }
+            }
+        }
+    };
+</script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-surface min-h-screen flex flex-col">
+<!-- Header / Brand Anchor -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<a href="index.html" class="font-headline-md text-headline-md font-bold text-primary">MatchStage</a>
+<div class="hidden md:flex gap-stack-md">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">¿Ya tienes cuenta?</a>
+<a href="login.html" class="bg-outline-variant/20 hover:bg-outline-variant/40 px-4 py-2 rounded-lg font-label-md text-label-md transition-all inline-block">Iniciar Sesión</a>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center pt-24 pb-12 px-margin-mobile">
+<div class="w-full max-w-container-max flex flex-col lg:flex-row gap-gutter items-stretch">
+<!-- Left Side: Visual/Context -->
+<div class="hidden lg:flex flex-1 flex-col justify-center pr-margin-desktop space-y-stack-lg">
+<div class="space-y-stack-sm">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] mr-1" data-icon="business">business</span>
+                        Portal para Organizaciones
+                    </span>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">Impulsa el talento del futuro.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Conectamos a su organización con los estudiantes más prometedores a través de un proceso de selección optimizado y transparente.</p>
+</div>
+<div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl">
+<img alt="Modern Office" class="w-full h-full object-cover" data-alt="A high-end modern corporate office interior with clean lines, glass partitions, and minimalist ergonomic furniture. The space is filled with natural bright daylight, creating a professional and optimistic atmosphere. The color palette is composed of cool grays, deep blues, and crisp whites, reflecting a corporate and tech-focused environment. High-quality architectural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlHS2CnDp9IT50t7NgIzNUk0-tDB-Txjc3QYb9y59qjuaBI8wJb7Ria_NB4qoVxH0i9oncFp1iaih2UdUxi-Fic6lbdulw5tPd3CUr5d6vz4jzvsrv5-ZwQGqz3hnBWR887y6jWCJtFWZo33snMZyn_NfqRGccpa88EkyBaxjH54CUEywlsADo4BGWjEckLmYTpps83wkcNxBdfoIUOs6o-_Vb_CwizF9PRB3krVqrtvoKk_dtIZ07N9r1j5cHcI4794xG3_GjYz6X">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+<div class="absolute bottom-stack-lg left-stack-lg right-stack-lg p-stack-md glass-effect rounded-xl border border-white/20">
+<p class="font-label-md text-label-md text-primary font-bold mb-1 italic">"MatchStage ha transformado nuestro reclutamiento junior, permitiéndonos encontrar perfiles técnicos en tiempo récord."</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">— Directora de Talento, TechCorp International</p>
+</div>
+</div>
+</div>
+<!-- Right Side: Registration Form -->
+<div class="w-full lg:w-[480px] flex flex-col">
+<div class="bg-surface-container-lowest p-8 md:p-10 rounded-3xl shadow-sm border border-outline-variant flex flex-col space-y-stack-lg">
+<div class="space-y-stack-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">Registrar Organización</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Complete los datos para comenzar a publicar pasantías.</p>
+</div>
+<form class="space-y-stack-md" onsubmit="event.preventDefault();">
+<!-- Nombre de la Organización -->
+<div class="space-y-unit">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-1" for="org_name">Nombre de la Organización</label>
+<input class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none transition-all font-body-md text-body-md" id="org_name" placeholder="Ej. Tech Solutions S.A." type="text">
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<!-- RUC / Tax ID -->
+<div class="space-y-unit">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-1" for="tax_id">RUC / Tax ID</label>
+<input class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none transition-all font-body-md text-body-md" id="tax_id" placeholder="20123456789" type="text">
+</div>
+<!-- Tamaño -->
+<div class="space-y-unit">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-1" for="org_size">Tamaño de empresa</label>
+<select class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none transition-all font-body-md text-body-md appearance-none" id="org_size">
+<option disabled="" selected="" value="">Seleccionar...</option>
+<option>1-10 empleados</option>
+<option>11-50 empleados</option>
+<option>51-200 empleados</option>
+<option>201-500 empleados</option>
+<option>500+ empleados</option>
+</select>
+</div>
+</div>
+<!-- Sector / Industria -->
+<div class="space-y-unit">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-1" for="industry">Sector / Industria</label>
+<input class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none transition-all font-body-md text-body-md" id="industry" placeholder="Ej. Tecnología de la Información" type="text">
+</div>
+<!-- Correo Corporativo -->
+<div class="space-y-unit">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-1" for="email">Correo electrónico corporativo</label>
+<input class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none transition-all font-body-md text-body-md" id="email" placeholder="rrhh@empresa.com" type="email">
+</div>
+<!-- Password -->
+<div class="space-y-unit">
+<label class="font-label-md text-label-md text-on-surface-variant block ml-1" for="password">Contraseña</label>
+<div class="relative">
+<input class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface focus:border-tertiary focus:ring-1 focus:ring-tertiary outline-none transition-all font-body-md text-body-md" id="password" placeholder="••••••••" type="password">
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<div class="pt-stack-md">
+<a href="dashboard_organizacion.html" class="w-full bg-tertiary text-on-tertiary py-4 rounded-xl font-title-lg text-title-lg shadow-lg shadow-tertiary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-150 flex justify-center items-center">Registrar Organización</a>
+</div>
+</form>
+<div class="flex items-center gap-stack-sm py-2 px-4 bg-surface-container rounded-xl border border-outline-variant/30">
+<span class="material-symbols-outlined text-tertiary" data-icon="contact_support">contact_support</span>
+<div class="flex-grow">
+<p class="font-label-sm text-label-sm text-on-surface">¿Cuenta institucional grande?</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Ofrecemos planes Enterprise personalizados.</p>
+</div>
+<a class="font-label-md text-label-md text-tertiary font-bold hover:underline" href="#">Contactar</a>
+</div>
+<div class="pt-4 border-t border-outline-variant text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                            Al registrarse, acepta nuestros 
+                            <a class="text-tertiary hover:underline" href="#">Términos y Condiciones</a> y 
+                            <a class="text-tertiary hover:underline" href="#">Política de Privacidad</a>.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="w-full mt-auto border-t border-outline-variant bg-surface">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-md px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto gap-stack-md">
+<span class="font-title-lg text-title-lg font-bold text-on-surface">MatchStage</span>
+<div class="flex gap-stack-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Términos y Condiciones</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contacto</a>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 MatchStage. Todos los derechos reservados.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label')?.classList.add('text-tertiary');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label')?.classList.remove('text-tertiary');
+            });
+        });
+
+        // Toggle Password visibility logic
+        const togglePass = document.querySelector('button .material-symbols-outlined[data-icon="visibility"]');
+        if (togglePass) {
+            togglePass.parentElement.addEventListener('click', () => {
+                const passInput = document.getElementById('password');
+                if (passInput.type === 'password') {
+                    passInput.type = 'text';
+                    togglePass.textContent = 'visibility_off';
+                } else {
+                    passInput.type = 'password';
+                    togglePass.textContent = 'visibility';
+                }
+            });
+        }
+    </script>
+
+
+
+
+</body></html>
