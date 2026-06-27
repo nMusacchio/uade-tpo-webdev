@@ -132,24 +132,25 @@
             box-shadow: 0 12px 24px -10px rgba(101, 84, 192, 0.15);
         }
     </style>
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body class="bg-background text-on-surface min-h-screen flex flex-col">
 <!-- TopNavBar -->
-<header class="bg-surface border-b border-outline-variant sticky top-0 z-50 h-16">
+<header role="banner"> class="bg-surface border-b border-outline-variant sticky top-0 z-50 h-16">
   <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
     <div class="flex items-center gap-8">
-      <a href="index.html" class="font-bold text-primary text-xl tracking-tight">MatchStage</a>
-      <nav class="hidden md:flex items-center gap-6 h-full">
+      <a href="../index.html" class="font-bold text-primary text-xl tracking-tight">MatchStage</a>
+      <nav class="hidden md:flex items-center gap-6 h-full" aria-label="Navegación principal">
         <a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md h-full flex items-center" href="buscador_pasantias.html">Buscar Pasantías</a>
         <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md h-full flex items-center" href="mis_postulaciones.html">Mis Postulaciones</a>
         <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md h-full flex items-center" href="mi_perfil.html">Mi Perfil</a>
       </nav>
     </div>
     <div class="flex items-center gap-3">
-      <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+      <button aria-label="Notificaciones" class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
         <span class="material-symbols-outlined">notifications</span>
       </button>
-      <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+      <button aria-label="Configuración" class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
         <span class="material-symbols-outlined">settings</span>
       </button>
       <a href="mi_perfil.html" class="w-9 h-9 rounded-full overflow-hidden border border-outline-variant block ml-1 flex-shrink-0">
@@ -159,9 +160,9 @@
   </div>
 </header>
 <!-- Main Content Grid -->
-<main class="flex-grow pt-24 pb-12 px-margin-desktop w-full max-w-container-max mx-auto flex flex-col md:flex-row gap-gutter">
+<main role="main" id="main-content" role="main" class="flex-grow pt-24 pb-12 px-margin-desktop w-full max-w-container-max mx-auto flex flex-col md:flex-row gap-gutter">
 <!-- Sidebar Filters -->
-<aside class="w-full md:w-72 shrink-0">
+<aside aria-label="Menú de navegación" class="w-full md:w-72 shrink-0">
 <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 sticky top-24">
 <div class="flex items-center justify-between mb-6">
 <h2 class="font-title-md text-title-md text-on-surface">Filtros Avanzados</h2>
@@ -253,7 +254,7 @@
 <!-- Internship Grid -->
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 <!-- Card 1 -->
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 card-hover flex flex-col h-full">
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 card-hover flex flex-col h-full">
 <div class="flex justify-between items-start mb-4">
 <div class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center p-2 border border-outline-variant">
 <img alt="Tech Corp Logo" class="w-full h-full object-contain" data-alt="A sleek and minimal technology company logo featuring geometric shapes and a vibrant indigo color palette. The logo is displayed in a professional, clean UI setting, suggesting innovation and digital excellence in a modern corporate landscape with soft, diffused backlighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV_S41___SNUYRE3r_0OKR21Jmyzj_iWl40UhPEzXJAg_Z6UYlHpwj6dIn5uwXz05SHrSfSPAaymXk22aIef4vpacK1YpTxdSkFo3zSjqTLX9IKVUtP8mncpHWVswXZjyAXVt_pqi_zcXCO4lmxc9HO0cXULx1cRNrM4zYeDh6ywpdNmwYvpIKBUavDnFtq9gS_Iv5kuvYPvpMigkA1f1139PruhM_8ats7tgo6WI0hkxVBtBcdD14Owfn-5m4I4znUQASoKuuCGtL"/>
@@ -291,7 +292,7 @@
 </div>
 </div>
 <!-- Card 2 -->
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 card-hover flex flex-col h-full">
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 card-hover flex flex-col h-full">
 <div class="flex justify-between items-start mb-4">
 <div class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center p-2 border border-outline-variant">
 <img alt="Design Agency Logo" class="w-full h-full object-contain" data-alt="A modern and creative design studio logo featuring abstract shapes and a rich purple gradient. The visual style is contemporary and artistic, presented on a clean white background that emphasizes high-density professional aesthetics and intellectual focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPoOVVNSvddkqzegObCf-bhkkJ3wlXkIAehmoQ_C6QB0JtOseb0_X3lqFmGoWdvU2XghEL4rW8TErBfvA6qqn4maeI50XQZigFvWUwzE7SIAEkOHetudrcCKxVzaEVIXLE9q2juxhlu_uOyFWfAetDeEvCBMbuBVcMQaq5rLhOvV4n3xATg6QxqJswJrvAD6dz4v8SXBHhu-qHmibZ-koUOKvvsL6wj_aGUmJ9BgSO0j8y7g-evtMqaYD9KFkwQR84A3Q0b8E5Lglt"/>
@@ -326,7 +327,7 @@
 </div>
 </div>
 <!-- Card 3 -->
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 card-hover flex flex-col h-full">
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 card-hover flex flex-col h-full">
 <div class="flex justify-between items-start mb-4">
 <div class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center p-2 border border-outline-variant">
 <img alt="Fintech Logo" class="w-full h-full object-contain" data-alt="A minimal corporate logo for a financial services firm, using clean lines and a professional blue and gray palette. The image conveys trust and organizational efficiency, rendered in a high-fidelity digital format suitable for a premium career platform interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYgF4zWcwWAEGgGDoNG9LftIqKRrlgCFs0v7TRRFCovEuv4_Qeig8CMdcfPSdsOW6YQnJi9Famh65EZgs6leH2PTBHKNsUGUyALugNzSwlPCFsGJ_bi5n8pixiljvXEVk5vXHLZquLCmoXgcHp9K4cYlQv3nWX0WfSU5e4gdSwZcUcZ2p2gLZrkc-uFrWxJL-HXBn90-jvPN81pGhXeCyQTo9x5pcYuEdwd-y-HjJFbWQAuERGocLacNYu1VzGIsKzk56VoVlLN33l"/>
@@ -361,7 +362,7 @@
 </div>
 </div>
 <!-- Card 4 -->
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 card-hover flex flex-col h-full">
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 card-hover flex flex-col h-full">
 <div class="flex justify-between items-start mb-4">
 <div class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center p-2 border border-outline-variant">
 <img alt="Company Logo" class="w-full h-full object-contain" data-alt="A clean and professional logo for a marketing agency, featuring a bold typography and a modern circular emblem in deep violet. The styling is high-end and minimalist, positioned within a white container that emphasizes clarity and intellectual focus for a scholarly recruitment platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArKyBXeifEMTUUS4L4qiZg6yYj-tqSAtvFjTOuQ1w8VGXsUWTYdio0jwS0f0IBN-zF0rT-eXhjPnW_LWpL0LGyV6-3ojiOT0cSx0tAmD-TRVejMD_XCJwfcuFOryiNg1udHJsNwWJ3zy-4EbDcx9n0V8mY2oRLMks3Oc8tL8Jhds5ZepcOSAPaf9pxWV2F-jd01bFPmhGs5fd_8bu05AXcidQMq-fQ9ECz5wCQxPiKhf-qZx4aGdvcNQ4XI8JGlEua0_ZUbt0pE8Yd"/>
@@ -416,7 +417,7 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface border-t border-outline-variant mt-auto">
+<footer role="contentinfo" class="bg-surface border-t border-outline-variant mt-auto">
 <div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-margin-desktop w-full max-w-container-max mx-auto">
 <div class="flex flex-col items-center md:items-start gap-2 mb-6 md:mb-0">
 <span class="font-title-lg text-title-lg font-bold text-on-surface">MatchStage</span>
@@ -448,4 +449,5 @@
             searchInput.parentElement.classList.remove('ring-2', 'ring-primary/20');
         });
     </script>
+<script src="../assets/js/app.js"></script>
 </body></html>

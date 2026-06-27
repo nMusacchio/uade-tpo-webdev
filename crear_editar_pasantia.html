@@ -125,17 +125,18 @@
             border: 1px solid rgba(223, 225, 230, 0.5);
         }
     </style>
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body class="bg-background text-on-surface font-body-md min-h-screen flex">
 <!-- SideNavBar (Shared Component) -->
-<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 px-4">
-  <a class="flex items-center gap-3 mb-8 px-2 hover:opacity-90 transition-opacity" href="index.html">
+<aside aria-label="Menú de navegación" class="fixed left-0 top-0 h-full w-64 z-40 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 px-4">
+  <a class="flex items-center gap-3 mb-8 px-2 hover:opacity-90 transition-opacity" href="../index.html">
     <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
       <span class="material-symbols-outlined text-on-primary" style="font-size:18px">work</span>
     </div>
     <span class="font-bold text-primary text-lg">MatchStage</span>
   </a>
-  <nav class="flex-1 space-y-1">
+  <nav class="flex-1 space-y-1" aria-label="Menú principal">
     <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="dashboard_organizacion.html">
       <span class="material-symbols-outlined">dashboard</span>
       <span class="font-label-md text-label-md">Dashboard</span>
@@ -162,15 +163,15 @@
       <span class="material-symbols-outlined">settings</span>
       <span class="font-label-md text-label-md">Ajustes</span>
     </a>
-    <a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/10 rounded-xl transition-all" href="index.html">
+    <a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/10 rounded-xl transition-all" href="../index.html">
       <span class="material-symbols-outlined">logout</span>
       <span class="font-label-md text-label-md">Cerrar Sesión</span>
     </a>
   </div>
 </aside>
 <!-- Main Content Canvas -->
-<main class="ml-64 flex-1 p-margin-desktop max-w-container-max mx-auto">
-<header class="mb-stack-lg flex justify-between items-end">
+<main id="main-content" role="main" class="ml-64 flex-1 p-margin-desktop max-w-container-max mx-auto">
+<header role="banner"> class="mb-stack-lg flex justify-between items-end">
 <div>
 <nav class="flex items-center gap-2 text-on-surface-variant font-label-md mb-2">
 <span class="">Pasantías</span>
@@ -186,7 +187,7 @@
 </div>
 </header>
 <!-- Form Bento Grid Layout -->
-<form class="grid grid-cols-12 gap-gutter">
+<form novalidate class="grid grid-cols-12 gap-gutter">
 <!-- Main Content Area (8 Columns) -->
 <div class="col-span-12 lg:col-span-8 space-y-gutter">
 <!-- Section 1: General Info -->
@@ -334,7 +335,7 @@
 </div>
 </form>
 <!-- Footer (Shared Component Context) -->
-<footer class="mt-stack-lg border-t border-outline-variant pt-stack-lg pb-stack-md flex flex-col md:flex-row justify-between items-center w-full">
+<footer role="contentinfo" class="mt-stack-lg border-t border-outline-variant pt-stack-lg pb-stack-md flex flex-col md:flex-row justify-between items-center w-full">
 <div class="mb-4 md:mb-0">
 <h4 class="font-title-lg text-title-lg font-bold text-on-surface">MatchStage</h4>
 <p class="font-body-md text-body-md text-on-surface-variant">© 2026 MatchStage. Todos los derechos reservados.</p>
@@ -370,4 +371,5 @@
             });
         });
     </script>
+<script src="../assets/js/app.js"></script>
 </body></html>

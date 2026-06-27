@@ -122,24 +122,25 @@
         }
     };
 </script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopNavBar -->
-<header class="bg-surface border-b border-outline-variant sticky top-0 z-50 h-16">
+<header role="banner"> class="bg-surface border-b border-outline-variant sticky top-0 z-50 h-16">
   <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
     <div class="flex items-center gap-8">
-      <a href="index.html" class="font-bold text-primary text-xl tracking-tight">MatchStage</a>
-      <nav class="hidden md:flex items-center gap-6 h-full">
+      <a href="../index.html" class="font-bold text-primary text-xl tracking-tight">MatchStage</a>
+      <nav class="hidden md:flex items-center gap-6 h-full" aria-label="Navegación principal">
         <a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md h-full flex items-center" href="buscador_pasantias.html">Buscar Pasantías</a>
         <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md h-full flex items-center" href="mis_postulaciones.html">Mis Postulaciones</a>
         <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md h-full flex items-center" href="mi_perfil.html">Mi Perfil</a>
       </nav>
     </div>
     <div class="flex items-center gap-3">
-      <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+      <button aria-label="Notificaciones" class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
         <span class="material-symbols-outlined">notifications</span>
       </button>
-      <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+      <button aria-label="Configuración" class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
         <span class="material-symbols-outlined">settings</span>
       </button>
       <a href="mi_perfil.html" class="w-9 h-9 rounded-full overflow-hidden border border-outline-variant block ml-1 flex-shrink-0">
@@ -148,7 +149,7 @@
     </div>
   </div>
 </header>
-<main class="pt-24 pb-stack-lg">
+<main id="main-content" role="main" class="pt-24 pb-stack-lg">
 <div class="max-w-container-max mx-auto px-margin-desktop">
 <!-- Breadcrumbs -->
 <div class="flex items-center gap-unit mb-stack-md text-on-surface-variant font-label-sm text-label-sm">
@@ -267,7 +268,7 @@
 </section>
 </div>
 <!-- Right Column: Sidebar -->
-<aside class="space-y-stack-lg">
+<aside aria-label="Menú de navegación" class="space-y-stack-lg">
 <!-- Progress Stepper -->
 <div class="bg-surface-container-lowest p-stack-lg rounded-xl shadow-sm border border-outline-variant">
 <h3 class="font-label-md text-label-md text-on-surface mb-stack-lg">Proceso de Selección</h3>
@@ -331,10 +332,10 @@
 </div>
 </main>
 <!-- Footer -->
-<footer class="bg-surface border-t border-outline-variant mt-stack-lg" id="footer">
+<footer role="contentinfo" class="bg-surface border-t border-outline-variant mt-stack-lg" id="footer">
 <div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-margin-desktop w-full max-w-container-max mx-auto gap-stack-md">
 <div class="flex flex-col items-center md:items-start">
-<a class="font-title-lg text-title-lg font-bold text-on-surface" href="index.html">MatchStage</a>
+<a class="font-title-lg text-title-lg font-bold text-on-surface" href="../index.html">MatchStage</a>
 <p class="font-body-md text-body-md text-on-surface-variant mt-unit">Conectando ambición con oportunidad.</p>
 </div>
 <div class="flex gap-stack-lg">
@@ -371,4 +372,5 @@
             }
         });
     </script>
+<script src="../assets/js/app.js"></script>
 </body></html>

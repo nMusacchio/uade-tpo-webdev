@@ -129,17 +129,18 @@
             font-weight: 600;
         }
     </style>
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen flex">
 <!-- SideNavBar (Shared Component) -->
-<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 px-4">
-  <a class="flex items-center gap-3 mb-8 px-2 hover:opacity-90 transition-opacity" href="index.html">
+<aside aria-label="Menú de navegación" class="fixed left-0 top-0 h-full w-64 z-40 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 px-4">
+  <a class="flex items-center gap-3 mb-8 px-2 hover:opacity-90 transition-opacity" href="../index.html">
     <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
       <span class="material-symbols-outlined text-on-primary" style="font-size:18px">work</span>
     </div>
     <span class="font-bold text-primary text-lg">MatchStage</span>
   </a>
-  <nav class="flex-1 space-y-1">
+  <nav class="flex-1 space-y-1" aria-label="Menú principal">
     <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="dashboard_organizacion.html">
       <span class="material-symbols-outlined">dashboard</span>
       <span class="font-label-md text-label-md">Dashboard</span>
@@ -166,16 +167,16 @@
       <span class="material-symbols-outlined">settings</span>
       <span class="font-label-md text-label-md">Ajustes</span>
     </a>
-    <a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/10 rounded-xl transition-all" href="index.html">
+    <a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/10 rounded-xl transition-all" href="../index.html">
       <span class="material-symbols-outlined">logout</span>
       <span class="font-label-md text-label-md">Cerrar Sesión</span>
     </a>
   </div>
 </aside>
 <!-- Main Content Canvas -->
-<main class="ml-64 flex-grow p-margin-desktop max-w-container-max mx-auto">
+<main role="main" id="main-content" role="main" class="ml-64 flex-grow p-margin-desktop max-w-container-max mx-auto">
 <!-- Header Section -->
-<header class="mb-stack-lg flex flex-col md:flex-row md:items-end justify-between gap-gutter">
+<header role="banner"> class="mb-stack-lg flex flex-col md:flex-row md:items-end justify-between gap-gutter">
 <div>
 <h2 class="font-headline-lg text-headline-lg text-on-background">Postulantes Recibidos</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-2">Gestiona el talento joven que busca unirse a tu organización.</p>
@@ -361,7 +362,7 @@
 </tbody>
 </table>
 <!-- Pagination -->
-<footer class="bg-surface-container-low px-6 py-4 flex items-center justify-between border-t border-outline-variant">
+<footer role="contentinfo" class="bg-surface-container-low px-6 py-4 flex items-center justify-between border-t border-outline-variant">
 <p class="font-label-sm text-on-surface-variant">Mostrando 1-4 de 24 postulantes</p>
 <div class="flex items-center gap-stack-sm">
 <button class="p-2 rounded-lg border border-outline-variant hover:bg-surface-container-high transition-colors disabled:opacity-50" disabled="">
@@ -411,4 +412,5 @@
     </script>
 
 
+<script src="../assets/js/app.js"></script>
 </body></html>

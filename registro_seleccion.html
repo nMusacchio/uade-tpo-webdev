@@ -126,13 +126,14 @@
         }
     };
 </script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body class="bg-background text-on-background min-h-screen flex flex-col items-center justify-center">
 <!-- Header Navigation (Simplified for Transactional Focus) -->
-<header class="fixed top-0 left-0 w-full bg-surface/80 backdrop-blur-md border-b border-outline-variant z-50">
+<header role="banner"> class="fixed top-0 left-0 w-full bg-surface/80 backdrop-blur-md border-b border-outline-variant z-50">
 <div class="max-w-container-max mx-auto h-16 px-margin-desktop flex items-center justify-between">
 <div class="flex items-center gap-2">
-<a href="index.html" class="text-title-lg font-bold text-primary">MatchStage</a>
+<a href="../index.html" class="text-title-lg font-bold text-primary">MatchStage</a>
 </div>
 <div class="flex items-center gap-4">
 <span class="text-label-md font-medium text-on-surface-variant">¿Ya tienes cuenta?</span>
@@ -140,7 +141,7 @@
 </div>
 </div>
 </header>
-<main class="w-full max-w-container-max px-margin-mobile md:px-margin-desktop py-stack-lg mt-16">
+<main id="main-content" role="main" class="w-full max-w-container-max px-margin-mobile md:px-margin-desktop py-stack-lg mt-16">
 <!-- Hero Section -->
 <div class="text-center mb-12 animate-fade-in">
 <h1 class="text-headline-lg font-headline-lg text-on-surface mb-stack-sm">Comienza tu viaje profesional</h1>
@@ -216,7 +217,7 @@
 </div>
 </main>
 <!-- Footer (Shared Component Guidance) -->
-<footer class="w-full py-8 px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto border-t border-outline-variant mt-stack-lg">
+<footer role="contentinfo" class="w-full py-8 px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto border-t border-outline-variant mt-stack-lg">
 <div class="mb-4 md:mb-0">
 <span class="text-label-md font-bold text-on-surface">MatchStage</span>
 <span class="text-label-sm text-on-surface-variant ml-2">© 2026 MatchStage. Todos los derechos reservados.</span>
@@ -274,4 +275,5 @@
 
 
 
+<script src="../assets/js/app.js"></script>
 </body></html>

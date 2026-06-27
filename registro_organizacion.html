@@ -120,19 +120,20 @@
             -webkit-backdrop-filter: blur(12px);
         }
     </style>
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body class="bg-surface-bright text-on-surface min-h-screen flex flex-col">
 <!-- Header / Brand Anchor -->
-<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant">
+<header role="banner"> class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant">
 <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-container-max mx-auto">
-<a href="index.html" class="font-headline-md text-headline-md font-bold text-primary">MatchStage</a>
+<a href="../index.html" class="font-headline-md text-headline-md font-bold text-primary">MatchStage</a>
 <div class="hidden md:flex gap-stack-md">
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">¿Ya tienes cuenta?</a>
 <a href="login.html" class="bg-outline-variant/20 hover:bg-outline-variant/40 px-4 py-2 rounded-lg font-label-md text-label-md transition-all inline-block">Iniciar Sesión</a>
 </div>
 </div>
 </header>
-<main class="flex-grow flex items-center justify-center pt-24 pb-12 px-margin-mobile">
+<main id="main-content" role="main" class="flex-grow flex items-center justify-center pt-24 pb-12 px-margin-mobile">
 <div class="w-full max-w-container-max flex flex-col lg:flex-row gap-gutter items-stretch">
 <!-- Left Side: Visual/Context -->
 <div class="hidden lg:flex flex-1 flex-col justify-center pr-margin-desktop space-y-stack-lg">
@@ -160,7 +161,7 @@
 <h2 class="font-headline-md text-headline-md text-on-surface">Registrar Organización</h2>
 <p class="font-body-md text-body-md text-on-surface-variant">Complete los datos para comenzar a publicar pasantías.</p>
 </div>
-<form class="space-y-stack-md" onsubmit="event.preventDefault();">
+<form novalidate class="space-y-stack-md" onsubmit="event.preventDefault();">
 <!-- Nombre de la Organización -->
 <div class="space-y-unit">
 <label class="font-label-md text-label-md text-on-surface-variant block ml-1" for="org_name">Nombre de la Organización</label>
@@ -229,7 +230,7 @@
 </div>
 </main>
 <!-- Simple Footer -->
-<footer class="w-full mt-auto border-t border-outline-variant bg-surface">
+<footer role="contentinfo" class="w-full mt-auto border-t border-outline-variant bg-surface">
 <div class="flex flex-col md:flex-row justify-between items-center py-stack-md px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto gap-stack-md">
 <span class="font-title-lg text-title-lg font-bold text-on-surface">MatchStage</span>
 <div class="flex gap-stack-lg">
@@ -271,4 +272,5 @@
 
 
 
+<script src="../assets/js/app.js"></script>
 </body></html>

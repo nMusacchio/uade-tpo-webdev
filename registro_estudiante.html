@@ -124,6 +124,7 @@
         }
     };
 </script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body class="bg-surface-bright min-h-screen flex items-center justify-center p-margin-mobile md:p-margin-desktop overflow-x-hidden">
 <!-- Abstract Background Elements -->
@@ -132,11 +133,11 @@
 <div class="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-secondary-container/10 rounded-full blur-[120px]"></div>
 </div>
 <!-- Main Registration Container -->
-<main class="w-full max-w-[1100px] grid md:grid-cols-2 bg-surface-container-lowest rounded-[2rem] shadow-xl overflow-hidden border border-outline-variant/30">
+<main id="main-content" role="main" class="w-full max-w-[1100px] grid md:grid-cols-2 bg-surface-container-lowest rounded-[2rem] shadow-xl overflow-hidden border border-outline-variant/30">
 <!-- Left Side: Visual Branding/Context -->
 <section class="hidden md:flex flex-col justify-between p-12 bg-primary relative overflow-hidden">
 <div class="relative z-10">
-<a href="index.html" class="flex items-center gap-2 mb-12 hover:opacity-90 transition-opacity">
+<a href="../index.html" class="flex items-center gap-2 mb-12 hover:opacity-90 transition-opacity">
 <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg">
 <span class="material-symbols-outlined text-primary" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
 </div>
@@ -195,7 +196,7 @@ LinkedIn
 <div class="flex-grow border-t border-outline-variant/50"></div>
 </div>
 <!-- Registration Form -->
-<form class="space-y-5" onsubmit="return false;">
+<form novalidate class="space-y-5" onsubmit="return false;">
 <!-- Full Name -->
 <div class="group">
 <label class="block font-label-md text-label-md text-on-surface-variant mb-1.5 transition-colors group-focus-within:text-primary" for="full_name">Nombre completo</label>
@@ -295,4 +296,5 @@ Crear Cuenta Estudiante
 
 
 
+<script src="../assets/js/app.js"></script>
 </body></html>

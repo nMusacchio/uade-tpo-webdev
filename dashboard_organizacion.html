@@ -125,17 +125,18 @@
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #c9c4d4; border-radius: 10px; }
     </style>
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body class="text-on-background" data-mode="connect">
 <!-- Sidebar Navigation -->
-<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 px-4">
-  <a class="flex items-center gap-3 mb-8 px-2 hover:opacity-90 transition-opacity" href="index.html">
+<aside aria-label="Menú de navegación" class="fixed left-0 top-0 h-full w-64 z-40 bg-surface-container-low border-r border-outline-variant flex flex-col py-6 px-4">
+  <a class="flex items-center gap-3 mb-8 px-2 hover:opacity-90 transition-opacity" href="../index.html">
     <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
       <span class="material-symbols-outlined text-on-primary" style="font-size:18px">work</span>
     </div>
     <span class="font-bold text-primary text-lg">MatchStage</span>
   </a>
-  <nav class="flex-1 space-y-1">
+  <nav class="flex-1 space-y-1" aria-label="Menú principal">
     <a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container font-semibold rounded-xl transition-all" href="dashboard_organizacion.html">
       <span class="material-symbols-outlined">dashboard</span>
       <span class="font-label-md text-label-md">Dashboard</span>
@@ -162,16 +163,16 @@
       <span class="material-symbols-outlined">settings</span>
       <span class="font-label-md text-label-md">Ajustes</span>
     </a>
-    <a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/10 rounded-xl transition-all" href="index.html">
+    <a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/10 rounded-xl transition-all" href="../index.html">
       <span class="material-symbols-outlined">logout</span>
       <span class="font-label-md text-label-md">Cerrar Sesión</span>
     </a>
   </div>
 </aside>
 <!-- Main Content Area -->
-<main class="ml-64 min-h-screen">
+<main role="main" id="main-content" role="main" class="ml-64 min-h-screen">
 <!-- Top App Bar -->
-<header class="fixed top-0 right-0 left-64 h-16 z-30 bg-surface border-b border-outline-variant">
+<header role="banner"> class="fixed top-0 right-0 left-64 h-16 z-30 bg-surface border-b border-outline-variant">
 <div class="flex justify-between items-center h-full px-margin-desktop mx-auto max-w-max-width">
 <div class="flex items-center gap-4">
 <div class="relative">
@@ -433,7 +434,7 @@
 </div>
 </div>
 </div>
-<footer class="mt-12 py-8 border-t border-outline-variant px-margin-desktop">
+<footer role="contentinfo" class="mt-12 py-8 border-t border-outline-variant px-margin-desktop">
   <div class="max-w-max-width mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
     <div class="flex flex-col items-center md:items-start gap-2">
       <span class="font-headline-md text-headline-md font-bold text-primary">MatchStage</span>
@@ -471,4 +472,5 @@
     </script>
 
 
+<script src="../assets/js/app.js"></script>
 </body></html>

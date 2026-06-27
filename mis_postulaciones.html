@@ -119,24 +119,25 @@
             border: 1px solid rgba(201, 196, 212, 0.5);
         }
     </style>
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body class="bg-surface text-on-surface">
 <!-- TopAppBar -->
-<header class="bg-surface border-b border-outline-variant sticky top-0 z-50 h-16">
+<header role="banner"> class="bg-surface border-b border-outline-variant sticky top-0 z-50 h-16">
   <div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
     <div class="flex items-center gap-8">
-      <a href="index.html" class="font-bold text-primary text-xl tracking-tight">MatchStage</a>
-      <nav class="hidden md:flex items-center gap-6 h-full">
+      <a href="../index.html" class="font-bold text-primary text-xl tracking-tight">MatchStage</a>
+      <nav class="hidden md:flex items-center gap-6 h-full" aria-label="Navegación principal">
         <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md h-full flex items-center" href="buscador_pasantias.html">Buscar Pasantías</a>
         <a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md h-full flex items-center" href="mis_postulaciones.html">Mis Postulaciones</a>
         <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md h-full flex items-center" href="mi_perfil.html">Mi Perfil</a>
       </nav>
     </div>
     <div class="flex items-center gap-3">
-      <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+      <button aria-label="Notificaciones" class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
         <span class="material-symbols-outlined">notifications</span>
       </button>
-      <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+      <button aria-label="Configuración" class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
         <span class="material-symbols-outlined">settings</span>
       </button>
       <a href="mi_perfil.html" class="w-9 h-9 rounded-full overflow-hidden border border-outline-variant block ml-1 flex-shrink-0">
@@ -146,7 +147,7 @@
   </div>
 </header>
 <!-- Main Content -->
-<main class="pt-16 min-h-screen">
+<main id="main-content" role="main" class="pt-16 min-h-screen">
 <div class="max-w-max-width mx-auto p-margin-desktop">
 <!-- Header Section -->
 <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
@@ -384,4 +385,5 @@
     </script>
 
 
+<script src="../assets/js/app.js"></script>
 </body></html>

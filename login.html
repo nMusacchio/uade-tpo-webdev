@@ -122,16 +122,17 @@
             background-size: 24px 24px;
         }
     </style>
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body class="bg-pattern min-h-screen flex flex-col font-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container">
 <!-- Transactional Header: Suppressed Navigation as per "Semantic Shell" Mandate -->
-<header class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20 flex items-center">
-<div class="flex items-center gap-stack-sm cursor-pointer" onclick="window.location.href='index.html'">
+<header role="banner"> class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20 flex items-center">
+<div class="flex items-center gap-stack-sm cursor-pointer" onclick="window.location.href='../index.html'">
 <span class="material-symbols-outlined text-primary text-headline-md" style="font-variation-settings: 'FILL' 1;">school</span>
 <span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">MatchStage</span>
 </div>
 </header>
-<main class="flex-grow flex items-center justify-center px-margin-mobile py-stack-lg">
+<main id="main-content" role="main" class="flex-grow flex items-center justify-center px-margin-mobile py-stack-lg">
 <div class="w-full max-w-[440px] animate-in fade-in slide-in-from-bottom-4 duration-700">
 <!-- Selection Segmented Control (Role Funneling) -->
 <div class="flex p-1 bg-surface-container rounded-xl mb-stack-lg shadow-inner">
@@ -148,7 +149,7 @@
 <h1 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Bienvenido de nuevo</h1>
 <p class="font-body-md text-body-md text-on-surface-variant">Ingresa tus credenciales para acceder a tu portal.</p>
 </div>
-<form class="space-y-stack-md" onsubmit="return false;">
+<form novalidate class="space-y-stack-md" onsubmit="return false;">
 <!-- Email Field -->
 <div class="space-y-unit">
 <label class="font-label-md text-label-md text-on-surface-variant block" for="email">Correo electrónico</label>
@@ -210,7 +211,7 @@
 <img class="w-full h-full object-cover rounded-bl-full" data-alt="A clean, minimalist high-key photograph of a modern university library with bright natural light coming through large windows. The scene is calm and focused, with a blurred background of bookshelves and architectural lines. The color palette is dominated by whites, light grays, and soft blue accents, embodying the professional and academic ambition of MatchStage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTMeh1zhZC5UsVcG7JAIy79tciZcfyUtgfJfKUhZsB6Nnm3EqowibnrbmRBbVdwB0hST1I51Y6DQF9l_1YyAD4OFQWCJbeX-gLbvoNvRwxUOhaoMeKk7jYWWjjYAbpLf9oD3JbCtQ_zg5o3rCpmDfHHe0C299YLWOb5CK5I7NhgUUcnqkV2pjpo0nVUG4Wan-KD4H9TmeCj1BtOiKVxiuL_3bXhVdnoZJekBvLi5fGaC4jmUM9eArvR_sYSu7K9PT6OBTBrEuT9TYH">
 </div>
 <!-- Bottom Footer Components -->
-<footer class="mt-auto w-full py-stack-md px-margin-desktop bg-surface flex flex-col md:flex-row justify-between items-center border-t border-outline-variant">
+<footer role="contentinfo" class="mt-auto w-full py-stack-md px-margin-desktop bg-surface flex flex-col md:flex-row justify-between items-center border-t border-outline-variant">
 <span class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2026 MatchStage. Todos los derechos reservados.</span>
 <div class="flex gap-stack-lg mt-stack-sm md:mt-0">
 <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacidad</a>
@@ -256,4 +257,5 @@
 
 
 
+<script src="../assets/js/app.js"></script>
 </body></html>
